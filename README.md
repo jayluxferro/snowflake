@@ -1,4 +1,4 @@
-### Snowflake's Safari Extension (macOS/iOS)
+### Snowflake's Safari Extension
 
 <p id="downloads" align="center">
 	<img src="https://raw.githubusercontent.com/jayluxferro/snowflake/main/Shared%20(App)/Resources/Icon.png" height="120px"/>
