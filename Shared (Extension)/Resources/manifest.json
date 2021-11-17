@@ -8,7 +8,7 @@
     "scripts": [
       "snowflake.js"
     ],
-    "persistent": false
+    "persistent": true
   },
   "icons": {
       "48": "assets/toolbar-on-48.png",
