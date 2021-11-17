@@ -25,15 +25,15 @@ Snowflake is a system to defeat internet censorship. People who are censored can
     <td><img src="resources/4.png" width=270 height=420></td>
   </tr>
   <tr>
-     <td>Launch Screen</td>
-     <td>Enable Snowflake Extension in Setttings</td>
-     <td>Go to Safari Extensions</td>
-     <td>Enable Snowflake Extension</td>
+     <td>Snowflake Extension Enabled</td>
+     <td></td>
+     <td></td>
+     <td>Snowflake is Active</td>
   </tr>
   <tr>
     <td><img src="resources/6.png" width=270 height=420></td>
+    <td><img src="resources/7.png" width=270 height=420></td>
     <td><img src="resources/8.png" width=270 height=420></td>
     <td><img src="resources/9.png" width=270 height=420></td>
-    <td><img src="resources/10.png" width=270 height=420></td>
   </tr>
  </table>
