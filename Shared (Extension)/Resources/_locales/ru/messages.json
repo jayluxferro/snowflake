@@ -1,30 +1,30 @@
 {
   "appDesc": {
-    "message": "Snowflake is a WebRTC pluggable transport for Tor."
+    "message": "Snowflake – подключаемый транспорт для Tor через WebRTC."
   },
   "popupEnabled": {
-    "message": "Enabled"
+    "message": "Вкл / выкл"
   },
   "popupLearnMore": {
-    "message": "Learn more"
+    "message": "Узнать больше"
   },
   "popupStatusOff": {
-    "message": "Snowflake is off"
+    "message": "Snowflake выключен"
   },
   "popupStatusOn": {
-    "message": "Number of users currently connected: $1"
+    "message": "Сейчас подключено пользователей: $1"
   },
   "popupStatusReady": {
-    "message": "Your Snowflake is ready to help users circumvent censorship"
+    "message": "Ваш Snowflake готов помочь пользователям обойти цензуру"
   },
   "popupWebRTCOff": {
-    "message": "WebRTC feature is not detected."
+    "message": "WebRTC не обнаружен."
   },
   "popupBridgeUnreachable": {
-    "message": "Could not connect to the bridge."
+    "message": "Не удалось подключиться к мосту."
   },
   "popupDescOn": {
-    "message": "Number of users your Snowflake has helped circumvent censorship in the last 24 hours: $1"
+    "message": "Пользователей, которым ваш Snowflake помог обойти цензуру за последние 24 часа: $1"
   },
   "popupRetry": {
     "message": "Retry"
@@ -33,31 +33,31 @@
     "message": "Retrying ..."
   },
   "badgeCookiesOff": {
-    "message": "Cookies are not enabled."
+    "message": "Файлы-куки не включены."
   },
   "websiteIntro": {
     "message": "Snowflake is a system to defeat internet censorship. People who are censored can use Snowflake to access the internet. Their connection goes through Snowflake proxies, which are run by volunteers. For more detailed information about how Snowflake works see our <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/home\">documentation wiki</a>."
   },
   "browser": {
-    "message": "Browser"
+    "message": "Браузер"
   },
   "censoredUsers": {
-    "message": "If your internet access is censored, you should download <a href=\"https://www.torproject.org/download/\">Tor Browser</a>."
+    "message": "Если вашему доступу к интернету мешает цензура, скачайте <a href=\"https://www.torproject.org/download/\">Tor Browser</a>."
   },
   "extension": {
-    "message": "Extension"
+    "message": "Расширение"
   },
   "installExtension": {
-    "message": "If your internet access is <strong>not</strong> censored, you should consider installing the Snowflake extension to help users in censored networks. There is no need to worry about which websites people are accessing through your proxy. Their visible browsing IP address will match their Tor exit node, not yours."
+    "message": "Если цензура вам не мешает, подумайте об установке расширения Snowflake. Этим вы поможете пользователям в подцензурных сетях. Не беспокойтесь о том, какие сайты люди смотрят через ваш прокси-сервер. Их видимый IP-адрес будет соответствовать выходному узлу Tor, а не вашему."
   },
   "installFirefox": {
-    "message": "Install in Firefox"
+    "message": "Установить в Firefox"
   },
   "installChrome": {
-    "message": "Install in Chrome"
+    "message": "Установить в Chrome"
   },
   "reportingBugs": {
-    "message": "Reporting Bugs"
+    "message": "Сообщить об ошибке"
   },
   "fileBug": {
     "message": "If you encounter problems with Snowflake as a client or a proxy, please consider filing a bug report.  There are two ways to file a bug report:"
@@ -72,13 +72,13 @@
     "message": "Please try to be as descriptive as possible with your ticket and if possible include log messages that will help us reproduce the bug."
   },
   "embed": {
-    "message": "Embed"
+    "message": "Встроить"
   },
   "possible": {
-    "message": "It is now possible to embed the Snowflake badge on any website:"
+    "message": "Можно вставить значок Snowflake на сайт:"
   },
   "looksLike": {
-    "message": "Which looks like this:"
+    "message": "Выглядеть будет примерно так:"
   },
   "faq": {
     "message": "FAQ"

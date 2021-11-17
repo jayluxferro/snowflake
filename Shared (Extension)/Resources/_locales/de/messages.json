@@ -1,30 +1,30 @@
 {
   "appDesc": {
-    "message": "Snowflake is a WebRTC pluggable transport for Tor."
+    "message": "Snowflake ist ein auf WebRTC basierendes \"pluggable transport\"-Protokoll für Tor."
   },
   "popupEnabled": {
-    "message": "Enabled"
+    "message": "Aktiv"
   },
   "popupLearnMore": {
-    "message": "Learn more"
+    "message": "Mehr erfahren"
   },
   "popupStatusOff": {
-    "message": "Snowflake is off"
+    "message": "Snowflake ist ausgeschaltet"
   },
   "popupStatusOn": {
-    "message": "Number of users currently connected: $1"
+    "message": "Anzahl der derzeit verbundenen Benutzer: $1"
   },
   "popupStatusReady": {
-    "message": "Your Snowflake is ready to help users circumvent censorship"
+    "message": "Dein Snowflake ist bereit, Benutzern zu helfen, die Zensur zu umgehen."
   },
   "popupWebRTCOff": {
-    "message": "WebRTC feature is not detected."
+    "message": "WebRTC-Fähigkeit nicht erkannt."
   },
   "popupBridgeUnreachable": {
-    "message": "Could not connect to the bridge."
+    "message": "Konnte keine Verbindung zur Brücke herstellen."
   },
   "popupDescOn": {
-    "message": "Number of users your Snowflake has helped circumvent censorship in the last 24 hours: $1"
+    "message": "Anzahl der Benutzer, denen dein Snowflake in den letzten 24 Stunden geholfen hat, die Zensur zu umgehen: $1"
   },
   "popupRetry": {
     "message": "Retry"
@@ -33,7 +33,7 @@
     "message": "Retrying ..."
   },
   "badgeCookiesOff": {
-    "message": "Cookies are not enabled."
+    "message": "Cookies sind nicht aktiviert."
   },
   "websiteIntro": {
     "message": "Snowflake is a system to defeat internet censorship. People who are censored can use Snowflake to access the internet. Their connection goes through Snowflake proxies, which are run by volunteers. For more detailed information about how Snowflake works see our <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/home\">documentation wiki</a>."
@@ -42,22 +42,22 @@
     "message": "Browser"
   },
   "censoredUsers": {
-    "message": "If your internet access is censored, you should download <a href=\"https://www.torproject.org/download/\">Tor Browser</a>."
+    "message": "Falls Ihr Internetzugang zensiert ist, laden Sie den <a href=\"https://www.torproject.org/download/\">Tor Browser</a> herunter."
   },
   "extension": {
-    "message": "Extension"
+    "message": "Erweiterung"
   },
   "installExtension": {
-    "message": "If your internet access is <strong>not</strong> censored, you should consider installing the Snowflake extension to help users in censored networks. There is no need to worry about which websites people are accessing through your proxy. Their visible browsing IP address will match their Tor exit node, not yours."
+    "message": "Falls Ihr Internetzugang <strong>nicht</strong> zensiert ist, ziehen Sie in Erwägung, Snowflake zu installieren, um Nutzern in zensierten Netzwerken zu helfen. Sie brauchen sich keine Sorgen zu machen über die  Webseiten, auf die die Nutzer über Ihren Proxy zugreifen. Deren sichtbare IP-Adresse entspricht der des Tor Ausgangsknotenpunktes und nicht Ihrer."
   },
   "installFirefox": {
-    "message": "Install in Firefox"
+    "message": "In Firefox installieren"
   },
   "installChrome": {
-    "message": "Install in Chrome"
+    "message": "In Chrome installieren"
   },
   "reportingBugs": {
-    "message": "Reporting Bugs"
+    "message": "Fehler werden gemeldet"
   },
   "fileBug": {
     "message": "If you encounter problems with Snowflake as a client or a proxy, please consider filing a bug report.  There are two ways to file a bug report:"
@@ -72,13 +72,13 @@
     "message": "Please try to be as descriptive as possible with your ticket and if possible include log messages that will help us reproduce the bug."
   },
   "embed": {
-    "message": "Embed"
+    "message": "Einbetten"
   },
   "possible": {
-    "message": "It is now possible to embed the Snowflake badge on any website:"
+    "message": "Es ist nun möglich, den Snowflake-Banner auf jeder Webseite einzubetten:"
   },
   "looksLike": {
-    "message": "Which looks like this:"
+    "message": "Dieser sieht folgendermaßen aus:"
   },
   "faq": {
     "message": "FAQ"

@@ -1,39 +1,39 @@
 {
   "appDesc": {
-    "message": "Snowflake is a WebRTC pluggable transport for Tor."
+    "message": "Snowflake er en WebRTC-udskiftelig transport til Tor."
   },
   "popupEnabled": {
-    "message": "Enabled"
+    "message": "Aktiveret"
   },
   "popupLearnMore": {
-    "message": "Learn more"
+    "message": "Lær mere"
   },
   "popupStatusOff": {
-    "message": "Snowflake is off"
+    "message": "Snowflake er slukket"
   },
   "popupStatusOn": {
-    "message": "Number of users currently connected: $1"
+    "message": "Antal tilsluttede brugere i øjeblikket: $1"
   },
   "popupStatusReady": {
-    "message": "Your Snowflake is ready to help users circumvent censorship"
+    "message": "Din Snowflake er klar til at hjælpe brugere med at omgå censur"
   },
   "popupWebRTCOff": {
-    "message": "WebRTC feature is not detected."
+    "message": "WebRTC-funktionalitet er ikke registreret."
   },
   "popupBridgeUnreachable": {
-    "message": "Could not connect to the bridge."
+    "message": "Kunne ikke oprette forbindelse til broen."
   },
   "popupDescOn": {
-    "message": "Number of users your Snowflake has helped circumvent censorship in the last 24 hours: $1"
+    "message": "Antal brugere som din Snowflake har hjulpet med at omgå censur indenfor de sidste 24 timer: $1"
   },
   "popupRetry": {
-    "message": "Retry"
+    "message": "Prøv igen"
   },
   "popupRetrying": {
-    "message": "Retrying ..."
+    "message": "Prøver igen..."
   },
   "badgeCookiesOff": {
-    "message": "Cookies are not enabled."
+    "message": "Cookies er ikke aktiveret."
   },
   "websiteIntro": {
     "message": "Snowflake is a system to defeat internet censorship. People who are censored can use Snowflake to access the internet. Their connection goes through Snowflake proxies, which are run by volunteers. For more detailed information about how Snowflake works see our <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/home\">documentation wiki</a>."
@@ -42,22 +42,22 @@
     "message": "Browser"
   },
   "censoredUsers": {
-    "message": "If your internet access is censored, you should download <a href=\"https://www.torproject.org/download/\">Tor Browser</a>."
+    "message": "Din internetadgang er censureret, du bør downloade <a href=\"https://www.torproject.org/download/\">Tor Browser</a>."
   },
   "extension": {
-    "message": "Extension"
+    "message": "Udvidelse"
   },
   "installExtension": {
-    "message": "If your internet access is <strong>not</strong> censored, you should consider installing the Snowflake extension to help users in censored networks. There is no need to worry about which websites people are accessing through your proxy. Their visible browsing IP address will match their Tor exit node, not yours."
+    "message": "Hvis din internetadgang <strong>ikke</strong> er censureret, så bør du overveje at installere Snowflake-udvidelsen for at hjælpe brugere i censureret netværk. Du behøver ikke bekymre dig om hvilke websteder folk tilgår gennem din proxy. Deres synlige browsing IP-adresse vil matche deres Tor-afslutningsknudepunkt, ikke dit."
   },
   "installFirefox": {
-    "message": "Install in Firefox"
+    "message": "Installer i Firefox"
   },
   "installChrome": {
-    "message": "Install in Chrome"
+    "message": "Installer i Chrome"
   },
   "reportingBugs": {
-    "message": "Reporting Bugs"
+    "message": "Fejlrapportering"
   },
   "fileBug": {
     "message": "If you encounter problems with Snowflake as a client or a proxy, please consider filing a bug report.  There are two ways to file a bug report:"
@@ -72,13 +72,13 @@
     "message": "Please try to be as descriptive as possible with your ticket and if possible include log messages that will help us reproduce the bug."
   },
   "embed": {
-    "message": "Embed"
+    "message": "Indlejr"
   },
   "possible": {
-    "message": "It is now possible to embed the Snowflake badge on any website:"
+    "message": "Det er nu muligt at indlejre Snowflake-badget på et websted:"
   },
   "looksLike": {
-    "message": "Which looks like this:"
+    "message": "Som ser sådan her ud:"
   },
   "faq": {
     "message": "FAQ"

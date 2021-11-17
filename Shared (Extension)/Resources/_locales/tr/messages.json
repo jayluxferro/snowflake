@@ -1,0 +1,89 @@
+{
+  "appDesc": {
+    "message": "Snowflake, Tor için bir WebRTC değiştirilebilir taşıyıcısıdır."
+  },
+  "popupEnabled": {
+    "message": "Etkin"
+  },
+  "popupLearnMore": {
+    "message": "Ayrıntılı bilgi alın"
+  },
+  "popupStatusOff": {
+    "message": "Snowflake kapalı"
+  },
+  "popupStatusOn": {
+    "message": "Şu anda bağlı olan kullanıcı sayısı: $1"
+  },
+  "popupStatusReady": {
+    "message": "Snowflake uygulamanız kullanıcıların sansürü aşmasına yardımcı olmaya hazır"
+  },
+  "popupWebRTCOff": {
+    "message": "WebRTC özelliği algılanamadı."
+  },
+  "popupBridgeUnreachable": {
+    "message": "Köprü ile bağlantı kurulamadı."
+  },
+  "popupDescOn": {
+    "message": "Snowflake uygulamanız son 24 saatte $1 kullanıcının sansürü aşmasına yardımcı oldu."
+  },
+  "popupRetry": {
+    "message": "Yeniden Dene"
+  },
+  "popupRetrying": {
+    "message": "Yeniden deneniyor..."
+  },
+  "badgeCookiesOff": {
+    "message": "Çerezler etkin değil."
+  },
+  "websiteIntro": {
+    "message": "Snowflake İnternet sansürünü aşmaya yönelik bir sistemdir. Sansüre uğrayan kişiler, Snowflake kullanarak İnternete erişebilir. Bağlantı, gönüllüler tarafından işletilen Snowflake vekil sunucuları üzerinden kurulur. Snowflake hakkında ayrıntılı bilgi almak için <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/home\">belgeler viki</a> sayfamıza bakabilirsiniz."
+  },
+  "browser": {
+    "message": "Tarayıcı"
+  },
+  "censoredUsers": {
+    "message": "İnternet erişiminiz sansürleniyorsa <a href=\"https://www.torproject.org/download/\">Tor Browser</a> uygulamasını indirmelisiniz."
+  },
+  "extension": {
+    "message": "Eklenti"
+  },
+  "installExtension": {
+    "message": "İnternet erişiminiz <strong>sansürlenmiyorsa</strong>, sansürlenen ağlardaki kullanıcılara yardımcı olmak için Snowflake eklentisini kurabilirsiniz. Diğer kullanıcıların vekil sunucunuz üzerinden eriştiği sayfalar hakkında endişelenmeniz gerekmez. Bu kullanıcıların görülebilecek IP adresleri sizin değil Tor çıkış durağının adresi olur."
+  },
+  "installFirefox": {
+    "message": "Firefox üzerine kurulum"
+  },
+  "installChrome": {
+    "message": "Chrome üzerine kurulum"
+  },
+  "reportingBugs": {
+    "message": "Hata Bildirimi"
+  },
+  "fileBug": {
+    "message": "Bir istemci ya da vekil sunucu olarak Snowflake kullanırken sorun yaşarsanız, hata bildiriminde bulunmanız iyi olur. Hata bildirimini iki şekilde gönderebilirsiniz:"
+  },
+  "sharedAccount": {
+    "message": "Bir belirteç üretip onunla oturum açarak <a href=\"https://anonticket.onionize.space/\">anonim bir destek kaydı</a> gönderebilirsiniz. Daha sonra <strong>tüm projeler listesine</strong> giderek Snowflake projesini bulun ve yeni bir sorun bildirin."
+  },
+  "bugTracker": {
+    "message": "Tor Project GitLab üzerinde <a href=\"https://gitlab.onionize.space/\">bir hesap açılmasını istedikten</a> sonra Snowflake projesinde <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">yeni bir sorun bildirebilirsiniz</a>."
+  },
+  "descriptive": {
+    "message": "Lütfen bildirim kaydında olabildiğince açıklayıcı olun ve yapabiliyorsanız hatayı yeniden oluşturmamıza yardımcı olabilecek günlük kayıtlarını ekleyin."
+  },
+  "embed": {
+    "message": "Ekleme"
+  },
+  "possible": {
+    "message": "Artık Snowflake logosunu istediğiniz web sitesine ekleyebilirsiniz."
+  },
+  "looksLike": {
+    "message": "Şu şekilde görüntülenir:"
+  },
+  "faq": {
+    "message": "SSS"
+  },
+  "support": {
+    "message": "Tor <a href=\"https://support.torproject.org/\">Destek Portalında</a> bulunan <a href=\"https://support.torproject.org/censorship/\">Sansür</a> başlığına bakabilirsiniz."
+  }
+}

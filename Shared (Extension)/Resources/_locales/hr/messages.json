@@ -1,0 +1,86 @@
+{
+  "appDesc": {
+    "message": "Snowflake je priključni WebRTC transport za Tor."
+  },
+  "popupEnabled": {
+    "message": "Aktivirano"
+  },
+  "popupLearnMore": {
+    "message": "Saznaj više"
+  },
+  "popupStatusOff": {
+    "message": "Snowflake je isključen"
+  },
+  "popupStatusOn": {
+    "message": "Broj trenutačno povezanih korisnika: $1"
+  },
+  "popupStatusReady": {
+    "message": "Snowflake je spreman pomoći korisnicima zaobići cenzuru"
+  },
+  "popupWebRTCOff": {
+    "message": "WebRTC funkcija nije otkrivena."
+  },
+  "popupBridgeUnreachable": {
+    "message": "Nije bilo moguće povezati se na most."
+  },
+  "popupDescOn": {
+    "message": "Broj korisnika kojima je Snowflake pomogao zaobići cenzuru u zadnjih 24 sata: $1"
+  },
+  "popupRetry": {
+    "message": "Pokušaj ponovo"
+  },
+  "popupRetrying": {
+    "message": "Pokušava se ponovo …"
+  },
+  "badgeCookiesOff": {
+    "message": "Kolačići nisu aktivirani."
+  },
+  "websiteIntro": {
+    "message": "Snowflake (snježna pahuljica) je sustav za nadvladavanje internetske cenzure. Osobe pod cenzurom mogu koristiti Snowflake za pristup internetu. Njihova veza prolazi kroz Snowflake poslužitelje, kojima upravljaju volonteri. Za detaljnije informacije o tome kako radi Snowflake, pogledaj našu <a href=\"https://trac.torproject.org/projects/tor/wiki/doc/Snowflake/\" data-msgid=\"__MSG_docWiki__\">wiki dokumentaciju</a>."
+  },
+  "docWiki": {
+    "message": "wiki dokumentacija"
+  },
+  "browser": {
+    "message": "Preglednik"
+  },
+  "censoredUsers": {
+    "message": "Ako je tvoj pristup internetu cenzuriran, preuzmi <a href=\"https://www.torproject.org/download/\">Tor preglednik</a>."
+  },
+  "extension": {
+    "message": "Proširenje"
+  },
+  "installExtension": {
+    "message": "Ako tvoj pristup internetu <strong>nije</strong> cenzuriran, razmisli o instaliranju Snowflake proširenja kako bi pomogao/la korisnicima u cenzuriranim mrežama. Ne brini o tome, kojim web lokacijama ljudi pristupaju putem tvog poslužitelja. Njihova vidljiva IP adresa pregledavanja odgovarat će njihovom izlaznom Tor-čvoru, a ne tvom."
+  },
+  "installFirefox": {
+    "message": "Instaliraj u Firefoxu"
+  },
+  "installChrome": {
+    "message": "Instaliraj u Chromeu"
+  },
+  "reportingBugs": {
+    "message": "Prijavljivanje grešaka"
+  },
+  "fileBug": {
+    "message": "Ako imaš problema sa Snowflakeom kao klijentom ili poslužiteljem, prijavi grešku. Za prijavljivanje greške postoje dvije mogućnosti:"
+  },
+  "sharedAccount": {
+    "message": "Uredi <a href=\"https://pad.riseup.net/p/tor-anti-censorship-bugs-keep\">ploču za prijavljivanje grešaka</a> tima za anticenzuru."
+  },
+  "bugTracker": {
+    "message": "<a href=\"https://gitlab.torproject.org/\">Zatraži račun</a> u Tor Project GitLab, a zatim <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">otvori novi problem</a> u projektu Snowflake."
+  },
+  "descriptive": {
+    "message": "Opiši problem što opširnije i po mogućnosti uključi poruke log-zapisa koje će nam pomoći reproducirati grešku."
+  },
+  "embed": {
+    "message": "Ugradi"
+  },
+  "possible": {
+    "message": "Sada je moguće umetnuti Snowflake značku na bilo koju web stranicu:"
+  },
+  "looksLike": {
+    "message": "Izgleda ovako:"
+  }
+}

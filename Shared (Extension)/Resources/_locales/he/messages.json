@@ -1,0 +1,89 @@
+{
+  "appDesc": {
+    "message": "Snowflake הוא תעבורה נתיקה של WebRTC עבור Tor."
+  },
+  "popupEnabled": {
+    "message": "מאופשר"
+  },
+  "popupLearnMore": {
+    "message": "למד עוד"
+  },
+  "popupStatusOff": {
+    "message": "Snowflake מכובה"
+  },
+  "popupStatusOn": {
+    "message": "מספר של משתמשים המחוברים כרגע: $1"
+  },
+  "popupStatusReady": {
+    "message": "Snowflake שלך מוכן לעזור למשתמשים לעקוף צנזורה"
+  },
+  "popupWebRTCOff": {
+    "message": "איפיון WebRTC לא התגלה."
+  },
+  "popupBridgeUnreachable": {
+    "message": "לא היה ניתן להתחבר אל הגשר."
+  },
+  "popupDescOn": {
+    "message": "מספר של משתמשים אשר Snowflake שלך עזר להם לעקוף צנזורה במהלך 24 השעות האחרונות: $1"
+  },
+  "popupRetry": {
+    "message": "נסה שוב"
+  },
+  "popupRetrying": {
+    "message": "מנסה מחדש…"
+  },
+  "badgeCookiesOff": {
+    "message": "עוגיות אינן מאופשרות."
+  },
+  "websiteIntro": {
+    "message": "Snowflake is a system to defeat internet censorship. People who are censored can use Snowflake to access the internet. Their connection goes through Snowflake proxies, which are run by volunteers. For more detailed information about how Snowflake works see our <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/home\">documentation wiki</a>."
+  },
+  "browser": {
+    "message": "דפדפן"
+  },
+  "censoredUsers": {
+    "message": "אם הגישה אל האינטרנט שלך מצונזרת, אתה צריך להוריד את <a href=\"https://www.torproject.org/download/\">דפדפן Tor</a>."
+  },
+  "extension": {
+    "message": "הרחבה"
+  },
+  "installExtension": {
+    "message": "אם הגישה אל האינטרנט שלך <strong>אינה</strong> מצונזרת אתה צריך לשקול להתקין את ההרחבה Snowflake כדי לעזור למשתמשים ברשתות מצונזרות. אין צורך לדאוג לגבי אילו אתרים אנשים משיגים גישה דרך ייפוי הכוח שלך. כתובת IP הגלויה לגלישה שלהם תתאים אל צומת יציאת Tor שלהם, לא שלך."
+  },
+  "installFirefox": {
+    "message": "התקן ב־Firefox"
+  },
+  "installChrome": {
+    "message": "התקן ב־Chrome"
+  },
+  "reportingBugs": {
+    "message": "מדווח על תקלים"
+  },
+  "fileBug": {
+    "message": "אם אתה נתקל בבעיות עם Snowflake כלקוח או כייפוי כוח, אנא שקול הגשת דוח תקל. יש שתי דרכים להגיש דוח תקל:"
+  },
+  "sharedAccount": {
+    "message": "File an <a href=\"https://anonticket.onionize.space/\">anonymous ticket</a> by generating an identifier and logging in with it.  Then, find the Snowflake project in the <strong>List of all projects</strong> and create a new issue."
+  },
+  "bugTracker": {
+    "message": "<a href=\"https://gitlab.onionize.space/\">Request an account</a> at the Tor Project GitLab, then <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">open a new issue</a> in the Snowflake project."
+  },
+  "descriptive": {
+    "message": "אנא נסה להיות מפורט ככל האפשר עם הכרטיס שלך ואם אפשר כלול הודעות יומן שיעזרו לנו להפיק מחדש את התקל."
+  },
+  "embed": {
+    "message": "שבץ"
+  },
+  "possible": {
+    "message": "כעת זה אפשרי לשבץ את תג Snowflake בכל אתר שהוא:"
+  },
+  "looksLike": {
+    "message": "שנראה כך:"
+  },
+  "faq": {
+    "message": "FAQ"
+  },
+  "support": {
+    "message": "See the <a href=\"https://support.torproject.org/censorship/\">Censorship</a> topic in Tor's <a href=\"https://support.torproject.org/\">Support Portal</a>."
+  }
+}

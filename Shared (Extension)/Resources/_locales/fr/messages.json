@@ -1,0 +1,89 @@
+{
+  "appDesc": {
+    "message": "Snowflake est un transport enfichable WebRTC pour Tor."
+  },
+  "popupEnabled": {
+    "message": "Activé"
+  },
+  "popupLearnMore": {
+    "message": "En apprendre davantage"
+  },
+  "popupStatusOff": {
+    "message": "Snowflake est désactivé"
+  },
+  "popupStatusOn": {
+    "message": "Nombre d’utilisateurs connectés actuellement : $1"
+  },
+  "popupStatusReady": {
+    "message": "Votre Snowflake est prêt à aider des utilisateurs à contourner la censure"
+  },
+  "popupWebRTCOff": {
+    "message": "La fonction WebRTC n’est pas détectée."
+  },
+  "popupBridgeUnreachable": {
+    "message": "Impossible de se connecter au pont."
+  },
+  "popupDescOn": {
+    "message": "Nombre d’utilisateurs aidés par votre Snowflake à contourner la censure au cours des dernières 24 heures : $1"
+  },
+  "popupRetry": {
+    "message": "Réessayer"
+  },
+  "popupRetrying": {
+    "message": "Nouvelle essai…"
+  },
+  "badgeCookiesOff": {
+    "message": "Les témoins ne sont pas activés."
+  },
+  "websiteIntro": {
+    "message": "Snowflake est un système pour contrecarrer la censure sur Internet. Les personnes victimes de censure peuvent utiliser Snowflake pour accéder à Internet. Leur connexion passe par des mandataires Snowflake qui sont exploités par des bénévoles. Pour de plus amples renseignements sur le fonctionnement de Snowflake, consultez notre <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/home\">wiki de documentation</a> (page en anglais)."
+  },
+  "browser": {
+    "message": "Navigateur"
+  },
+  "censoredUsers": {
+    "message": "Si votre accès à Internet est censuré, vous devriez télécharger le <a href=\"https://www.torproject.org/fr/download/\">Navigateur Tor</a>."
+  },
+  "extension": {
+    "message": "Extension"
+  },
+  "installExtension": {
+    "message": "Si votre accès à Internet n’est <strong>pas</strong> censuré, vous devriez envisager d’installer l’extension Snowflake pour aider les utilisateurs sur les réseaux censurés. Vous n’avez pas à vous soucier des sites Web auxquels les utilisateurs accèdent par votre mandataire. Leur adresse IP visible de navigation correspondra à leur nœud de sortie de Tor, pas à la vôtre."
+  },
+  "installFirefox": {
+    "message": "Installer dans Firefox"
+  },
+  "installChrome": {
+    "message": "Installer dans Chrome"
+  },
+  "reportingBugs": {
+    "message": "Signaler des bogues"
+  },
+  "fileBug": {
+    "message": "Si vous rencontrez des problèmes avec Snowflake comme client ou comme mandataire, veuillez envisager de remplir un relevé de bogue. Deux options s’offrent à vous :"
+  },
+  "sharedAccount": {
+    "message": "Remplissez un <a href=\"https://anonticket.onionize.space/\">ticket anonyme</a> (site en anglais) en générant un identifiant et en l’utilisant pour vous connecter. Ensuite, trouvez le projet Snowflake dans la <strong>liste de tous les projets</strong> et créez un nouveau ticket de problème."
+  },
+  "bugTracker": {
+    "message": "<a href=\"https://gitlab.onionize.space/\">Demandez un compte</a> sur le GitLab du Projet Tor, puis <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">créez un nouveau ticket de problème</a> pour le projet Snowflake."
+  },
+  "descriptive": {
+    "message": "Veuillez essayer de créer un ticket des plus descriptif et si possible, joignez-y des messages de journalisation qui nous aideront à reproduire le bogue."
+  },
+  "embed": {
+    "message": "Intégrer"
+  },
+  "possible": {
+    "message": "Il est maintenant possible d’intégrer le macaron Snowflake sur n’importe quel site Web :"
+  },
+  "looksLike": {
+    "message": "Qui ressemble à ceci :"
+  },
+  "faq": {
+    "message": "FAQ"
+  },
+  "support": {
+    "message": "Consultez le sujet <a href=\"https://support.torproject.org/fr/censorship/\">Censure</a>  du <a href=\"https://support.torproject.org/fr/\">portail d’assistance</a> de Tor."
+  }
+}

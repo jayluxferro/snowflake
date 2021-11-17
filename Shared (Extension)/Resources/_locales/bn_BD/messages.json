@@ -1,0 +1,86 @@
+{
+  "appDesc": {
+    "message": "Snowflake Tor এর জন্য একটি WebRTC প্লাগযোগ্য পরিবহন।"
+  },
+  "popupEnabled": {
+    "message": "সক্রিয়"
+  },
+  "popupLearnMore": {
+    "message": "আরও জানুন"
+  },
+  "popupStatusOff": {
+    "message": "Snowflake বন্ধ আছে"
+  },
+  "popupStatusOn": {
+    "message": "বর্তমানে সংযুক্ত ব্যবহারকারীর সংখ্যা: $1"
+  },
+  "popupStatusReady": {
+    "message": "আপনার Snowflake  ব্যবহারকারীদের সেন্সর ছাড়িয়ে দেওয়ার জন্য প্রস্তুত"
+  },
+  "popupWebRTCOff": {
+    "message": "WebRTC বৈশিষ্ট্য সনাক্ত করা যায়নি।"
+  },
+  "popupBridgeUnreachable": {
+    "message": "ব্রিজের সাথে সংযোগ স্থাপন করা যায়নি।"
+  },
+  "popupDescOn": {
+    "message": "বিগত ২৪ ঘন্টায় আপনার Snowflake ব্যাবহারকারিদের সেন্সর থেকে দূরে রাখতে সহায়তাকারীর সংখ্যা : $1"
+  },
+  "popupRetry": {
+    "message": "Retry"
+  },
+  "popupRetrying": {
+    "message": "Retrying ..."
+  },
+  "badgeCookiesOff": {
+    "message": "কুকিজ সক্রিয় নয়।"
+  },
+  "websiteIntro": {
+    "message": "Snowflake ইন্টারনেট সেন্সরশিপকে পরাস্ত করার একটি ব্যবস্থা। সেন্সরযুক্ত লোকেরা ইন্টারনেট অ্যাক্সেস করতে Snowflake ব্যবহার করতে পারেন। তাদের সংযোগ Snowflake প্রক্সিগুলির মধ্য দিয়ে যায়, যা স্বেচ্ছাসেবীর মাধ্যমে চালিত হয়। Snowflake কীভাবে কাজ করে সে সম্পর্কে আরও বিস্তারিত তথ্যের জন্য আমাদের <a href=\"https://trac.torproject.org/projects/tor/wiki/doc/Snowflake/\" data-msgid=\"__MSG_docWiki__\">ডকুমেন্টেশন উইকি</a> দেখুন।"
+  },
+  "docWiki": {
+    "message": "ডকুমেন্টেশন উইকি"
+  },
+  "browser": {
+    "message": "ব্রাউজার"
+  },
+  "censoredUsers": {
+    "message": "যদি আপনার ইন্টারনেট অ্যাক্সেস সেন্সর করা থাকে তবে আপনার <a href=\"https://www.torproject.org/download/\">Tor Browser</a> ডাউনলোড করা উচিত।"
+  },
+  "extension": {
+    "message": "এক্সটেনশন"
+  },
+  "installExtension": {
+    "message": "যদি আপনার ইন্টারনেট অ্যাক্সেস সেন্সর <strong>না করা হয়</strong> তবে সেন্সরযুক্ত নেটওয়ার্কগুলিতে ব্যবহারকারীদের সহায়তা করার জন্য আপনার Snowflake এক্সটেনশনটি ইনস্টল করার কথা বিবেচনা করা উচিত। লোকেরা আপনার প্রক্সি দিয়ে কোন ওয়েবসাইটগুলিতে অ্যাক্সেস করছে তা নিয়ে চিন্তা করার দরকার নেই। তাদের দৃশ্যমান ব্রাউজিং আইপি ঠিকানাটি আপনার TOR প্রস্থান নোডের সাথে মিলবে।"
+  },
+  "installFirefox": {
+    "message": "ফায়ারফক্সে ইনস্টল করুন"
+  },
+  "installChrome": {
+    "message": "Chrome এ ইনস্টল করুন"
+  },
+  "reportingBugs": {
+    "message": "বাগ রিপোর্টিং"
+  },
+  "fileBug": {
+    "message": "আপনার যদি ক্লায়েন্ট বা প্রক্সি হিসাবে Snowflake এর  সমস্যা হয় তবে দয়া করে একটি বাগ ফাইল করা বিবেচনা করুন। এটি করতে আপনাকে করতে হবে,"
+  },
+  "sharedAccount": {
+    "message": "হয় <a href=\"https://trac.torproject.org/projects/tor/register\">একটি অ্যাকাউন্ট তৈরি করুন</a> বা পাসওয়ার্ড <b>রাইটিং কোড</b> সহ ভাগ করা <b>cypherpunks</b> অ্যাকাউন্টটি ব্যবহার করে <a href=\"https://trac.torproject.org/projects/tor/login\">লগ ইন</a> করুন।"
+  },
+  "bugTracker": {
+    "message": "আমাদের বাগ ট্র্যাকার ব্যবহার করে <a href=\"https://trac.torproject.org/projects/tor/newticket?component=Circumvention%2FSnowflake\">টিকিট ফাইল করুন</a>।"
+  },
+  "descriptive": {
+    "message": "আপনার টিকিট দিয়ে যতটা সম্ভব বর্ণনামূলক হওয়ার চেষ্টা করুন এবং সম্ভব হলে লগ বার্তা অন্তর্ভুক্ত করুন যা আমাদের বাগের পুনরুত্পাদন করতে সহায়তা করবে। snowflake সিস্টেমের কোন অংশটি কীভাবে সমস্যার মুখোমুখি হচ্ছে তা আমাদের জানান দিতে <em>snowflake-webextension</em> বা <em>snowflake-client</em> কীওয়ার্ড যুক্ত করার বিষয়টি বিবেচনা করুন।"
+  },
+  "embed": {
+    "message": "বসান"
+  },
+  "possible": {
+    "message": "এখন কোনও ওয়েবসাইটে Snowflake ব্যাজ বসানো সম্ভব:"
+  },
+  "looksLike": {
+    "message": "যা দেখতে এরকম দেখাচ্ছে:"
+  }
+}

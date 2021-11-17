@@ -1,38 +1,28 @@
 {
-    "manifest_version": 2,
-    "default_locale": "en",
-
-    "name": "__MSG_extension_name__",
-    "description": "__MSG_extension_description__",
-    "version": "1.0",
-
-    "icons": {
-        "48": "images/icon-48.png",
-        "96": "images/icon-96.png",
-        "128": "images/icon-128.png",
-        "256": "images/icon-256.png",
-        "512": "images/icon-512.png"
+  "manifest_version": 2,
+  "name": "Snowflake",
+  "version": "0.5.4",
+  "description": "__MSG_appDesc__",
+  "default_locale": "en_US",
+  "background": {
+    "scripts": [
+      "snowflake.js"
+    ],
+    "persistent": true
+  },
+  "icons": {
+      "48": "assets/toolbar-on-48.png",
+      "96": "assets/toolbar-on-96.png"
+   },
+  "browser_action": {
+    "default_icon": {
+      "48": "assets/toolbar-on-48.png",
+      "96": "assets/toolbar-on-96.png"
     },
-
-    "background": {
-        "scripts": [ "background.js" ],
-        "persistent": false
-    },
-
-    "content_scripts": [{
-        "js": [ "content.js" ],
-        "matches": [ "*://example.com/*" ]
-    }],
-
-    "browser_action": {
-        "default_popup": "popup.html",
-        "default_icon": {
-            "16": "images/toolbar-icon-16.png",
-            "19": "images/toolbar-icon-19.png",
-            "32": "images/toolbar-icon-32.png",
-            "38": "images/toolbar-icon-38.png"
-        }
-    },
-
-    "permissions": [ ]
+    "default_title": "Snowflake",
+    "default_popup": "embed.html"
+  },
+  "permissions": [
+    "storage"
+  ]
 }

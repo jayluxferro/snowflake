@@ -1,0 +1,86 @@
+{
+  "appDesc": {
+    "message": "A Snowflake (Hópihe) egy WebRTC csatlakoztatható átvivő a Tor-hoz."
+  },
+  "popupEnabled": {
+    "message": "Engedélyezve"
+  },
+  "popupLearnMore": {
+    "message": "További információ"
+  },
+  "popupStatusOff": {
+    "message": "A Snowflake kikapcsolt"
+  },
+  "popupStatusOn": {
+    "message": "Jelenleg kapcsolódott felhasználók száma: $1"
+  },
+  "popupStatusReady": {
+    "message": "Az ön Snowflake-je kész arra, hogy segítse a cenzúra elkerülésében."
+  },
+  "popupWebRTCOff": {
+    "message": "WebRTC szolgáltatás nem észlelt."
+  },
+  "popupBridgeUnreachable": {
+    "message": "Sikertelen a hídhoz csatlakozás."
+  },
+  "popupDescOn": {
+    "message": "Az Ön Snowflake-je az elmúlt 24 órában ennyi felhasználónak segített a cenzúra elkerülésében: $1"
+  },
+  "popupRetry": {
+    "message": "Újra"
+  },
+  "popupRetrying": {
+    "message": "Újra próbálkozás ..."
+  },
+  "badgeCookiesOff": {
+    "message": "A cookie-k nincsenek engedélyezve."
+  },
+  "websiteIntro": {
+    "message": "A Snowflake egy cenzúra elleni rendszer. Azok, akiket cenzúráznak a Snowflake-et használhatják az internet elérésére. A kapcsolatuk Snowflake proxykon megy keresztül, amiket önkéntesek futtatnak. Részletesebb információkért, arról, hogy a Snowflake hogyan működik látogassa meg a <a href=\"https://trac.torproject.org/projects/tor/wiki/doc/Snowflake/\" data-msgid=\"__MSG_docWiki__\">dokumentáció wiki</a>-t."
+  },
+  "docWiki": {
+    "message": "dokumentáció wiki"
+  },
+  "browser": {
+    "message": "Böngésző"
+  },
+  "censoredUsers": {
+    "message": "Ha az internet hozzáférése blokkolt, javasolt a <a href=\"https://www.torproject.org/download/\">Tor Böngésző</a> letöltése."
+  },
+  "extension": {
+    "message": "Bővítmény"
+  },
+  "installExtension": {
+    "message": "Ha az internet hozzáférése <strong>nem</strong> cenzúrázott, javasolt a Snowflake bővítmény telepítése, hogy segítse a felhasználókat a cenzúrázott hálózatokon. Nem kell aggódnia milyen weboldalakat érnek el a proxyján keresztül. A látható IP címük a Tor kilépési ponttal fog egyezni, nem az Önével."
+  },
+  "installFirefox": {
+    "message": "Telepítés Firefox-ba"
+  },
+  "installChrome": {
+    "message": "Telepítés Chrome-ba"
+  },
+  "reportingBugs": {
+    "message": "Hibajelentés"
+  },
+  "fileBug": {
+    "message": "Ha problémát tapasztal a Snowflake-kel, mint kliens vagy proxy, gondoljon arra, hogy beküldjön egy hibát. Két módja van a hiba beküldésének:"
+  },
+  "sharedAccount": {
+    "message": "Szerkessze a <a href=\"https://pad.riseup.net/p/tor-anti-censorship-bugs-keep\">nyilvános hibabjelentő felületét</a> az anti cenzúra csapatnak."
+  },
+  "bugTracker": {
+    "message": "<a href=\"https://gitlab.torproject.org/\">Igényeljen egy fiókot</a>a Tor Project GitLabjához, majd <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">nyisson egy hibajegyet</a> a Snowflake projektben."
+  },
+  "descriptive": {
+    "message": "Kérjük legyen annyira leíró, amennyire lehet a hibajegyében és ha van rá lehetősége csatolja a logot, ami segítheti a probléma reprodukálását."
+  },
+  "embed": {
+    "message": "Beágyazás"
+  },
+  "possible": {
+    "message": "Most már lehetséges, hogy beágyazza a Snowflake kitűzőt bármelyik weboldalba:"
+  },
+  "looksLike": {
+    "message": "Amely így néz ki:"
+  }
+}

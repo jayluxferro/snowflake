@@ -1,0 +1,86 @@
+{
+  "appDesc": {
+    "message": "Snowflake yra WebRTC keičiamasis perdavimas, skirtas Tor."
+  },
+  "popupEnabled": {
+    "message": "Įjungta"
+  },
+  "popupLearnMore": {
+    "message": "Sužinoti daugiau"
+  },
+  "popupStatusOff": {
+    "message": "Snowflake išjungta"
+  },
+  "popupStatusOn": {
+    "message": "Šiuo metu prisijungusių naudotojų skaičius: $1"
+  },
+  "popupStatusReady": {
+    "message": "Jūsų Snowflake yra parengta padėti naudotojams išvengti cenzūros"
+  },
+  "popupWebRTCOff": {
+    "message": "WebRTC ypatybė neaptikta."
+  },
+  "popupBridgeUnreachable": {
+    "message": "Nepavyko prisijungti prie tinklų tilto."
+  },
+  "popupDescOn": {
+    "message": "Naudotojų skaičius, kuriems jūsų Snowflake padėjo apeiti cenzūrą per pastarąsias 24 valandas: $1"
+  },
+  "popupRetry": {
+    "message": "Retry"
+  },
+  "popupRetrying": {
+    "message": "Bandoma iš naujo..."
+  },
+  "badgeCookiesOff": {
+    "message": "Slapukai nėra įjungti."
+  },
+  "websiteIntro": {
+    "message": "Snowflake yra sistema, skirta nugalėti interneto cenzūrą. Cenzūruojami žmonės gali naudotis Snowflake, kad gautų prieigą prie interneto. Jų ryšys jungiasi per įgaliotuosius Snowflake serverius, kurie veikia savanorių dėka. Daugiau išsamesnės informacijos apie tai, kaip veikia Snowflake, rasite mūsų <a href=\"https://trac.torproject.org/projects/tor/wiki/doc/Snowflake/\" data-msgid=\"__MSG_docWiki__\">dokumentacijos vikyje</a>."
+  },
+  "docWiki": {
+    "message": "dokumentacijos vikis"
+  },
+  "browser": {
+    "message": "Naršyklė"
+  },
+  "censoredUsers": {
+    "message": "Jeigu jūsų interneto prieiga yra cenzūruojama, turėtumėte atsisiųsti </a>Tor Naršyklę</a>."
+  },
+  "extension": {
+    "message": "Plėtinys"
+  },
+  "installExtension": {
+    "message": "Jeigu jūsų interneto prieiga <strong>nėra</strong> cenzūruojama, turėtumėte apsvarstyti galimybę įsidiegti Snowflake plėtinį, kad padėtumėte naudotojams, kurių tinklai yra cenzūruojami. Nėra reikalo jaudintis dėl to, kokiose internetinėse svetainėje lankysis žmonės per jūsų įgaliotąjį serverį. Jų matomas naršymo IP adresas atitiks jų Tor išėjimo mazgą, o ne jūsų IP adresą."
+  },
+  "installFirefox": {
+    "message": "Įdiegti Firefox naršyklėje"
+  },
+  "installChrome": {
+    "message": "Įdiegti Chrome naršyklėje"
+  },
+  "reportingBugs": {
+    "message": "Pranešimas apie klaidas"
+  },
+  "fileBug": {
+    "message": "Jei naudodamiesi Snowflake kaip klientas ar įgaliotasis serveris susiduriate su problemomis, apsvarstykite galimybę pateikti pranešimą apie klaidą. Norėdami tai padaryti, turėsite"
+  },
+  "sharedAccount": {
+    "message": "Arba <a href=\"https://trac.torproject.org/projects/tor/register\">susikurkite paskyrą</a>, arba <a href=\"https://trac.torproject.org/projects/tor/login\">prisijunkite</a> naudodami bendrinamą paskyrą, kurios naudotojo vardas - <b>cypherpunks</b>, o slaptažodis - <b>writecode</b>."
+  },
+  "bugTracker": {
+    "message": "<a href=\"https://trac.torproject.org/projects/tor/newticket?component=Circumvention%2FSnowflake\">Registruokite klaidą</a> naudodamiesi mūsų klaidų sekliu."
+  },
+  "descriptive": {
+    "message": "Registruodami klaidą, stenkitės kaip įmanoma išsamiau ją aprašyti ir, jei įmanoma, pridėkite žurnalo pranešimus, kurie padės atgaminti klaidą.  Apsvarstykite galimybę pridėti raktažodžius <em>snowflake-webextension</em> ar <em>snowflake-client</em>, kad žinotume kuri Snowflake sistemos dalis susiduria su problemomis."
+  },
+  "embed": {
+    "message": "Įterpimas"
+  },
+  "possible": {
+    "message": "Dabar, įmanoma įterpti Snowflake ženklelį bet kurioje internetinėje svetainėje:"
+  },
+  "looksLike": {
+    "message": "Kuris atrodo štai taip:"
+  }
+}

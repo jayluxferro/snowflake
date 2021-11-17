@@ -1,0 +1,86 @@
+{
+  "appDesc": {
+    "message": "Snowflake é um transporte plugável WebRTC para o Tor."
+  },
+  "popupEnabled": {
+    "message": "Habilitado"
+  },
+  "popupLearnMore": {
+    "message": "Saber mais"
+  },
+  "popupStatusOff": {
+    "message": "Snowflake está desligado"
+  },
+  "popupStatusOn": {
+    "message": "Número de pessoas conectadas agora: $1"
+  },
+  "popupStatusReady": {
+    "message": "Seu Snowflake está pronto para ajudar pessoas a driblar censura"
+  },
+  "popupWebRTCOff": {
+    "message": "O recurso WebRTC não foi detectado."
+  },
+  "popupBridgeUnreachable": {
+    "message": "Não foi possível se conectar à ponte."
+  },
+  "popupDescOn": {
+    "message": "Número de pessoas que driblaram censura com ajuda do seu Snowflake nas últimas 24 horas: $1"
+  },
+  "popupRetry": {
+    "message": "Retry"
+  },
+  "popupRetrying": {
+    "message": "Retrying ..."
+  },
+  "badgeCookiesOff": {
+    "message": "Cookies não estão habilitados."
+  },
+  "websiteIntro": {
+    "message": "Snowflake é um sistema para acabar com a censura na Internet. As pessoas que sofrem censura podem usar o Snowflake para acessar a Internet. A conexão delas passará por proxies do Snowflake, que são executados por voluntários. Para informações mais detalhadas sobre como o Snowflake funciona, consulte nossa <a href=\"https://trac.torproject.org/projects/tor/wiki/doc/Snowflake/\" data-msgid=\"__MSG_docWiki__\">wiki de documentação</a>."
+  },
+  "docWiki": {
+    "message": "wiki de documentação"
+  },
+  "browser": {
+    "message": "Navegador"
+  },
+  "censoredUsers": {
+    "message": "Se o seu acesso à Internet for censurado, você deve baixar o <a href=\"https://www.torproject.org/download/\">Navegador Tor</a>."
+  },
+  "extension": {
+    "message": "Extensão"
+  },
+  "installExtension": {
+    "message": "Se o seu acesso à Internet <strong>não</strong> estiver sendo censurado, pense na possibilidade de instalar a extensão Snowflake para ajudar pessoas que acessam a partir de redes censuradas. Você não precisa se preocupar com quais sites elas vão acessar usando o seu proxy. O endereço IP de navegação delas que ficará visível será o do nó de saída do Tor que elas estiverem usando, não o seu."
+  },
+  "installFirefox": {
+    "message": "Instalar no Firefox"
+  },
+  "installChrome": {
+    "message": "Instalar no Chrome"
+  },
+  "reportingBugs": {
+    "message": "Relatando bugs"
+  },
+  "fileBug": {
+    "message": "If you encounter problems with Snowflake as a client or a proxy, please consider filing a bug report.  There are two ways to file a bug report:"
+  },
+  "sharedAccount": {
+    "message": "Edit the <a href=\"https://pad.riseup.net/p/tor-anti-censorship-bugs-keep\">public bug-reporting pad</a> of the anti-censorship team."
+  },
+  "bugTracker": {
+    "message": "<a href=\"https://gitlab.torproject.org/\">Request an account</a> at the Tor Project GitLab, then <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">open a new issue</a> in the Snowflake project."
+  },
+  "descriptive": {
+    "message": "Please try to be as descriptive as possible with your ticket and if possible include log messages that will help us reproduce the bug."
+  },
+  "embed": {
+    "message": "Incorporar"
+  },
+  "possible": {
+    "message": "Agora é possível incorporar o emblema do Snowflake em qualquer site:"
+  },
+  "looksLike": {
+    "message": "Que aparece assim:"
+  }
+}

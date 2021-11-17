@@ -1,0 +1,86 @@
+{
+  "appDesc": {
+    "message": "Snowflake és un complement per al Tor, basat en WebRTC."
+  },
+  "popupEnabled": {
+    "message": "Habilitat"
+  },
+  "popupLearnMore": {
+    "message": "Més informació"
+  },
+  "popupStatusOff": {
+    "message": "Snowflake està inhabilitat"
+  },
+  "popupStatusOn": {
+    "message": "Nombre d'usuaris connectats actualment: $1"
+  },
+  "popupStatusReady": {
+    "message": "El vostre Snowflake està preparat per ajudar a altres usuaris a eludir la censura"
+  },
+  "popupWebRTCOff": {
+    "message": "No s'ha detectat la característica WebRTC."
+  },
+  "popupBridgeUnreachable": {
+    "message": "No es pot connectar al pont de línia."
+  },
+  "popupDescOn": {
+    "message": "Nombre d'usuaris que el vostre Snowflake ha ajudat a eludir la censura en les últimes 24 hores: $1"
+  },
+  "popupRetry": {
+    "message": "Retry"
+  },
+  "popupRetrying": {
+    "message": "Retrying ..."
+  },
+  "badgeCookiesOff": {
+    "message": "Les galetes no estan activades."
+  },
+  "websiteIntro": {
+    "message": "Snowflake és un sistema per defensar-se contra la censura a Internet. La gent a qui s'aplica aquesta censura pot utilitzar Snowflake per accedir a Internet. La connexió funciona mitjançant servidors intermediaris de Snowflake, creats per voluntaris. Per a més informació quant al funcionament del Snowflake, veieu la <a href=\"https://trac.torproject.org/projects/tor/wiki/doc/Snowflake/\">documentació al wiki</a>."
+  },
+  "docWiki": {
+    "message": "Wiki de documentació"
+  },
+  "browser": {
+    "message": "Navegador"
+  },
+  "censoredUsers": {
+    "message": "Si s'està aplicant cap censura al vostre accés a Internet, baixeu el <a href=\"https://www.torproject.org/download/\">Navegador Tor</a>."
+  },
+  "extension": {
+    "message": "Complement"
+  },
+  "installExtension": {
+    "message": "Si el vostre accés a Internet <strong>no</strong> està censurat, considereu instal·lar el complement Snowflake per ajudar a usuaris amb censura a les seves connexions. No us heu d'amoïnar pel contingut web que visitin mitjançant el vostre servidor intermediari. La seva adreça IP coincidirà amb el node de sortida del Tor, no la vostra IP."
+  },
+  "installFirefox": {
+    "message": "Instal·la al Firefox "
+  },
+  "installChrome": {
+    "message": "Instal·la al Chrome"
+  },
+  "reportingBugs": {
+    "message": "Informació d'errors"
+  },
+  "fileBug": {
+    "message": "If you encounter problems with Snowflake as a client or a proxy, please consider filing a bug report.  There are two ways to file a bug report:"
+  },
+  "sharedAccount": {
+    "message": "Edit the <a href=\"https://pad.riseup.net/p/tor-anti-censorship-bugs-keep\">public bug-reporting pad</a> of the anti-censorship team."
+  },
+  "bugTracker": {
+    "message": "<a href=\"https://gitlab.torproject.org/\">Request an account</a> at the Tor Project GitLab, then <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">open a new issue</a> in the Snowflake project."
+  },
+  "descriptive": {
+    "message": "Please try to be as descriptive as possible with your ticket and if possible include log messages that will help us reproduce the bug."
+  },
+  "embed": {
+    "message": "Incrusta"
+  },
+  "possible": {
+    "message": "Podeu afegir la insígnia del Snowflake a qualsevol web:"
+  },
+  "looksLike": {
+    "message": "I es veurà d'aquesta manera:"
+  }
+}

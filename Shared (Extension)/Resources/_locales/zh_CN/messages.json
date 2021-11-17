@@ -1,0 +1,89 @@
+{
+  "appDesc": {
+    "message": "Snowflake 是一个为 Tor 提供的 WebRTC 式可插拔传输方式。"
+  },
+  "popupEnabled": {
+    "message": "启用"
+  },
+  "popupLearnMore": {
+    "message": "更多详情"
+  },
+  "popupStatusOff": {
+    "message": "Snowflake 已关闭"
+  },
+  "popupStatusOn": {
+    "message": "当前连接的用户数量：$1"
+  },
+  "popupStatusReady": {
+    "message": "您的Snowflake已经准备好帮助用户规避审查"
+  },
+  "popupWebRTCOff": {
+    "message": "未检测到 WebRTC 功能。"
+  },
+  "popupBridgeUnreachable": {
+    "message": "无法连接至网桥。"
+  },
+  "popupDescOn": {
+    "message": "您的 Snowflake 在过去的24小时中帮助了$1个用户规避审查。"
+  },
+  "popupRetry": {
+    "message": "重试"
+  },
+  "popupRetrying": {
+    "message": "正在重试……"
+  },
+  "badgeCookiesOff": {
+    "message": "Cookie 未启用。"
+  },
+  "websiteIntro": {
+    "message": "Snowflake is a system to defeat internet censorship. People who are censored can use Snowflake to access the internet. Their connection goes through Snowflake proxies, which are run by volunteers. For more detailed information about how Snowflake works see our <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/home\">documentation wiki</a>."
+  },
+  "browser": {
+    "message": "浏览器"
+  },
+  "censoredUsers": {
+    "message": "如果您的互联网访问是受到审查的，您应该下载 <a href=\"https://www.torproject.org/download/\">Tor 浏览器</a>。"
+  },
+  "extension": {
+    "message": "拓展"
+  },
+  "installExtension": {
+    "message": "如果您的互联网访问<strong>并未</strong>受到审查，你可以考虑安装 Snowflake 拓展来帮助那些身陷审查网络中的用户。无需担心人们通过您的代理访问哪些网站。他们可见的 IP 地址是他们的 Tor 出口节点的 IP 地址，而不是您的。"
+  },
+  "installFirefox": {
+    "message": "安装到 Firefox 浏览器"
+  },
+  "installChrome": {
+    "message": "安装到 Google Chrome 浏览器"
+  },
+  "reportingBugs": {
+    "message": "报告缺陷"
+  },
+  "fileBug": {
+    "message": "如果您在用 Snowflake 作为客户端或代理时遇到问题或任何漏洞，请考虑提交错误报告。 提交错误报告文件的方式有两种："
+  },
+  "sharedAccount": {
+    "message": "File an <a href=\"https://anonticket.onionize.space/\">anonymous ticket</a> by generating an identifier and logging in with it.  Then, find the Snowflake project in the <strong>List of all projects</strong> and create a new issue."
+  },
+  "bugTracker": {
+    "message": "在 Tor 项目的 GitLab 上<a href=\"https://gitlab.onionize.space/\">申请一个账号</a>，然后在 Snowflake 项目中<a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">提交一个新的问题</a>。"
+  },
+  "descriptive": {
+    "message": "请尽量客观地描述您的情况，如果可能，请同时报告您的日志文件，这将帮助我们重现漏洞。"
+  },
+  "embed": {
+    "message": "嵌入式插件"
+  },
+  "possible": {
+    "message": "现在可以在任何网站上嵌入 Snowflake 徽章："
+  },
+  "looksLike": {
+    "message": "看起来是这样的："
+  },
+  "faq": {
+    "message": "常见问题"
+  },
+  "support": {
+    "message": "查看 Tor <a href=\"https://support.torproject.org/zh-CN/\">支持页面</a>中的 <a href=\"https://support.torproject.org/zh-CN/censorship/\">审查</a> 主题。"
+  }
+}

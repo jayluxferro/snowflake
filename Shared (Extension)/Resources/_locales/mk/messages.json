@@ -1,0 +1,86 @@
+{
+  "appDesc": {
+    "message": "Snowflake е WebRTC pluggable transport за Tor."
+  },
+  "popupEnabled": {
+    "message": "Овозможено"
+  },
+  "popupLearnMore": {
+    "message": "Научете повеќе"
+  },
+  "popupStatusOff": {
+    "message": "Snowflake е исклучен"
+  },
+  "popupStatusOn": {
+    "message": "Број на корисници кои се поврзани во моментов: $1"
+  },
+  "popupStatusReady": {
+    "message": "Вашиот Snowflake е подготвен да им помогне на корисниците да ја заобиколат цензурата"
+  },
+  "popupWebRTCOff": {
+    "message": "WebRTC карактеристиката не е детектирана."
+  },
+  "popupBridgeUnreachable": {
+    "message": "Не може да се поврзе со мостот."
+  },
+  "popupDescOn": {
+    "message": "Број на корисници кој вашиот Snowflake им помогнал да ја заобиколаат цензурата во последните 24 часа: $1"
+  },
+  "popupRetry": {
+    "message": "Обидете се пак"
+  },
+  "popupRetrying": {
+    "message": "Повторно обидување..."
+  },
+  "badgeCookiesOff": {
+    "message": "Колачињата не се овозможени."
+  },
+  "websiteIntro": {
+    "message": "Snowflake е систем кој ја поразува интернет цензурата. Луѓето кои се цензурирани може да го користат Snowflake за да пристапуваат на Интернет. Нивното поврзување оди преку Snowflake проксија, кои се водени од волонтери. За подетални информации за тоа како работи Snowflake видете ја нашата <a href=\"https://trac.torproject.org/projects/tor/wiki/doc/Snowflake/\" data-msgid=\"__MSG_docWiki__\">wiki документација</a>."
+  },
+  "docWiki": {
+    "message": "wiki документација"
+  },
+  "browser": {
+    "message": "Прелистувач"
+  },
+  "censoredUsers": {
+    "message": "Ако вашиот пристап на Интернет е цензуриран, треба да го преземете <a href=\"https://www.torproject.org/download/\">Tor Browser</a>."
+  },
+  "extension": {
+    "message": "Проширување"
+  },
+  "installExtension": {
+    "message": "Ако вашиот Интернет пристап е <strong>не</strong> цензуриран, би можеле да размислите да го инсталирате Snowflake проширувањето за да им помогнете на корисниците на цензурираните мрежи. Нема потребе да се грижите за тоа на која веб страна луѓето и пристапуваат преку вашето прокси. Нивната видлива IP адреса за прелистување ќе одговоара со нивниот излезен Tor јазол, а не со вашиот."
+  },
+  "installFirefox": {
+    "message": "Инсталирај во Firefox"
+  },
+  "installChrome": {
+    "message": "Инсталирај во Chrome"
+  },
+  "reportingBugs": {
+    "message": "Пријавување грешки"
+  },
+  "fileBug": {
+    "message": "Ако се судрите со проблеми со Snowflake како клиент или како пркси, ве молиме размислете да пријавите грешка. Има два начина да поднесете извештај за грешка:"
+  },
+  "sharedAccount": {
+    "message": "Уредете го <a href=\"https://pad.riseup.net/p/tor-anti-censorship-bugs-keep\">јавниот пад за пријавување грешки</a> на тимот за анти-цензура."
+  },
+  "bugTracker": {
+    "message": "<a href=\"https://gitlab.torproject.org/\">Побарајте сметка</a> на Tor Project GitLab, потоа <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">отворете нов проблем</a> во Snowflake проектот."
+  },
+  "descriptive": {
+    "message": "Ве молиме обидете се да бидете што е можно појасни во вашиот извештај и ако е можно вклучете ги логовите кои ќе ни помогнат да ја произведеме истата грешка."
+  },
+  "embed": {
+    "message": "Вгради"
+  },
+  "possible": {
+    "message": "Сега е можно да го вградиш Snowflake беџот на било која веб страна:"
+  },
+  "looksLike": {
+    "message": "Кој изгледа вака:"
+  }
+}
