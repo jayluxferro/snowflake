@@ -35,10 +35,10 @@ Snowflake is a system to defeat internet censorship. People who are censored can
      <td>Enable Snowflake Extension</td>
   </tr>
   <tr>
-    <td><img src="resources/1.png" width=270 height=420></td>
-    <td><img src="resources/2.png" width=270 height=420></td>
-    <td><img src="resources/3.png" width=270 height=420></td>
-    <td><img src="resources/4.png" width=270 height=420></td>
+    <td><img src="resources/1.png" width=270 height=400></td>
+    <td><img src="resources/2.png" width=270 height=400></td>
+    <td><img src="resources/3.png" width=270 height=400></td>
+    <td><img src="resources/4.png" width=270 height=400></td>
   </tr>
   <tr>
      <td>Snowflake Extension Enabled</td>
@@ -47,9 +47,9 @@ Snowflake is a system to defeat internet censorship. People who are censored can
      <td>Snowflake is Active</td>
   </tr>
   <tr>
-    <td><img src="resources/6.png" width=270 height=420></td>
-    <td><img src="resources/7.png" width=270 height=420></td>
-    <td><img src="resources/8.png" width=270 height=420></td>
-    <td><img src="resources/9.png" width=270 height=420></td>
+    <td><img src="resources/6.png" width=270 height=400></td>
+    <td><img src="resources/7.png" width=270 height=400></td>
+    <td><img src="resources/8.png" width=270 height=400></td>
+    <td><img src="resources/9.png" width=270 height=400></td>
   </tr>
  </table>
