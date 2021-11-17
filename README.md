@@ -1,7 +1,7 @@
 ### Snowflake's Safari Extension (macOS/iOS)
 
 <p id="downloads" align="center">
-	<img src="ihttps://snowflake.torproject.org/snowflake-schematic.png" height="120px"/>
+	<img src="https://snowflake.torproject.org/snowflake-schematic.png" height="120px"/>
 	<h2 align="center">Snowflake</h2>
 </p>
 
