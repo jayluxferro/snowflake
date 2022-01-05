@@ -16,7 +16,7 @@ import SafariServices
 typealias PlatformViewController = NSViewController
 #endif
 
-let extensionBundleIdentifier = "org.sperixlabs.Snowflake.Extension"
+let extensionBundleIdentifier = "org.sperixlabs.torproject-snowflake.Extension"
 
 class ViewController: PlatformViewController, WKNavigationDelegate, WKScriptMessageHandler {
 
