@@ -39,13 +39,13 @@
     "message": "Snowflake is a system to defeat internet censorship. People who are censored can use Snowflake to access the internet. Their connection goes through Snowflake proxies, which are run by volunteers. For more detailed information about how Snowflake works see our <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/home\">documentation wiki</a>."
   },
   "browser": {
-    "message": "Browser"
+    "message": "Use Snowflake"
   },
   "censoredUsers": {
     "message": "Falls Ihr Internetzugang zensiert ist, laden Sie den <a href=\"https://www.torproject.org/download/\">Tor Browser</a> herunter."
   },
   "extension": {
-    "message": "Erweiterung"
+    "message": "Run a Proxy"
   },
   "installExtension": {
     "message": "Falls Ihr Internetzugang <strong>nicht</strong> zensiert ist, ziehen Sie in Erwägung, Snowflake zu installieren, um Nutzern in zensierten Netzwerken zu helfen. Sie brauchen sich keine Sorgen zu machen über die  Webseiten, auf die die Nutzer über Ihren Proxy zugreifen. Deren sichtbare IP-Adresse entspricht der des Tor Ausgangsknotenpunktes und nicht Ihrer."
@@ -55,6 +55,9 @@
   },
   "installChrome": {
     "message": "In Chrome installieren"
+  },
+  "installStandalone": {
+    "message": "If you would like to run a command-line version of the Snowflake proxy on your desktop or server, see our <a href=\"https://community.torproject.org/relay/setup/snowflake/standalone/\">community documentation</a> for running a standalone Snowflake proxy."
   },
   "reportingBugs": {
     "message": "Fehler werden gemeldet"

@@ -1,89 +1,92 @@
 {
   "appDesc": {
-    "message": "Snowflake is a WebRTC pluggable transport for Tor."
+    "message": "Snowflake är en pluggbar WebRTC-transport för Tor."
   },
   "popupEnabled": {
-    "message": "Enabled"
+    "message": "Aktiverad"
   },
   "popupLearnMore": {
-    "message": "Learn more"
+    "message": "Lär dig mer"
   },
   "popupStatusOff": {
-    "message": "Snowflake is off"
+    "message": "Snowflake är avstängd"
   },
   "popupStatusOn": {
-    "message": "Number of users currently connected: $1"
+    "message": "Antal användare som för närvarande är anslutna: $1"
   },
   "popupStatusReady": {
-    "message": "Your Snowflake is ready to help users circumvent censorship"
+    "message": "Din Snowflake är redo att hjälpa användarna kringgå censur"
   },
   "popupWebRTCOff": {
-    "message": "WebRTC feature is not detected."
+    "message": "WebRTC-funktionen detekteras inte."
   },
   "popupBridgeUnreachable": {
-    "message": "Could not connect to the bridge."
+    "message": "Det gick inte att ansluta till bron."
   },
   "popupDescOn": {
-    "message": "Number of users your Snowflake has helped circumvent censorship in the last 24 hours: $1"
+    "message": "Antal användare din Snowflake har hjälpt kringgå censur under de senaste 24 timmarna: $1"
   },
   "popupRetry": {
-    "message": "Retry"
+    "message": "Försök igen"
   },
   "popupRetrying": {
-    "message": "Retrying ..."
+    "message": "Försöker igen ..."
   },
   "badgeCookiesOff": {
-    "message": "Cookies are not enabled."
+    "message": "Kakor är inte aktiverade."
   },
   "websiteIntro": {
-    "message": "Snowflake is a system to defeat internet censorship. People who are censored can use Snowflake to access the internet. Their connection goes through Snowflake proxies, which are run by volunteers. For more detailed information about how Snowflake works see our <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/home\">documentation wiki</a>."
+    "message": "Snowflake är ett system för att besegra internetcensur. Personer som är censurerade kan använda Snowflake för att komma åt internet. Deras anslutning går genom Snowflake-proxyer, som drivs av volontärer. För mer detaljerad information om hur Snowflake fungerar, se vår <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/home\">dokumentationswiki</a>."
   },
   "browser": {
-    "message": "Browser"
+    "message": "Använd Snowflake"
   },
   "censoredUsers": {
-    "message": "If your internet access is censored, you should download <a href=\"https://www.torproject.org/download/\">Tor Browser</a>."
+    "message": "Om din tillgång till internet censureras, bör du hämta <a href=\"https://www.torproject.org/download/\">Tor Browser</a>."
   },
   "extension": {
-    "message": "Extension"
+    "message": "Kör en proxy"
   },
   "installExtension": {
-    "message": "If your internet access is <strong>not</strong> censored, you should consider installing the Snowflake extension to help users in censored networks. There is no need to worry about which websites people are accessing through your proxy. Their visible browsing IP address will match their Tor exit node, not yours."
+    "message": "Om din internetåtkomst <strong>inte</strong> censureras bör du överväga att installera Snowflake-tillägget för att hjälpa användare i censurerade nätverk. Det finns ingen anledning att oroa sig för vilka webbplatser personer har tillgång till via din proxy. Deras synliga surfnings IP-adress kommer att matcha deras Tor-slutnod, inte din."
   },
   "installFirefox": {
-    "message": "Install in Firefox"
+    "message": "Installera i Firefox"
   },
   "installChrome": {
-    "message": "Install in Chrome"
+    "message": "Installera i Chrome"
+  },
+  "installStandalone": {
+    "message": "Om du vill köra en kommandoradsversion av Snowflake-proxyn på ditt skrivbord eller server, se vår <a href=\"https://community.torproject.org/relay/setup/snowflake/standalone/\">gemenskapsdokumentation</a> för att köra en fristående Snowflake-proxy."
   },
   "reportingBugs": {
-    "message": "Reporting Bugs"
+    "message": "Rapportera fel"
   },
   "fileBug": {
-    "message": "If you encounter problems with Snowflake as a client or a proxy, please consider filing a bug report.  There are two ways to file a bug report:"
+    "message": "Om du stöter på problem med Snowflake som\"en klient eller en proxy kan du överväga att skicka en felrapport. Det finns två sätt att skicka en felrapport:"
   },
   "sharedAccount": {
-    "message": "File an <a href=\"https://anonticket.onionize.space/\">anonymous ticket</a> by generating an identifier and logging in with it.  Then, find the Snowflake project in the <strong>List of all projects</strong> and create a new issue."
+    "message": "Registrera ett <a href=\"https://anonticket.onionize.space/\">anonymt ärende</a> genom att skapa en identifierare och logga in med den. Hitta sedan Snowflake-projektet i <strong>listan över alla projekt</strong> och skapa ett nytt ärende."
   },
   "bugTracker": {
-    "message": "<a href=\"https://gitlab.onionize.space/\">Request an account</a> at the Tor Project GitLab, then <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">open a new issue</a> in the Snowflake project."
+    "message": "<a href=\"https://gitlab.torproject.org/\">Skapa ett konto</a> på Tor Project GitLab och <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">öppna sedan ett  nytt ärende</a> i Snowflake-projektet."
   },
   "descriptive": {
-    "message": "Please try to be as descriptive as possible with your ticket and if possible include log messages that will help us reproduce the bug."
+    "message": "Försök att vara så beskrivande som möjligt med ditt ärende och om möjligt inkludera loggmeddelanden som hjälper oss att reproducera felet."
   },
   "embed": {
-    "message": "Embed"
+    "message": "Bädda in"
   },
   "possible": {
-    "message": "It is now possible to embed the Snowflake badge on any website:"
+    "message": "Det är nu möjligt att bädda in Snowflake-kännetecknet på vilken webbplats som helst:"
   },
   "looksLike": {
-    "message": "Which looks like this:"
+    "message": "Som ser ut så här:"
   },
   "faq": {
-    "message": "FAQ"
+    "message": "Vanliga frågor"
   },
   "support": {
-    "message": "See the <a href=\"https://support.torproject.org/censorship/\">Censorship</a> topic in Tor's <a href=\"https://support.torproject.org/\">Support Portal</a>."
+    "message": "Se <a href=\"https://support.torproject.org/censorship/\">censurämnet</a> i Tors <a href=\"https://support.torproject.org/\">supportportal</a>."
   }
 }

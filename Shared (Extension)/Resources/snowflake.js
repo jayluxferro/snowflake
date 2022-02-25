@@ -21,7 +21,6 @@ class Broker {
 
     this.config = config;
     this.url = config.brokerUrl;
-    this.clients = 0;
     this.natType = "unknown";
     if (0 === this.url.indexOf('localhost', 0)) {
       // Ensure url has the right protocol + trailing slash.
@@ -40,7 +39,7 @@ class Broker {
   // waits for a response containing some client offer that the Broker chooses
   // for this proxy..
   // TODO: Actually support multiple clients.
-  getClientOffer(id) {
+  getClientOffer(id, numClientsConnected) {
     return new Promise((fulfill, reject) => {
       var xhr;
       xhr = new XMLHttpRequest();
@@ -66,7 +65,14 @@ class Broker {
         }
       };
       this._xhr = xhr; // Used by spec to fake async Broker interaction
-      var data = {"Version": "1.2", "Sid": id, "Type": this.config.proxyType, "NAT": this.natType};
+      const clients = Math.floor(numClientsConnected / 8) * 8;
+      var data = {
+        Version: "1.2",
+        Sid: id,
+        Type: this.config.proxyType,
+        NAT: this.natType,
+        Clients: clients,
+      };
       return this._postRequest(xhr, 'proxy', JSON.stringify(data));
     });
   }
@@ -137,7 +143,6 @@ Broker.MESSAGE = {
   UNEXPECTED: 'Unexpected status.'
 };
 
-Broker.prototype.clients = 0;
 
 class Config {
   constructor(proxyType) {
@@ -190,8 +195,8 @@ Config.prototype.pcConfig = {
   ]
 };
 
-Config.PROBEURL = "https://snowflake-broker.torproject.net:8443/probe";
-/* global snowflake, log, dbg, Util, PeerConnection, Parse, WS */
+Config.PROBEURL = "https://snowflake-broker.freehaven.net:8443/probe";
+/* global snowflake, log, dbg, Util, Parse, WS */
 
 /*
 Represents a single:
@@ -228,16 +233,7 @@ class ProxyPair {
 
   // Prepare a WebRTC PeerConnection and await for an SDP offer.
   begin() {
-    this.pc = new PeerConnection(this.pcConfig, {
-      optional: [
-        {
-          DtlsSrtpKeyAgreement: true
-        },
-        {
-          RtpDataChannels: false
-        }
-      ]
-    });
+    this.pc = new RTCPeerConnection(this.pcConfig);
     this.pc.onicecandidate = (evt) => {
       // Browser sends a null candidate once the ICE gathering completes.
       if (null === evt.candidate && this.pc.connectionState !== 'closed') {
@@ -457,7 +453,7 @@ ProxyPair.prototype.messageTimer = 0;
 ProxyPair.prototype.flush_timeout_id = null;
 
 ProxyPair.prototype.onCleanup = null;
-/* global log, dbg, DummyRateLimit, BucketRateLimit, SessionDescription, ProxyPair */
+/* global log, dbg, DummyRateLimit, BucketRateLimit, ProxyPair */
 
 /*
 A JavaScript WebRTC snowflake proxy
@@ -530,7 +526,7 @@ class Snowflake {
     //update NAT type
     console.log("NAT type: "+ this.ui.natType);
     this.broker.setNATType(this.ui.natType);
-    recv = this.broker.getClientOffer(pair.id);
+    recv = this.broker.getClientOffer(pair.id, this.proxyPairs.length);
     recv.then((resp) => {
       var clientNAT = resp.NAT;
       if (!this.receiveOffer(pair, resp.Offer)) {
@@ -579,7 +575,7 @@ class Snowflake {
     try {
       offer = JSON.parse(desc);
       dbg('Received:\n\n' + offer.sdp + '\n');
-      sdp = new SessionDescription(offer);
+      sdp = new RTCSessionDescription(offer);
       if (pair.receiveWebRTCOffer(sdp)) {
         this.sendAnswer(pair);
         return true;
@@ -668,7 +664,7 @@ class UI {
 
 UI.prototype.active = false;
 /* exported Util, Params, DummyRateLimit */
-/* global PeerConnection, Config */
+/* global Config */
 
 /*
 A JavaScript WebRTC snowflake proxy
@@ -683,36 +679,38 @@ class Util {
   }
 
   static hasWebRTC() {
-    return typeof PeerConnection === 'function';
+    return typeof RTCPeerConnection === 'function';
   }
 
   static hasCookies() {
     return navigator.cookieEnabled;
   }
 
-  // returns a promise that fullfills to "restricted" if we
+  // returns a promise that resolves to "restricted" if we
   // fail to make a test connection to a known restricted
-  // NAT, "unrestricted" if the test connection fails, and
+  // NAT, "unrestricted" if the test connection succeeds, and
   // "unknown" if we fail to reach the probe test server
   static checkNATType(timeout) {
-    return new Promise((fulfill, reject) => {
+    let pc = new RTCPeerConnection({iceServers: [
+      {urls: 'stun:stun1.l.google.com:19302'}
+    ]});
+    let channel = pc.createDataChannel("NAT test");
+    return (new Promise((fulfill, reject) => {
       let open = false;
-      let pc = new PeerConnection({iceServers: [
-        {urls: 'stun:stun1.l.google.com:19302'}
-      ]});
-      let channel = pc.createDataChannel("NAT test");
       channel.onopen = function() {
         open = true;
         fulfill("unrestricted");
-        channel.close();
-        pc.close();
       };
       pc.onicecandidate = (evt) => {
         if (evt.candidate == null) {
           //ice gathering is finished
           Util.sendOffer(pc.localDescription)
           .then((answer) => {
-            setTimeout(() => {if(!open) fulfill("restricted");}, timeout);
+            setTimeout(() => {
+              if(!open) {
+                fulfill("restricted");
+              }
+            }, timeout);
             pc.setRemoteDescription(JSON.parse(answer));
           }).catch((e) => {
             console.log(e);
@@ -726,7 +724,10 @@ class Util {
         console.log(e);
         reject("Error creating offer for probetest");
       });
-    });
+    }).finally(() => {
+      channel.close();
+      pc.close();
+    }));
   }
 
   // Assumes getClientOffer happened, and a WebRTC SDP answer has been generated.
@@ -1094,18 +1095,11 @@ if (typeof module !== "undefined" && module !== null ? module.exports : void 0) 
   ({ URLSearchParams } = require('url'));
   if ((typeof TESTING === "undefined" || TESTING === null) || !TESTING) {
     webrtc = require('wrtc');
-    PeerConnection = webrtc.RTCPeerConnection;
-    IceCandidate = webrtc.RTCIceCandidate;
-    SessionDescription = webrtc.RTCSessionDescription;
+    RTCPeerConnection = webrtc.RTCPeerConnection;
+    RTCSessionDescription = webrtc.RTCSessionDescription;
     WebSocket = require('ws');
     ({ XMLHttpRequest } = require('xmlhttprequest'));
   }
-} else {
-  PeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
-  IceCandidate = window.RTCIceCandidate || window.mozRTCIceCandidate;
-  SessionDescription = window.RTCSessionDescription || window.mozRTCSessionDescription;
-  WebSocket = window.WebSocket;
-  XMLHttpRequest = window.XMLHttpRequest;
 }
 /* global Util, chrome, Config, UI, Broker, Snowflake, WS */
 /* eslint no-unused-vars: 0 */

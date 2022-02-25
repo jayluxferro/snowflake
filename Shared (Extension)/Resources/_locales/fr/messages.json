@@ -39,13 +39,13 @@
     "message": "Snowflake est un système pour contrecarrer la censure sur Internet. Les personnes victimes de censure peuvent utiliser Snowflake pour accéder à Internet. Leur connexion passe par des mandataires Snowflake qui sont exploités par des bénévoles. Pour de plus amples renseignements sur le fonctionnement de Snowflake, consultez notre <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/home\">wiki de documentation</a> (page en anglais)."
   },
   "browser": {
-    "message": "Navigateur"
+    "message": "Utiliser Snowflake"
   },
   "censoredUsers": {
     "message": "Si votre accès à Internet est censuré, vous devriez télécharger le <a href=\"https://www.torproject.org/fr/download/\">Navigateur Tor</a>."
   },
   "extension": {
-    "message": "Extension"
+    "message": "Exécuter un serveur mandataire"
   },
   "installExtension": {
     "message": "Si votre accès à Internet n’est <strong>pas</strong> censuré, vous devriez envisager d’installer l’extension Snowflake pour aider les utilisateurs sur les réseaux censurés. Vous n’avez pas à vous soucier des sites Web auxquels les utilisateurs accèdent par votre mandataire. Leur adresse IP visible de navigation correspondra à leur nœud de sortie de Tor, pas à la vôtre."
@@ -55,6 +55,9 @@
   },
   "installChrome": {
     "message": "Installer dans Chrome"
+  },
+  "installStandalone": {
+    "message": "Si vous voulez exécuter une version en ligne de commande du mandataire Snowflake sur votre ordinateur ou sur votre serveur, consultez notre <a href=\"https://community.torproject.org/relay/setup/snowflake/standalone/\">documentation</a> sur l’exécution d’un mandataire Snowflake autonome (en anglais)."
   },
   "reportingBugs": {
     "message": "Signaler des bogues"

@@ -36,16 +36,16 @@
     "message": "I cookie non sono attivati."
   },
   "websiteIntro": {
-    "message": "Snowflake is a system to defeat internet censorship. People who are censored can use Snowflake to access the internet. Their connection goes through Snowflake proxies, which are run by volunteers. For more detailed information about how Snowflake works see our <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/home\">documentation wiki</a>."
+    "message": "Snowflake è un sistema per sconfiggere la censura di internet. Le persone che sono sottoposte a censura possono usare Snowflake per accedere ad internet. Le loro connessioni passano attraverso i proxy Snowflake, che sono gestiti da volontari. Per informazioni più dettagliate su come funziona Snowflake leggi la nostra <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/home\">wiki di documentazione</a>."
   },
   "browser": {
-    "message": "Browser"
+    "message": "Usa Snowflake"
   },
   "censoredUsers": {
     "message": "Se il tuo accesso ad internet è censurato, dovresti scaricare <a href=\"https://www.torproject.org/it/download/\">Tor Browser</a>."
   },
   "extension": {
-    "message": "Estensione"
+    "message": "Esegui un Proxy"
   },
   "installExtension": {
     "message": "Se il tuo accesso ad internet <strong>non</strong> è censurato, dovresti considerare di installare l'estensione Snowflake per aiutare gli utenti nelle reti con restrizioni. Non c'è bisogno di preoccuparsi riguardo ai siti che le persone visitano attraverso il tuo proxy. Il loro indirizzo IP visibile di navigazione corrisponderà al loro nodo d'uscita Tor, non al tuo."
@@ -56,20 +56,23 @@
   "installChrome": {
     "message": "Installa in Chrome"
   },
+  "installStandalone": {
+    "message": "Se vuoi eseguire una versione a riga di comando del proxy Snowflake sul tuo desktop o server, visiona la <a href=\"https://community.torproject.org/relay/setup/snowflake/standalone/\">documentazione della nostra community</a> per eseguire un proxy Snowflake autonomo."
+  },
   "reportingBugs": {
     "message": "Segnala un Problema"
   },
   "fileBug": {
-    "message": "If you encounter problems with Snowflake as a client or a proxy, please consider filing a bug report.  There are two ways to file a bug report:"
+    "message": "Se incappi in qualche problema con Snowflake, sia come client che come proxy, considera di segnalare l'errore.  Ci sono due modi per farlo:"
   },
   "sharedAccount": {
-    "message": "File an <a href=\"https://anonticket.onionize.space/\">anonymous ticket</a> by generating an identifier and logging in with it.  Then, find the Snowflake project in the <strong>List of all projects</strong> and create a new issue."
+    "message": "Compila un <a href=\"https://anonticket.onionize.space/\">ticket anonimo</a> generando un identificativo e accedendo con esso.  Poi, trova il progetto Snowflake nell'<strong>elenco di tutti i progetti</strong> e crea una nuova segnalazione."
   },
   "bugTracker": {
-    "message": "<a href=\"https://gitlab.onionize.space/\">Request an account</a> at the Tor Project GitLab, then <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">open a new issue</a> in the Snowflake project."
+    "message": "<a href=\"https://gitlab.onionize.space/\">Richiedi un account</a> nel GitLab di Tor Project, poi <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">crea una nuova segnalazione</a> nel progetto Snowflake."
   },
   "descriptive": {
-    "message": "Please try to be as descriptive as possible with your ticket and if possible include log messages that will help us reproduce the bug."
+    "message": "Cerca di essere il più descrittivo possibile nel tuo ticket e se possibile includi messaggi di log che possano aiutarci a riprodurre l'errore."
   },
   "embed": {
     "message": "Incorpora"
@@ -84,6 +87,6 @@
     "message": "FAQ"
   },
   "support": {
-    "message": "See the <a href=\"https://support.torproject.org/censorship/\">Censorship</a> topic in Tor's <a href=\"https://support.torproject.org/\">Support Portal</a>."
+    "message": "Vedi l'argomento <a href=\"https://support.torproject.org/censorship/\">Censura</a> nel <a href=\"https://support.torproject.org/\">Portale di supporto</a> di Tor."
   }
 }

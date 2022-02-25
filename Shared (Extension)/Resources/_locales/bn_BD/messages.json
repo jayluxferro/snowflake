@@ -36,10 +36,7 @@
     "message": "কুকিজ সক্রিয় নয়।"
   },
   "websiteIntro": {
-    "message": "Snowflake ইন্টারনেট সেন্সরশিপকে পরাস্ত করার একটি ব্যবস্থা। সেন্সরযুক্ত লোকেরা ইন্টারনেট অ্যাক্সেস করতে Snowflake ব্যবহার করতে পারেন। তাদের সংযোগ Snowflake প্রক্সিগুলির মধ্য দিয়ে যায়, যা স্বেচ্ছাসেবীর মাধ্যমে চালিত হয়। Snowflake কীভাবে কাজ করে সে সম্পর্কে আরও বিস্তারিত তথ্যের জন্য আমাদের <a href=\"https://trac.torproject.org/projects/tor/wiki/doc/Snowflake/\" data-msgid=\"__MSG_docWiki__\">ডকুমেন্টেশন উইকি</a> দেখুন।"
-  },
-  "docWiki": {
-    "message": "ডকুমেন্টেশন উইকি"
+    "message": "Snowflake is a system to defeat internet censorship. People who are censored can use Snowflake to access the internet. Their connection goes through Snowflake proxies, which are run by volunteers. For more detailed information about how Snowflake works see our <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/home\">documentation wiki</a>."
   },
   "browser": {
     "message": "ব্রাউজার"
@@ -63,16 +60,16 @@
     "message": "বাগ রিপোর্টিং"
   },
   "fileBug": {
-    "message": "আপনার যদি ক্লায়েন্ট বা প্রক্সি হিসাবে Snowflake এর  সমস্যা হয় তবে দয়া করে একটি বাগ ফাইল করা বিবেচনা করুন। এটি করতে আপনাকে করতে হবে,"
+    "message": "If you encounter problems with Snowflake as a client or a proxy, please consider filing a bug report.  There are two ways to file a bug report:"
   },
   "sharedAccount": {
-    "message": "হয় <a href=\"https://trac.torproject.org/projects/tor/register\">একটি অ্যাকাউন্ট তৈরি করুন</a> বা পাসওয়ার্ড <b>রাইটিং কোড</b> সহ ভাগ করা <b>cypherpunks</b> অ্যাকাউন্টটি ব্যবহার করে <a href=\"https://trac.torproject.org/projects/tor/login\">লগ ইন</a> করুন।"
+    "message": "File an <a href=\"https://anonticket.onionize.space/\">anonymous ticket</a> by generating an identifier and logging in with it.  Then, find the Snowflake project in the <strong>List of all projects</strong> and create a new issue."
   },
   "bugTracker": {
-    "message": "আমাদের বাগ ট্র্যাকার ব্যবহার করে <a href=\"https://trac.torproject.org/projects/tor/newticket?component=Circumvention%2FSnowflake\">টিকিট ফাইল করুন</a>।"
+    "message": "<a href=\"https://gitlab.onionize.space/\">Request an account</a> at the Tor Project GitLab, then <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">open a new issue</a> in the Snowflake project."
   },
   "descriptive": {
-    "message": "আপনার টিকিট দিয়ে যতটা সম্ভব বর্ণনামূলক হওয়ার চেষ্টা করুন এবং সম্ভব হলে লগ বার্তা অন্তর্ভুক্ত করুন যা আমাদের বাগের পুনরুত্পাদন করতে সহায়তা করবে। snowflake সিস্টেমের কোন অংশটি কীভাবে সমস্যার মুখোমুখি হচ্ছে তা আমাদের জানান দিতে <em>snowflake-webextension</em> বা <em>snowflake-client</em> কীওয়ার্ড যুক্ত করার বিষয়টি বিবেচনা করুন।"
+    "message": "Please try to be as descriptive as possible with your ticket and if possible include log messages that will help us reproduce the bug."
   },
   "embed": {
     "message": "বসান"
@@ -82,5 +79,11 @@
   },
   "looksLike": {
     "message": "যা দেখতে এরকম দেখাচ্ছে:"
+  },
+  "faq": {
+    "message": "FAQ"
+  },
+  "support": {
+    "message": "See the <a href=\"https://support.torproject.org/censorship/\">Censorship</a> topic in Tor's <a href=\"https://support.torproject.org/\">Support Portal</a>."
   }
 }

@@ -1,6 +1,6 @@
 {
   "appDesc": {
-    "message": "A Snowflake (Hópihe) egy WebRTC csatlakoztatható átvivő a Tor-hoz."
+    "message": "A Snowflake (Hópihe) egy WebRTC cserélhető átvitel a Tor-hoz."
   },
   "popupEnabled": {
     "message": "Engedélyezve"
@@ -36,19 +36,16 @@
     "message": "A cookie-k nincsenek engedélyezve."
   },
   "websiteIntro": {
-    "message": "A Snowflake egy cenzúra elleni rendszer. Azok, akiket cenzúráznak a Snowflake-et használhatják az internet elérésére. A kapcsolatuk Snowflake proxykon megy keresztül, amiket önkéntesek futtatnak. Részletesebb információkért, arról, hogy a Snowflake hogyan működik látogassa meg a <a href=\"https://trac.torproject.org/projects/tor/wiki/doc/Snowflake/\" data-msgid=\"__MSG_docWiki__\">dokumentáció wiki</a>-t."
-  },
-  "docWiki": {
-    "message": "dokumentáció wiki"
+    "message": "A Snowflake egy cenzúra elleni rendszer. Azok, akiket cenzúráznak a Snowflake-et használhatják az internet elérésére. A kapcsolatuk Snowflake proxykon megy keresztül, amiket önkéntesek futtatnak. Részletesebb információkért, arról, hogy a Snowflake hogyan működik látogassa meg a <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/home\">dokumentáció wiki</a>-t."
   },
   "browser": {
-    "message": "Böngésző"
+    "message": "Snowflake használata"
   },
   "censoredUsers": {
     "message": "Ha az internet hozzáférése blokkolt, javasolt a <a href=\"https://www.torproject.org/download/\">Tor Böngésző</a> letöltése."
   },
   "extension": {
-    "message": "Bővítmény"
+    "message": "Proxy futtatása"
   },
   "installExtension": {
     "message": "Ha az internet hozzáférése <strong>nem</strong> cenzúrázott, javasolt a Snowflake bővítmény telepítése, hogy segítse a felhasználókat a cenzúrázott hálózatokon. Nem kell aggódnia milyen weboldalakat érnek el a proxyján keresztül. A látható IP címük a Tor kilépési ponttal fog egyezni, nem az Önével."
@@ -59,6 +56,9 @@
   "installChrome": {
     "message": "Telepítés Chrome-ba"
   },
+  "installStandalone": {
+    "message": "Ha szeretné futtatni a parancssori verzióját a Snowflake proxy-nak az asztali gépén vagy szerverén, tekintse meg a <a href=\"https://community.torproject.org/relay/setup/snowflake/standalone/\">közösségi dokumentációt</a> az önálló Snowflake proxy futtatásához."
+  },
   "reportingBugs": {
     "message": "Hibajelentés"
   },
@@ -66,10 +66,10 @@
     "message": "Ha problémát tapasztal a Snowflake-kel, mint kliens vagy proxy, gondoljon arra, hogy beküldjön egy hibát. Két módja van a hiba beküldésének:"
   },
   "sharedAccount": {
-    "message": "Szerkessze a <a href=\"https://pad.riseup.net/p/tor-anti-censorship-bugs-keep\">nyilvános hibabjelentő felületét</a> az anti cenzúra csapatnak."
+    "message": "Küldjön be egy <a href=\"https://anonticket.onionize.space/\">névtelen hibajegyet</a> egy azonosító generálásával és azzal belépéssel.  Utána keresse meg a Snowflake projektet a <strong>Minden projekt listája</strong> alatt és hozzon létre egy hibajegyet."
   },
   "bugTracker": {
-    "message": "<a href=\"https://gitlab.torproject.org/\">Igényeljen egy fiókot</a>a Tor Project GitLabjához, majd <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">nyisson egy hibajegyet</a> a Snowflake projektben."
+    "message": "<a href=\"https://gitlab.onionize.space/\">Igényeljen egy fiókot</a> a Tor Project GitLabjához, majd <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">nyisson egy hibajegyet</a> a Snowflake projektben."
   },
   "descriptive": {
     "message": "Kérjük legyen annyira leíró, amennyire lehet a hibajegyében és ha van rá lehetősége csatolja a logot, ami segítheti a probléma reprodukálását."
@@ -82,5 +82,11 @@
   },
   "looksLike": {
     "message": "Amely így néz ki:"
+  },
+  "faq": {
+    "message": "GYIK"
+  },
+  "support": {
+    "message": "Lásd a<a href=\"https://support.torproject.org/censorship/\">Cenzúra</a> témát a Tor <a href=\"https://support.torproject.org/\">Support Portálján</a>."
   }
 }

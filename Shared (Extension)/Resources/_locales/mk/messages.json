@@ -36,19 +36,16 @@
     "message": "Колачињата не се овозможени."
   },
   "websiteIntro": {
-    "message": "Snowflake е систем кој ја поразува интернет цензурата. Луѓето кои се цензурирани може да го користат Snowflake за да пристапуваат на Интернет. Нивното поврзување оди преку Snowflake проксија, кои се водени од волонтери. За подетални информации за тоа како работи Snowflake видете ја нашата <a href=\"https://trac.torproject.org/projects/tor/wiki/doc/Snowflake/\" data-msgid=\"__MSG_docWiki__\">wiki документација</a>."
-  },
-  "docWiki": {
-    "message": "wiki документација"
+    "message": "Snowflake е систем кој ја поразува интернет цензурата. Луѓето кои се цензурирани може да го користат Snowflake за да пристапуваат на Интернет. Нивното поврзување оди преку Snowflake проксија, кои се водени од волонтери. За подетални информации за тоа како работи Snowflake видете ја нашата <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/home\">wiki документација</a>."
   },
   "browser": {
-    "message": "Прелистувач"
+    "message": "Користи Snowflake"
   },
   "censoredUsers": {
     "message": "Ако вашиот пристап на Интернет е цензуриран, треба да го преземете <a href=\"https://www.torproject.org/download/\">Tor Browser</a>."
   },
   "extension": {
-    "message": "Проширување"
+    "message": "Стартувај Прокси"
   },
   "installExtension": {
     "message": "Ако вашиот Интернет пристап е <strong>не</strong> цензуриран, би можеле да размислите да го инсталирате Snowflake проширувањето за да им помогнете на корисниците на цензурираните мрежи. Нема потребе да се грижите за тоа на која веб страна луѓето и пристапуваат преку вашето прокси. Нивната видлива IP адреса за прелистување ќе одговоара со нивниот излезен Tor јазол, а не со вашиот."
@@ -59,6 +56,9 @@
   "installChrome": {
     "message": "Инсталирај во Chrome"
   },
+  "installStandalone": {
+    "message": "Ако сакате да ја стартувате command-line верзијата на Snowflake проксито на вашиот десктоп или сервер, видете ја нашата <a href=\"https://community.torproject.org/relay/setup/snowflake/standalone/\">документација на заедницата</a>за стартување на самостојно Snowflake прокси."
+  },
   "reportingBugs": {
     "message": "Пријавување грешки"
   },
@@ -66,10 +66,10 @@
     "message": "Ако се судрите со проблеми со Snowflake како клиент или како пркси, ве молиме размислете да пријавите грешка. Има два начина да поднесете извештај за грешка:"
   },
   "sharedAccount": {
-    "message": "Уредете го <a href=\"https://pad.riseup.net/p/tor-anti-censorship-bugs-keep\">јавниот пад за пријавување грешки</a> на тимот за анти-цензура."
+    "message": "Пополнете <a href=\"https://anonticket.onionize.space/\">анонимен тикет</a> со генерирање на идентификувач и најавување со него. Потоа, пронајдете го Snowflake проектот во <strong>Листата на сите проекти</strong> и создадете/креирајте нов проблем."
   },
   "bugTracker": {
-    "message": "<a href=\"https://gitlab.torproject.org/\">Побарајте сметка</a> на Tor Project GitLab, потоа <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">отворете нов проблем</a> во Snowflake проектот."
+    "message": "<a href=\"https://gitlab.onionize.space/\">Побарајте сметка</a> на Tor Project GitLab, потоа <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">отворете нов проблем</a> во Snowflake проектот."
   },
   "descriptive": {
     "message": "Ве молиме обидете се да бидете што е можно појасни во вашиот извештај и ако е можно вклучете ги логовите кои ќе ни помогнат да ја произведеме истата грешка."
@@ -82,5 +82,11 @@
   },
   "looksLike": {
     "message": "Кој изгледа вака:"
+  },
+  "faq": {
+    "message": "ЧПП"
+  },
+  "support": {
+    "message": "Видете ја <a href=\"https://support.torproject.org/censorship/\">Цензура</a> темата во <a href=\"https://support.torproject.org/\">Порталот за Поддршка</a> на Tor."
   }
 }

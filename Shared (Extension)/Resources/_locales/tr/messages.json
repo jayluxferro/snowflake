@@ -27,7 +27,7 @@
     "message": "Snowflake uygulamanız son 24 saatte $1 kullanıcının sansürü aşmasına yardımcı oldu."
   },
   "popupRetry": {
-    "message": "Yeniden Dene"
+    "message": "Yeniden dene"
   },
   "popupRetrying": {
     "message": "Yeniden deneniyor..."
@@ -39,16 +39,16 @@
     "message": "Snowflake İnternet sansürünü aşmaya yönelik bir sistemdir. Sansüre uğrayan kişiler, Snowflake kullanarak İnternete erişebilir. Bağlantı, gönüllüler tarafından işletilen Snowflake vekil sunucuları üzerinden kurulur. Snowflake hakkında ayrıntılı bilgi almak için <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/home\">belgeler viki</a> sayfamıza bakabilirsiniz."
   },
   "browser": {
-    "message": "Tarayıcı"
+    "message": "Snowflake kullanılsın"
   },
   "censoredUsers": {
     "message": "İnternet erişiminiz sansürleniyorsa <a href=\"https://www.torproject.org/download/\">Tor Browser</a> uygulamasını indirmelisiniz."
   },
   "extension": {
-    "message": "Eklenti"
+    "message": "Bir vekil sunucu çalıştır"
   },
   "installExtension": {
-    "message": "İnternet erişiminiz <strong>sansürlenmiyorsa</strong>, sansürlenen ağlardaki kullanıcılara yardımcı olmak için Snowflake eklentisini kurabilirsiniz. Diğer kullanıcıların vekil sunucunuz üzerinden eriştiği sayfalar hakkında endişelenmeniz gerekmez. Bu kullanıcıların görülebilecek IP adresleri sizin değil Tor çıkış durağının adresi olur."
+    "message": "İnternet erişiminiz <strong>sansürlenmiyorsa</strong>, sansürlenen ağlardaki kullanıcılara yardımcı olmak için Snowflake uzantısını kurabilirsiniz. Diğer kullanıcıların vekil sunucunuz üzerinden eriştiği sayfalar hakkında endişelenmeniz gerekmez. Bu kullanıcıların görülebilecek IP adresleri sizin değil Tor çıkış durağının adresi olur."
   },
   "installFirefox": {
     "message": "Firefox üzerine kurulum"
@@ -56,8 +56,11 @@
   "installChrome": {
     "message": "Chrome üzerine kurulum"
   },
+  "installStandalone": {
+    "message": "Masaüstü bilgisayarınızda ya da sunucunuzda Snowflake vekil sunucusunun komut satırı sürümünü çalıştırmak istiyorsanız, bağımsız bir Snowflake vekil sunucusu çalıştırmak hakkındaki <a href=\"https://community.torproject.org/relay/setup/snowflake/standalone/\">topluluk belgemize</a> bakabilirsiniz."
+  },
   "reportingBugs": {
-    "message": "Hata Bildirimi"
+    "message": "Hata bildirimi"
   },
   "fileBug": {
     "message": "Bir istemci ya da vekil sunucu olarak Snowflake kullanırken sorun yaşarsanız, hata bildiriminde bulunmanız iyi olur. Hata bildirimini iki şekilde gönderebilirsiniz:"
