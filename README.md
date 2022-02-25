@@ -9,10 +9,8 @@ Snowflake is a system to defeat internet censorship. People who are censored can
 
 #### Installation
 1. Download and and install the package.
-<a href="https://github.com/jayluxferro/snowflake/releases/download/v1.0.0/Snowflake.pkg" target="_blank">Download Snowflake Safari Extension</a>
+<a href="https://apps.apple.com/us/app/torproject-snowflake/id1597501940" target="_blank">Download Snowflake Safari Extension</a>
 2. Launch the Snowflake app after installation.
-
-**NB:** If the extension doesn't show in your browser, allow the use of unsigned extension in the 'Develop' menu of your Safari browser.
 
 #### Development
 1. Clone and build project with Xcode 13 or greater.
