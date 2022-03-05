@@ -68,3 +68,6 @@ fastlane/screenshots
 # ignore media files
 media/*
 assets/images/users/
+
+# tor project repository
+src/

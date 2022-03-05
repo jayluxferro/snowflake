@@ -1,7 +1,7 @@
 ### Snowflake's Safari Extension
 
 <p id="downloads" align="center">
-	<img src="https://raw.githubusercontent.com/jayluxferro/snowflake/main/extensions/safari/Shared%20(Extension)/Resources/assets/toolbar-on-96.png"/>
+	<img src="https://raw.githubusercontent.com/jayluxferro/snowflake/main/extension/Shared%20(Extension)/Resources/assets/toolbar-on-96.png"/>
 	<h2 align="center">Snowflake</h2>
 </p>
 
@@ -22,11 +22,11 @@ cd snowflake
 ./build-safari-extension
 ```
 
-5. Launch the application from the **`extensions/safari/build/Release/Snowflake.app`**.
+5. Launch the application from the **`extension/build/Release/Snowflake.app`**.
 
-**NB:** If an error is encountered during the **`xcodebuild`** process, open **`extensions/safari/Snowflake.xcodeproj`** in Xcode, add a development team and rebuild the project.
+**NB:** If an error is encountered during the **`xcodebuild`** process, open **`extension/Snowflake.xcodeproj`** in Xcode, add a development team and rebuild the project.
 
 <hr/>
 
 #### Sample
-<img src="extensions/safari/resources/web.png" style="width: 100%; height: auto"/>
+<img src="extension/resources/web.png" style="width: 100%; height: auto"/>
