@@ -1,7 +1,7 @@
 ### Snowflake's Safari Extension
 
 <p id="downloads" align="center">
-	<img src="https://raw.githubusercontent.com/jayluxferro/snowflake/main/Shared%20(App)/Resources/assets/toolbar-on-96.png" height="120px"/>
+	<img src="https://raw.githubusercontent.com/jayluxferro/snowflake/main/extensions/safari/Shared%20(Extension)/Resources/assets/toolbar-on-96.png"/>
 	<h2 align="center">Snowflake</h2>
 </p>
 
