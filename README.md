@@ -22,7 +22,7 @@ cd snowflake
 ./build-safari-extension
 ```
 
-5. Launch the application from the **`extension/build/Release/Snowflake.app`**.
+5. Launch the application from **`extension/build/Release/Snowflake.app`**.
 
 **NB:** If an error is encountered during the **`xcodebuild`** process, open **`extension/Snowflake.xcodeproj`** in Xcode, add a development team and rebuild the project.
 
