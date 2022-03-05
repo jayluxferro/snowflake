@@ -16,7 +16,15 @@ Snowflake is a system to defeat internet censorship. People who are censored can
 1. Clone and build project with Xcode 13 or greater.
 2. Enable "**Develop**" mode in Safari.
 3. Allow unsigned extension.
-4. Build and run the project to install the extension.
+4. Building the project.
+```
+cd snowflake
+./build-safari-extension
+```
+
+5. Launch the application from the **extensions/safari/build/Release/Snowflake.app**.
+
+**NB:** If an error is encountered during the *xcodebuild* process, open *extensions/safari/Snowflake.xcodeproj* in Xcode, add a development team and rebuild the project.
 
 <hr/>
 

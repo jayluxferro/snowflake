@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# src directory path
+src_directory="./src"
+
+# built extension path
+built_extension_path="$src_directory/webext"
+
+# safari extension resource path
+safari_extension_resource_path="extensions/safari/Shared (Extension)/Resources"
+
+# pull latest update from tor repo
+echo "[-] Fetching update from tor repository."
+git submodule update --recursive
+
+# build web extension
+echo "[-] Building extension."
+cd $src_directory
+npm install
+npm run webext
+cd ..
+
+if [ -d "$built_extension_path" ];
+then
+  # remove old files
+  echo "[-] Updating resource files."
+  rm -rf "$safari_extension_resource_path"
+  cp -rf "$built_extension_path" "$safari_extension_resource_path"
+fi
+
+# build xcode project
+cd "$safari_extension_resource_path/../../"
+xcodebuild
+
+# complete
+cd ../..
+echo "[+] Process completed."
+
+
