@@ -22,11 +22,11 @@ cd snowflake
 ./build-safari-extension
 ```
 
-5. Launch the application from the **extensions/safari/build/Release/Snowflake.app**.
+5. Launch the application from the **`extensions/safari/build/Release/Snowflake.app`**.
 
-**NB:** If an error is encountered during the *xcodebuild* process, open *extensions/safari/Snowflake.xcodeproj* in Xcode, add a development team and rebuild the project.
+**NB:** If an error is encountered during the **`xcodebuild`** process, open **`extensions/safari/Snowflake.xcodeproj`** in Xcode, add a development team and rebuild the project.
 
 <hr/>
 
 #### Sample
-<img src="resources/web.png" style="width: 100%; height: auto"/>
+<img src="extensions/safari/resources/web.png" style="width: 100%; height: auto"/>
