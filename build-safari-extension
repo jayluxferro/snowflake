@@ -12,31 +12,40 @@ safari_extension_resource_path="extension/Shared (Extension)/Resources"
 # pull latest update from tor repo
 snowflake_repo="https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake-webext.git"
 echo "[-] Fetching update from tor repository."
-git clone  "$snowflake_repo" "$src_directory"
-
-# build web extension
-echo "[-] Building extension."
-cd $src_directory
-npm install
-npm run webext
-cd ..
-
-if [ -d "$built_extension_path" ];
-then
-  # remove old files
-  echo "[-] Updating resource files."
-  rm -rf "$safari_extension_resource_path"
-  cp -rf "$built_extension_path" "$safari_extension_resource_path"
-fi
-
-# build xcode project
-cd "$safari_extension_resource_path/../../"
-xcodebuild
-
-# complete
-cd ../..
-if [ -d "$src_directory" ];
+if [ -d $src_directory ];
 then
   rm -rf "$src_directory"
 fi
+
+git clone  "$snowflake_repo" "$src_directory"
+
+# build web extension
+if [ -d $src_directory ];
+then
+  echo "[-] Building extension."
+  cd $src_directory
+  npm install
+  npm run webext
+  cd ..
+
+  if [ -d "$built_extension_path" ];
+  then
+    # remove old files
+    echo "[-] Updating resource files."
+    rm -rf "$safari_extension_resource_path"
+    cp -rf "$built_extension_path" "$safari_extension_resource_path"
+  fi
+
+  # build xcode project
+  cd "$safari_extension_resource_path/../../"
+  xcodebuild
+
+  # complete
+  cd ../..
+  if [ -d "$src_directory" ];
+  then
+    rm -rf "$src_directory"
+  fi
+fi
+
 echo "[+] Process completed."
