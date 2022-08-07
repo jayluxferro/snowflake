@@ -1,6 +1,6 @@
 {
   "appDesc": {
-    "message": "Snowflake is a WebRTC pluggable transport for Tor."
+    "message": "Help others circumvent censorship by simply installing this"
   },
   "popupEnabled": {
     "message": "Enabled"
@@ -36,7 +36,7 @@
     "message": "Cookies are not enabled."
   },
   "websiteIntro": {
-    "message": "Snowflake is a system to defeat internet censorship. People who are censored can use Snowflake to access the internet. Their connection goes through Snowflake proxies, which are run by volunteers. For more detailed information about how Snowflake works see our <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/home\">documentation wiki</a>."
+    "message": "Snowflake is a system to defeat internet censorship. People who are censored can use it to access the internet. Their connection goes through Snowflake proxies, which are run by volunteers. For more detailed information about how Snowflake works see our <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/home\">documentation wiki</a>."
   },
   "browser": {
     "message": "Use Snowflake"
@@ -57,7 +57,7 @@
     "message": "Install in Chrome"
   },
   "installStandalone": {
-    "message": "If you would like to run a command-line version of the Snowflake proxy on your desktop or server, see our <a href=\"https://community.torproject.org/relay/setup/snowflake/standalone/\">community documentation</a> for running a standalone Snowflake proxy."
+    "message": "If you would like to run a command-line version of the Snowflake proxy on your desktop or server, see our <a href=\"https://community.torproject.org/relay/setup/snowflake/standalone/\">documentation</a> for running a standalone proxy."
   },
   "reportingBugs": {
     "message": "Reporting Bugs"
