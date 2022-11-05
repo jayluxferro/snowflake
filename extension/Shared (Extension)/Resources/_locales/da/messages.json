@@ -1,92 +1,41 @@
 {
-  "appDesc": {
-    "message": "Snowflake er en WebRTC-udskiftelig transport til Tor."
-  },
-  "popupEnabled": {
-    "message": "Aktiveret"
-  },
-  "popupLearnMore": {
-    "message": "Lær mere"
-  },
-  "popupStatusOff": {
-    "message": "Snowflake er slukket"
-  },
-  "popupStatusOn": {
-    "message": "Antal tilsluttede brugere i øjeblikket: $1"
-  },
-  "popupStatusReady": {
-    "message": "Din Snowflake er klar til at hjælpe brugere med at omgå censur"
-  },
-  "popupWebRTCOff": {
-    "message": "WebRTC-funktionalitet er ikke registreret."
-  },
-  "popupBridgeUnreachable": {
-    "message": "Kunne ikke oprette forbindelse til broen."
-  },
-  "popupDescOn": {
-    "message": "Antal brugere som din Snowflake har hjulpet med at omgå censur indenfor de sidste 24 timer: $1"
-  },
-  "popupRetry": {
-    "message": "Prøv igen"
-  },
-  "popupRetrying": {
-    "message": "Prøver igen..."
-  },
-  "badgeCookiesOff": {
-    "message": "Cookies er ikke aktiveret."
-  },
-  "websiteIntro": {
-    "message": "Snowflake is a system to defeat internet censorship. People who are censored can use Snowflake to access the internet. Their connection goes through Snowflake proxies, which are run by volunteers. For more detailed information about how Snowflake works see our <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/home\">documentation wiki</a>."
-  },
-  "browser": {
-    "message": "Use Snowflake"
-  },
-  "censoredUsers": {
-    "message": "Din internetadgang er censureret, du bør downloade <a href=\"https://www.torproject.org/download/\">Tor Browser</a>."
-  },
-  "extension": {
-    "message": "Run a Proxy"
-  },
-  "installExtension": {
-    "message": "Hvis din internetadgang <strong>ikke</strong> er censureret, så bør du overveje at installere Snowflake-udvidelsen for at hjælpe brugere i censureret netværk. Du behøver ikke bekymre dig om hvilke websteder folk tilgår gennem din proxy. Deres synlige browsing IP-adresse vil matche deres Tor-afslutningsknudepunkt, ikke dit."
-  },
-  "installFirefox": {
-    "message": "Installer i Firefox"
-  },
-  "installChrome": {
-    "message": "Installer i Chrome"
-  },
-  "installStandalone": {
-    "message": "If you would like to run a command-line version of the Snowflake proxy on your desktop or server, see our <a href=\"https://community.torproject.org/relay/setup/snowflake/standalone/\">community documentation</a> for running a standalone Snowflake proxy."
-  },
-  "reportingBugs": {
-    "message": "Fejlrapportering"
-  },
-  "fileBug": {
-    "message": "If you encounter problems with Snowflake as a client or a proxy, please consider filing a bug report.  There are two ways to file a bug report:"
-  },
-  "sharedAccount": {
-    "message": "File an <a href=\"https://anonticket.onionize.space/\">anonymous ticket</a> by generating an identifier and logging in with it.  Then, find the Snowflake project in the <strong>List of all projects</strong> and create a new issue."
-  },
-  "bugTracker": {
-    "message": "<a href=\"https://gitlab.onionize.space/\">Request an account</a> at the Tor Project GitLab, then <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">open a new issue</a> in the Snowflake project."
-  },
-  "descriptive": {
-    "message": "Please try to be as descriptive as possible with your ticket and if possible include log messages that will help us reproduce the bug."
-  },
-  "embed": {
-    "message": "Indlejr"
-  },
-  "possible": {
-    "message": "Det er nu muligt at indlejre Snowflake-badget på et websted:"
-  },
-  "looksLike": {
-    "message": "Som ser sådan her ud:"
-  },
-  "faq": {
-    "message": "FAQ"
-  },
-  "support": {
-    "message": "See the <a href=\"https://support.torproject.org/censorship/\">Censorship</a> topic in Tor's <a href=\"https://support.torproject.org/\">Support Portal</a>."
-  }
+    "popupWebRTCOff": {
+        "message": "WebRTC-funktionalitet er ikke registreret."
+    },
+    "popupEnabled": {
+        "message": "Aktiveret"
+    },
+    "popupLearnMore": {
+        "message": "Lær mere"
+    },
+    "popupStatusOff": {
+        "message": "Snowflake er slukket"
+    },
+    "popupStatusOn": {
+        "message": "Antal tilsluttede brugere i øjeblikket: $1"
+    },
+    "popupStatusReady": {
+        "message": "Din Snowflake er klar til at hjælpe brugere med at omgå censur"
+    },
+    "popupBridgeUnreachable": {
+        "message": "Kunne ikke oprette forbindelse til broen."
+    },
+    "popupDescOn": {
+        "message": "Antal brugere som din Snowflake har hjulpet med at omgå censur indenfor de sidste 24 timer: $1"
+    },
+    "popupRetry": {
+        "message": "Prøv igen"
+    },
+    "popupRetrying": {
+        "message": "Prøver igen..."
+    },
+    "badgeCookiesOff": {
+        "message": "Cookies er ikke aktiveret."
+    },
+    "appDesc": {
+        "message": "Allow users in censored countries to use your network connection to access the Tor network."
+    },
+    "popupRunInBackground": {
+        "message": "Keep running when the browser is closed"
+    }
 }

@@ -1,0 +1,41 @@
+{
+    "popupStatusOn": {
+        "message": "Ներկայումս միացած մասնակիցների թիվն է՝$1"
+    },
+    "popupLearnMore": {
+        "message": "Իմանալ ավելին"
+    },
+    "popupStatusOff": {
+        "message": "Snowflake-ը կարողազրկված է"
+    },
+    "popupEnabled": {
+        "message": "Միացված"
+    },
+    "popupBridgeUnreachable": {
+        "message": "Կամուրջին միանալ չստացվեց:"
+    },
+    "popupWebRTCOff": {
+        "message": "«WebRTC» հատկություն չի հայտնաբերվել:"
+    },
+    "popupRetry": {
+        "message": "Կրկին փորձել"
+    },
+    "popupRetrying": {
+        "message": "Փորձվում է կրկին..."
+    },
+    "badgeCookiesOff": {
+        "message": "«Cookie»-ները չեն կարողազրկվել:"
+    },
+    "appDesc": {
+        "message": "Allow users in censored countries to use your network connection to access the Tor network."
+    },
+    "popupStatusReady": {
+        "message": "Your Snowflake is ready to help users circumvent censorship"
+    },
+    "popupDescOn": {
+        "message": "Number of users your Snowflake has helped circumvent censorship in the last 24 hours: $1"
+    },
+    "popupRunInBackground": {
+        "message": "Keep running when the browser is closed"
+    }
+}

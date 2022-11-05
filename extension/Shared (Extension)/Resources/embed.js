@@ -1,32 +1,42 @@
 /* global chrome, Popup */
 
-// Fill i18n in HTML
 window.onload = () => {
+  // Fill i18n in HTML
   Popup.fill(document.body, (m) => {
     return chrome.i18n.getMessage(m);
   });
-};
 
-const port = chrome.runtime.connect({
-  name: "popup"
-});
+  const port = chrome.runtime.connect({
+    name: "popup"
+  });
 
-port.onMessage.addListener((m) => {
-  const { clients, enabled, total, missingFeature } = m;
   const popup = new Popup(
     (...args) => chrome.i18n.getMessage(...args),
     (event) => port.postMessage({ enabled: event.target.checked }),
-    () => port.postMessage({ retry: true })
+    () => port.postMessage({ retry: true }),
+    (
+      (
+        typeof false !== 'undefined'
+        // eslint-disable-next-line no-undef
+        && false
+      )
+        ? (newValue) => port.postMessage({ runInBackground: newValue })
+        : undefined
+    )
   );
 
-  if (missingFeature) {
-    popup.missingFeature(missingFeature);
-    return;
-  }
+  port.onMessage.addListener((m) => {
+    const { clients, enabled, total, missingFeature } = m;
 
-  if (enabled) {
-    popup.turnOn(clients, total);
-  } else {
-    popup.turnOff();
-  }
-});
+    if (missingFeature) {
+      popup.missingFeature(missingFeature);
+      return;
+    }
+
+    if (enabled) {
+      popup.turnOn(clients, total);
+    } else {
+      popup.turnOff();
+    }
+  });
+};

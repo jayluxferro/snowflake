@@ -1,92 +1,41 @@
 {
-  "appDesc": {
-    "message": "Snowflake – подключаемый транспорт для Tor через WebRTC."
-  },
-  "popupEnabled": {
-    "message": "Вкл / выкл"
-  },
-  "popupLearnMore": {
-    "message": "Узнать больше"
-  },
-  "popupStatusOff": {
-    "message": "Snowflake выключен"
-  },
-  "popupStatusOn": {
-    "message": "Сейчас подключено пользователей: $1"
-  },
-  "popupStatusReady": {
-    "message": "Ваш Snowflake готов помочь пользователям обойти цензуру"
-  },
-  "popupWebRTCOff": {
-    "message": "WebRTC не обнаружен."
-  },
-  "popupBridgeUnreachable": {
-    "message": "Не удалось подключиться к мосту."
-  },
-  "popupDescOn": {
-    "message": "Пользователей, которым ваш Snowflake помог обойти цензуру за последние 24 часа: $1"
-  },
-  "popupRetry": {
-    "message": "Retry"
-  },
-  "popupRetrying": {
-    "message": "Retrying ..."
-  },
-  "badgeCookiesOff": {
-    "message": "Файлы-куки не включены."
-  },
-  "websiteIntro": {
-    "message": "Snowflake is a system to defeat internet censorship. People who are censored can use Snowflake to access the internet. Their connection goes through Snowflake proxies, which are run by volunteers. For more detailed information about how Snowflake works see our <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/home\">documentation wiki</a>."
-  },
-  "browser": {
-    "message": "Use Snowflake"
-  },
-  "censoredUsers": {
-    "message": "Если вашему доступу к интернету мешает цензура, скачайте <a href=\"https://www.torproject.org/download/\">Tor Browser</a>."
-  },
-  "extension": {
-    "message": "Run a Proxy"
-  },
-  "installExtension": {
-    "message": "Если цензура вам не мешает, подумайте об установке расширения Snowflake. Этим вы поможете пользователям в подцензурных сетях. Не беспокойтесь о том, какие сайты люди смотрят через ваш прокси-сервер. Их видимый IP-адрес будет соответствовать выходному узлу Tor, а не вашему."
-  },
-  "installFirefox": {
-    "message": "Установить в Firefox"
-  },
-  "installChrome": {
-    "message": "Установить в Chrome"
-  },
-  "installStandalone": {
-    "message": "If you would like to run a command-line version of the Snowflake proxy on your desktop or server, see our <a href=\"https://community.torproject.org/relay/setup/snowflake/standalone/\">community documentation</a> for running a standalone Snowflake proxy."
-  },
-  "reportingBugs": {
-    "message": "Сообщить об ошибке"
-  },
-  "fileBug": {
-    "message": "If you encounter problems with Snowflake as a client or a proxy, please consider filing a bug report.  There are two ways to file a bug report:"
-  },
-  "sharedAccount": {
-    "message": "File an <a href=\"https://anonticket.onionize.space/\">anonymous ticket</a> by generating an identifier and logging in with it.  Then, find the Snowflake project in the <strong>List of all projects</strong> and create a new issue."
-  },
-  "bugTracker": {
-    "message": "<a href=\"https://gitlab.onionize.space/\">Request an account</a> at the Tor Project GitLab, then <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">open a new issue</a> in the Snowflake project."
-  },
-  "descriptive": {
-    "message": "Please try to be as descriptive as possible with your ticket and if possible include log messages that will help us reproduce the bug."
-  },
-  "embed": {
-    "message": "Встроить"
-  },
-  "possible": {
-    "message": "Можно вставить значок Snowflake на сайт:"
-  },
-  "looksLike": {
-    "message": "Выглядеть будет примерно так:"
-  },
-  "faq": {
-    "message": "FAQ"
-  },
-  "support": {
-    "message": "See the <a href=\"https://support.torproject.org/censorship/\">Censorship</a> topic in Tor's <a href=\"https://support.torproject.org/\">Support Portal</a>."
-  }
+    "appDesc": {
+        "message": "Позволяет пользователям в странах с цензурой использовать ваше сетевое подключение для доступа к сети Tor."
+    },
+    "popupEnabled": {
+        "message": "Включено"
+    },
+    "popupRunInBackground": {
+        "message": "Продолжать работу, когда браузер закрыт"
+    },
+    "popupLearnMore": {
+        "message": "Узнать больше"
+    },
+    "popupStatusOff": {
+        "message": "Snowflake выключен"
+    },
+    "popupStatusOn": {
+        "message": "Сейчас подключено пользователей: $1"
+    },
+    "popupStatusReady": {
+        "message": "Ваш Snowflake готов помочь пользователям обойти цензуру"
+    },
+    "popupWebRTCOff": {
+        "message": "WebRTC не обнаружен."
+    },
+    "popupBridgeUnreachable": {
+        "message": "Не удалось подключиться к мосту."
+    },
+    "popupDescOn": {
+        "message": "Пользователей, которым ваш Snowflake помог обойти цензуру за последние 24 часа: $1"
+    },
+    "popupRetry": {
+        "message": "Повторить"
+    },
+    "popupRetrying": {
+        "message": "Повторная попытка ..."
+    },
+    "badgeCookiesOff": {
+        "message": "Файлы куки не включены."
+    }
 }

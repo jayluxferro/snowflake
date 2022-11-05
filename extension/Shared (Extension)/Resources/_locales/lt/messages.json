@@ -1,92 +1,41 @@
 {
-  "appDesc": {
-    "message": "Snowflake yra WebRTC keičiamasis perdavimas, skirtas Tor."
-  },
-  "popupEnabled": {
-    "message": "Įjungta"
-  },
-  "popupLearnMore": {
-    "message": "Sužinoti daugiau"
-  },
-  "popupStatusOff": {
-    "message": "Snowflake išjungta"
-  },
-  "popupStatusOn": {
-    "message": "Šiuo metu prisijungusių naudotojų skaičius: $1"
-  },
-  "popupStatusReady": {
-    "message": "Jūsų Snowflake yra parengta padėti naudotojams išvengti cenzūros"
-  },
-  "popupWebRTCOff": {
-    "message": "WebRTC ypatybė neaptikta."
-  },
-  "popupBridgeUnreachable": {
-    "message": "Nepavyko prisijungti prie tinklų tilto."
-  },
-  "popupDescOn": {
-    "message": "Naudotojų skaičius, kuriems jūsų Snowflake padėjo apeiti cenzūrą per pastarąsias 24 valandas: $1"
-  },
-  "popupRetry": {
-    "message": "Retry"
-  },
-  "popupRetrying": {
-    "message": "Bandoma iš naujo..."
-  },
-  "badgeCookiesOff": {
-    "message": "Slapukai nėra įjungti."
-  },
-  "websiteIntro": {
-    "message": "Snowflake is a system to defeat internet censorship. People who are censored can use Snowflake to access the internet. Their connection goes through Snowflake proxies, which are run by volunteers. For more detailed information about how Snowflake works see our <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/home\">documentation wiki</a>."
-  },
-  "browser": {
-    "message": "Use Snowflake"
-  },
-  "censoredUsers": {
-    "message": "Jeigu jūsų interneto prieiga yra cenzūruojama, turėtumėte atsisiųsti </a>Tor Naršyklę</a>."
-  },
-  "extension": {
-    "message": "Run a Proxy"
-  },
-  "installExtension": {
-    "message": "Jeigu jūsų interneto prieiga <strong>nėra</strong> cenzūruojama, turėtumėte apsvarstyti galimybę įsidiegti Snowflake plėtinį, kad padėtumėte naudotojams, kurių tinklai yra cenzūruojami. Nėra reikalo jaudintis dėl to, kokiose internetinėse svetainėje lankysis žmonės per jūsų įgaliotąjį serverį. Jų matomas naršymo IP adresas atitiks jų Tor išėjimo mazgą, o ne jūsų IP adresą."
-  },
-  "installFirefox": {
-    "message": "Įdiegti Firefox naršyklėje"
-  },
-  "installChrome": {
-    "message": "Įdiegti Chrome naršyklėje"
-  },
-  "installStandalone": {
-    "message": "If you would like to run a command-line version of the Snowflake proxy on your desktop or server, see our <a href=\"https://community.torproject.org/relay/setup/snowflake/standalone/\">community documentation</a> for running a standalone Snowflake proxy."
-  },
-  "reportingBugs": {
-    "message": "Pranešimas apie klaidas"
-  },
-  "fileBug": {
-    "message": "If you encounter problems with Snowflake as a client or a proxy, please consider filing a bug report.  There are two ways to file a bug report:"
-  },
-  "sharedAccount": {
-    "message": "File an <a href=\"https://anonticket.onionize.space/\">anonymous ticket</a> by generating an identifier and logging in with it.  Then, find the Snowflake project in the <strong>List of all projects</strong> and create a new issue."
-  },
-  "bugTracker": {
-    "message": "<a href=\"https://gitlab.onionize.space/\">Request an account</a> at the Tor Project GitLab, then <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">open a new issue</a> in the Snowflake project."
-  },
-  "descriptive": {
-    "message": "Please try to be as descriptive as possible with your ticket and if possible include log messages that will help us reproduce the bug."
-  },
-  "embed": {
-    "message": "Įterpimas"
-  },
-  "possible": {
-    "message": "Dabar, įmanoma įterpti Snowflake ženklelį bet kurioje internetinėje svetainėje:"
-  },
-  "looksLike": {
-    "message": "Kuris atrodo štai taip:"
-  },
-  "faq": {
-    "message": "FAQ"
-  },
-  "support": {
-    "message": "See the <a href=\"https://support.torproject.org/censorship/\">Censorship</a> topic in Tor's <a href=\"https://support.torproject.org/\">Support Portal</a>."
-  }
+    "popupBridgeUnreachable": {
+        "message": "Nepavyko prisijungti prie tinklų tilto."
+    },
+    "popupWebRTCOff": {
+        "message": "WebRTC ypatybė neaptikta."
+    },
+    "appDesc": {
+        "message": "Leiskite vartotojams cenzūruojamose šalyse naudoti jūsų tinklo ryšį, kad pasiektų Tor tinklą."
+    },
+    "popupEnabled": {
+        "message": "Įjungta"
+    },
+    "popupDescOn": {
+        "message": "Naudotojų skaičius, kuriems jūsų Snowflake padėjo apeiti cenzūrą per pastarąsias 24 valandas: $1"
+    },
+    "badgeCookiesOff": {
+        "message": "Slapukai nėra įjungti."
+    },
+    "popupLearnMore": {
+        "message": "Sužinoti daugiau"
+    },
+    "popupStatusOff": {
+        "message": "Snowflake išjungta"
+    },
+    "popupStatusOn": {
+        "message": "Šiuo metu prisijungusių naudotojų skaičius: $1"
+    },
+    "popupStatusReady": {
+        "message": "Jūsų Snowflake yra parengta padėti naudotojams išvengti cenzūros"
+    },
+    "popupRetry": {
+        "message": "Pakartoti"
+    },
+    "popupRetrying": {
+        "message": "Bandoma iš naujo..."
+    },
+    "popupRunInBackground": {
+        "message": "Keep running when the browser is closed"
+    }
 }

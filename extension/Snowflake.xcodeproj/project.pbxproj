@@ -23,8 +23,8 @@
 		690C4BFF2745A8BA0001BA44 /* snowflake.js in Resources */ = {isa = PBXBuildFile; fileRef = 690C4BF42745A8B90001BA44 /* snowflake.js */; };
 		690C4C032745A8BA0001BA44 /* embed.css in Resources */ = {isa = PBXBuildFile; fileRef = 690C4BF62745A8B90001BA44 /* embed.css */; };
 		690C4C052745A8BA0001BA44 /* embed.js in Resources */ = {isa = PBXBuildFile; fileRef = 690C4BF72745A8B90001BA44 /* embed.js */; };
-		69F10759289FC65600F28B6B /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 69F10757289FC65600F28B6B /* _locales */; };
-		69F1075A289FC65600F28B6B /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 69F10758289FC65600F28B6B /* assets */; };
+		69DBD21D2916686A00DFE249 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 69DBD21B2916686A00DFE249 /* _locales */; };
+		69DBD21E2916686A00DFE249 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 69DBD21C2916686A00DFE249 /* assets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,8 +72,8 @@
 		690C4BF42745A8B90001BA44 /* snowflake.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = snowflake.js; sourceTree = "<group>"; };
 		690C4BF62745A8B90001BA44 /* embed.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = embed.css; sourceTree = "<group>"; };
 		690C4BF72745A8B90001BA44 /* embed.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = embed.js; sourceTree = "<group>"; };
-		69F10757289FC65600F28B6B /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _locales; sourceTree = "<group>"; };
-		69F10758289FC65600F28B6B /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
+		69DBD21B2916686A00DFE249 /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _locales; sourceTree = "<group>"; };
+		69DBD21C2916686A00DFE249 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,8 +138,8 @@
 		690C4B8727459B500001BA44 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				69F10757289FC65600F28B6B /* _locales */,
-				69F10758289FC65600F28B6B /* assets */,
+				69DBD21B2916686A00DFE249 /* _locales */,
+				69DBD21C2916686A00DFE249 /* assets */,
 				690C4BF62745A8B90001BA44 /* embed.css */,
 				690C4BF22745A8B80001BA44 /* embed.html */,
 				690C4BF72745A8B90001BA44 /* embed.js */,
@@ -273,12 +273,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				690C4C032745A8BA0001BA44 /* embed.css in Resources */,
-				69F1075A289FC65600F28B6B /* assets in Resources */,
+				69DBD21E2916686A00DFE249 /* assets in Resources */,
 				690C4BFB2745A8BA0001BA44 /* embed.html in Resources */,
 				690C4BD627459B510001BA44 /* manifest.json in Resources */,
 				690C4C052745A8BA0001BA44 /* embed.js in Resources */,
 				690C4BFF2745A8BA0001BA44 /* snowflake.js in Resources */,
-				69F10759289FC65600F28B6B /* _locales in Resources */,
+				69DBD21D2916686A00DFE249 /* _locales in Resources */,
 				690C4BE027459B510001BA44 /* popup.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,6 +449,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/Snowflake.entitlements";
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3Y37VQ6H2R;
@@ -482,6 +483,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/Snowflake.entitlements";
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3Y37VQ6H2R;
@@ -518,6 +520,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "macOS (App)/Snowflake.entitlements";
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3Y37VQ6H2R;
@@ -555,6 +558,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "macOS (App)/Snowflake.entitlements";
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3Y37VQ6H2R;

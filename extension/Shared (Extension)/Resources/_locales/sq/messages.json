@@ -1,0 +1,41 @@
+{
+    "appDesc": {
+        "message": "Lejojuni përdoruesve në vende me censurë të përdorin lidhjen tuaj të rrjetit për të hyrë në rrjetin Tor."
+    },
+    "popupEnabled": {
+        "message": "E aktivizuar"
+    },
+    "popupRunInBackground": {
+        "message": "Vazhdo funksionimin, kur mbyllet shfletuesi"
+    },
+    "popupLearnMore": {
+        "message": "Mësoni më tepër"
+    },
+    "popupStatusOff": {
+        "message": "Snowflake është i çaktivizuar"
+    },
+    "popupStatusOn": {
+        "message": "Numër përdoruesish të lidhur aktualisht: $1"
+    },
+    "popupStatusReady": {
+        "message": "Snowflake-u juaj është gati të ndihmojë përdorues të anashkalojnë censurimin"
+    },
+    "popupWebRTCOff": {
+        "message": "S’u pikas veçoria WebRTC."
+    },
+    "popupBridgeUnreachable": {
+        "message": "S’u lidh dot me urën."
+    },
+    "popupDescOn": {
+        "message": "Numër përdoruesish që Snowflake-u juaj ka ndihmuar të anashkalojnë censurimin në 24 orët e fundit: $1"
+    },
+    "popupRetry": {
+        "message": "Riprovo"
+    },
+    "popupRetrying": {
+        "message": "Po riprovohet …"
+    },
+    "badgeCookiesOff": {
+        "message": "Cookie-t s’janë të aktivizuara."
+    }
+}

@@ -185,6 +185,7 @@ Config.prototype.rateLimitHistory = 5.0;
 Config.prototype.defaultBrokerPollInterval = 60.0 * 1000; //1 poll every minutes
 Config.prototype.slowestBrokerPollInterval = 6 * 60 * 60.0 * 1000; //1 poll every 6 hours
 Config.prototype.pollAdjustment = 100.0 * 1000;
+Config.prototype.fastBrokerPollInterval = 30 * 1000; //1 poll every 30 seconds
 
 // Recheck our NAT type once every 2 days
 Config.prototype.natCheckInterval = 2 * 24 * 60 * 60 * 1000;
@@ -210,7 +211,8 @@ Config.prototype.pcConfig = {
 
 Config.PROBEURL = "https://snowflake-broker.freehaven.net:8443/probe";
 
-Config.prototype.allowedRelayPattern="snowflake.torproject.net";/* global snowflake, log, dbg, Util, Parse, WS */
+Config.prototype.allowedRelayPattern="snowflake.torproject.net";
+/* global snowflake, log, dbg, Util, Parse, WS */
 
 /**
 Represents a single:
@@ -291,10 +293,25 @@ class ProxyPair {
    * @param {RTCDataChannel} channel
    */
   prepareDataChannel(channel) {
+    // if we don't receive any keep-alive messages from the client, close the
+    // connection
+    const onStaleTimeout = () => {
+      console.log("Closing stale connection.");
+      this.flush();
+      this.close();
+    };
+    this.refreshStaleTimeout = () => {
+      clearTimeout(this.messageTimer);
+      this.messageTimer = setTimeout(onStaleTimeout, this.config.messageTimeout);
+    };
+
     channel.onopen = () => {
       log('WebRTC DataChannel opened!');
       snowflake.ui.increaseClients();
       this.counted = true;
+
+      this.refreshStaleTimeout();
+
       // This is the point when the WebRTC datachannel is done, so the next step
       // is to establish websocket to the server.
       this.connectRelay();
@@ -338,10 +355,7 @@ class ProxyPair {
         WS.makeWebsocketFromURL(this.relayURL, params);
     this.relay.label = 'websocket-relay';
     this.relay.onopen = () => {
-      if (this.timer) {
-        clearTimeout(this.timer);
-        this.timer = 0;
-      }
+      clearTimeout(this.connectToRelayTimeoutId);
       log(relay.label + ' connected!');
       snowflake.ui.setStatus('connected');
     };
@@ -358,10 +372,7 @@ class ProxyPair {
     this.relay.onerror = this.onError;
     this.relay.onmessage = this.onRelayToClientMessage;
     // TODO: Better websocket timeout handling.
-    this.timer = setTimeout((() => {
-      if (0 === this.timer) {
-        return;
-      }
+    this.connectToRelayTimeoutId = setTimeout((() => {
       log(relay.label + ' timed out connecting.');
       relay.onclose();
     }), 5000);
@@ -372,20 +383,11 @@ class ProxyPair {
    * @param {MessageEvent} msg
    */
   onClientToRelayMessage(msg) {
-    if (this.messageTimer) {
-      clearTimeout(this.messageTimer);
-    }
     dbg('WebRTC --> websocket data: ' + msg.data.byteLength + ' bytes');
     this.c2rSchedule.push(msg.data);
-
-    // if we don't receive any keep-alive messages from the client, close the
-    // connection
-    this.messageTimer = setTimeout((() => {
-      console.log("Closing stale connection.");
-      this.flush();
-      this.close();
-    }), this.config.messageTimeout);
     this.flush();
+
+    this.refreshStaleTimeout();
   }
 
   /**
@@ -406,14 +408,8 @@ class ProxyPair {
 
   /** Close both WebRTC and websocket. */
   close() {
-    if (this.timer) {
-      clearTimeout(this.timer);
-      this.timer = 0;
-    }
-    if (this.messageTimer) {
-      clearTimeout(this.messageTimer);
-      this.messageTimer = 0;
-    }
+    clearTimeout(this.connectToRelayTimeoutId);
+    clearTimeout(this.messageTimer);
     if (this.webrtcIsReady()) {
       this.client.close();
     }
@@ -428,30 +424,28 @@ class ProxyPair {
 
   /** Send as much data in both directions as the rate limit currently allows. */
   flush() {
-    if (this.flush_timeout_id) {
-      clearTimeout(this.flush_timeout_id);
-    }
-    this.flush_timeout_id = null;
     let busy = true;
-    const checkChunks = () => {
+    while (busy && !this.rateLimit.isLimited()) {
       busy = false;
       // WebRTC --> websocket
-      if (this.relayIsReady() && this.relay.bufferedAmount < this.MAX_BUFFER && this.c2rSchedule.length > 0) {
+      if (this.c2rSchedule.length > 0 && this.relayIsReady() && this.relay.bufferedAmount < this.MAX_BUFFER) {
         const chunk = this.c2rSchedule.shift();
-        this.rateLimit.update(chunk.byteLength);
         this.relay.send(chunk);
+        this.rateLimit.update(chunk.byteLength);
         busy = true;
       }
       // websocket --> WebRTC
-      if (this.webrtcIsReady() && this.client.bufferedAmount < this.MAX_BUFFER && this.r2cSchedule.length > 0) {
+      if (this.r2cSchedule.length > 0 && this.webrtcIsReady() && this.client.bufferedAmount < this.MAX_BUFFER) {
         const chunk = this.r2cSchedule.shift();
-        this.rateLimit.update(chunk.byteLength);
         this.client.send(chunk);
+        this.rateLimit.update(chunk.byteLength);
         busy = true;
       }
-    };
-    while (busy && !this.rateLimit.isLimited()) {
-      checkChunks();
+    }
+
+    if (this.flush_timeout_id) {
+      clearTimeout(this.flush_timeout_id);
+      this.flush_timeout_id = null;
     }
     if (this.r2cSchedule.length > 0 || this.c2rSchedule.length > 0 || (this.relayIsReady() && this.relay.bufferedAmount > 0) || (this.webrtcIsReady() && this.client.bufferedAmount > 0)) {
       this.flush_timeout_id = setTimeout(this.flush, this.rateLimit.when() * 1000);
@@ -492,7 +486,7 @@ ProxyPair.prototype.pc = null;
 ProxyPair.prototype.client = null; // WebRTC Data channel
 ProxyPair.prototype.relay = null; // websocket
 
-ProxyPair.prototype.timer = 0;
+ProxyPair.prototype.connectToRelayTimeoutId = 0;
 ProxyPair.prototype.messageTimer = 0;
 ProxyPair.prototype.flush_timeout_id = null;
 
@@ -564,11 +558,11 @@ class Snowflake {
    */
   pollBroker() {
     // Poll broker for clients.
-    const pair = this.makeProxyPair();
-    if (!pair) {
+    if (this.proxyPairs.length >= this.config.maxNumClients) {
       log('At client capacity.');
       return;
     }
+    const pair = this.makeProxyPair();
     log('Polling broker..');
     // Do nothing until a new proxyPair is available.
     let msg = 'Polling for client ... ';
@@ -604,6 +598,7 @@ class Snowflake {
             this.ui.natType = "restricted";
             console.log("Learned NAT type: restricted");
             this.natFailures = 0;
+            this.config.maxNumClients = 1;
           }
           this.broker.setNATType(this.ui.natType);
         } else {
@@ -612,6 +607,10 @@ class Snowflake {
             Math.max(this.pollInterval - this.config.pollAdjustment,
               this.config.defaultBrokerPollInterval);
           this.natFailures = 0;
+          if (this.ui.natType == "unrestricted") {
+            this.pollInterval = this.config.fastBrokerPollInterval;
+            this.config.maxNumClients = 2;
+          }
         }
       }), this.config.datachannelTimeout);
     }, function () {
@@ -677,12 +676,9 @@ class Snowflake {
   }
 
   /**
-   * @returns {null | ProxyPair}
+   * @returns {ProxyPair}
    */
   makeProxyPair() {
-    if (this.proxyPairs.length >= this.config.maxNumClients) {
-      return null;
-    }
     const pair = new ProxyPair(this.relayAddr, this.rateLimit, this.config);
     this.proxyPairs.push(pair);
 
@@ -1272,6 +1268,44 @@ if (typeof module !== "undefined" && module !== null ? module.exports : undefine
 UI
 */
 
+
+/**
+ * Decide whether we need to request or revoke the 'background' permission, and
+ * set the `runInBackground` storage value appropriately.
+ * @param {boolean | undefined} enabledSetting
+ * @param {boolean | undefined} runInBackgroundSetting
+ */
+function maybeChangeBackgroundPermission(enabledSetting, runInBackgroundSetting) {
+  const needBackgroundPermission =
+    runInBackgroundSetting
+    // When the extension is disabled, we need the permission to be revoked because
+    // otherwise it'll keep the browser process running for no reason.
+    && enabledSetting;
+  // Yes, this is called even if the permission is already in the state we need
+  // it to be in (granted/removed).
+  new Promise(r => {
+    chrome.permissions[needBackgroundPermission ? "request" : "remove"](
+      { permissions: ['background'] },
+      r
+    );
+  })
+  .then(success => {
+    // Currently the resolve value is `true` even when the permission was alrady granted
+    // before it was requested (already removed before it was revoked). TODO Need to make
+    // sure it's the desired behavior and if it needs to change.
+    // https://developer.chrome.com/docs/extensions/reference/permissions/#method-remove
+    // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/permissions/remove#return_value
+    // https://github.com/mdn/content/pull/17516
+    if (success) {
+      chrome.storage.local.set({ runInBackground: runInBackgroundSetting });
+    }
+  });
+}
+
+// If you want to gonna change this to `false`, double-check everything as some code
+// may still be assuming it to be `true`.
+const DEFAULT_ENABLED = true;
+
 class WebExtUI extends UI {
 
   constructor() {
@@ -1361,15 +1395,38 @@ class WebExtUI extends UI {
     if (m.retry) {
       // FIXME: Can set a retrying state here
       this.tryProbe();
-      return;
+    } else if (m.enabled != undefined) {
+      (new Promise((resolve) => {
+        chrome.storage.local.set({ "snowflake-enabled": m.enabled }, resolve);
+      }))
+      .then(() => {
+        log("Stored toggle state");
+        this.initToggle();
+      });
+      if (
+        typeof false !== 'undefined'
+        // eslint-disable-next-line no-undef
+        && false
+      ) {
+        new Promise(r => chrome.storage.local.get({ runInBackground: false }, r))
+        .then(storage => {
+          maybeChangeBackgroundPermission(m.enabled, storage.runInBackground);
+        });
+      }
+    } else if (m.runInBackground != undefined) {
+      if (
+        typeof false !== 'undefined'
+        // eslint-disable-next-line no-undef
+        && false
+      ) {
+        new Promise(r => chrome.storage.local.get({ "snowflake-enabled": DEFAULT_ENABLED }, r))
+        .then(storage => {
+          maybeChangeBackgroundPermission(storage["snowflake-enabled"], m.runInBackground);
+        });
+      }
+    } else {
+      log("Unrecognized message");
     }
-    (new Promise((resolve) => {
-      chrome.storage.local.set({ "snowflake-enabled": m.enabled }, resolve);
-    }))
-    .then(() => {
-      log("Stored toggle state");
-      this.initToggle();
-    });
   }
 
   onDisconnect() {
@@ -1412,7 +1469,7 @@ class WebExtUI extends UI {
 
 WebExtUI.prototype.port = null;
 
-WebExtUI.prototype.enabled = true;
+WebExtUI.prototype.enabled = DEFAULT_ENABLED;
 
 /*
 Entry point.

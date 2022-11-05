@@ -1,0 +1,41 @@
+{
+    "popupStatusOff": {
+        "message": "Snowflake on väljas"
+    },
+    "popupLearnMore": {
+        "message": "Loe lisaks"
+    },
+    "popupEnabled": {
+        "message": "Lubatud"
+    },
+    "popupWebRTCOff": {
+        "message": "WebRTC funktsiooni ei tuvastatud."
+    },
+    "popupRetry": {
+        "message": "Proovi uuesti"
+    },
+    "appDesc": {
+        "message": "Allow users in censored countries to use your network connection to access the Tor network."
+    },
+    "popupRunInBackground": {
+        "message": "Keep running when the browser is closed"
+    },
+    "popupStatusOn": {
+        "message": "Number of users currently connected: $1"
+    },
+    "popupRetrying": {
+        "message": "Retrying ..."
+    },
+    "badgeCookiesOff": {
+        "message": "Cookies are not enabled."
+    },
+    "popupStatusReady": {
+        "message": "Your Snowflake is ready to help users circumvent censorship"
+    },
+    "popupBridgeUnreachable": {
+        "message": "Could not connect to the bridge."
+    },
+    "popupDescOn": {
+        "message": "Number of users your Snowflake has helped circumvent censorship in the last 24 hours: $1"
+    }
+}

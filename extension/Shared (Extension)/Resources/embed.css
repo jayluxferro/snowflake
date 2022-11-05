@@ -122,6 +122,10 @@ input:checked + .slider:before {
   transform: translateX(13px);
 }
 
+.display-none {
+  display: none;
+}
+
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
   body {

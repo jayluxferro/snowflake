@@ -1,0 +1,41 @@
+{
+    "popupLearnMore": {
+        "message": "더 알아보기"
+    },
+    "popupEnabled": {
+        "message": "활성화됨"
+    },
+    "popupBridgeUnreachable": {
+        "message": "브리지에 연결할 수 없습니다."
+    },
+    "popupStatusReady": {
+        "message": "Snowflake는 사용자가 검열을 피할 수 있도록 도와줄 준비가 되었습니다"
+    },
+    "popupStatusOn": {
+        "message": "현재 연결된 사용자 수: $1"
+    },
+    "appDesc": {
+        "message": "검열 국가의 사용자가 네트워크 연결을 사용하여 Tor 네트워크에 액세스할 수 있도록 허용합니다."
+    },
+    "popupStatusOff": {
+        "message": "Snowflake가 꺼져 있습니다"
+    },
+    "popupWebRTCOff": {
+        "message": "WebRTC 기능이 탐지되지 않음."
+    },
+    "popupDescOn": {
+        "message": "지난 24시간 동안 귀하가 활성화한 Snowflake 덕분에 검열을 우회한 사용자 수: $1"
+    },
+    "popupRetry": {
+        "message": "다시 시도"
+    },
+    "popupRetrying": {
+        "message": "재시도중 ..."
+    },
+    "badgeCookiesOff": {
+        "message": "쿠키가 활성화되지 않았습니다."
+    },
+    "popupRunInBackground": {
+        "message": "브라우저가 닫혀도 계속 실행"
+    }
+}

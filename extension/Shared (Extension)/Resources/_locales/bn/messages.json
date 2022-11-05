@@ -1,0 +1,41 @@
+{
+    "popupEnabled": {
+        "message": "সক্রিয়"
+    },
+    "popupLearnMore": {
+        "message": "আরও জানুন"
+    },
+    "popupStatusOff": {
+        "message": "Snowflake বন্ধ আছে"
+    },
+    "popupStatusOn": {
+        "message": "বর্তমানে সংযুক্ত ব্যবহারকারীর সংখ্যা: $1"
+    },
+    "popupStatusReady": {
+        "message": "আপনার Snowflake ব্যবহারকারীদের সেন্সর ছাড়িয়ে দেওয়ার জন্য প্রস্তুত"
+    },
+    "popupWebRTCOff": {
+        "message": "WebRTC বৈশিষ্ট্য সনাক্ত করা যায়নি।"
+    },
+    "popupBridgeUnreachable": {
+        "message": "ব্রিজের সাথে সংযোগ স্থাপন করা যায়নি।"
+    },
+    "popupDescOn": {
+        "message": "বিগত ২৪ ঘন্টায় আপনার Snowflake ব্যাবহারকারিদের সেন্সর থেকে দূরে রাখতে সহায়তাকারীর সংখ্যা : $1"
+    },
+    "popupRetry": {
+        "message": "আবার চেষ্টা করুন"
+    },
+    "popupRetrying": {
+        "message": "পুনঃচেষ্টা করা হচ্ছে ..."
+    },
+    "badgeCookiesOff": {
+        "message": "কুকিজ সক্রিয় নয়।"
+    },
+    "appDesc": {
+        "message": "Allow users in censored countries to use your network connection to access the Tor network."
+    },
+    "popupRunInBackground": {
+        "message": "Keep running when the browser is closed"
+    }
+}

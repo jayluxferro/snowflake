@@ -1,0 +1,41 @@
+{
+    "popupLearnMore": {
+        "message": "और अधिक जानें"
+    },
+    "popupDescOn": {
+        "message": "उन उपयोगकर्ताओं की संख्या जिन्हे Snowflake (स्नोफ्लेक) ने पिछले 24 घंटों में censorship अथवा अभिवेचन (सेंसरशिप) से बचने में सहायता की: $1"
+    },
+    "popupStatusOn": {
+        "message": "इस समय जुड़े हुए / कनेक्टेड  उपयोगकर्ताओं की संख्या: $1"
+    },
+    "popupStatusOff": {
+        "message": "Snowflake (स्नोफ्लेक ) बंद है|"
+    },
+    "popupStatusReady": {
+        "message": "आपका  Snowflake (स्नोफ्लेक) उपयोगकर्ताओं को censorship (सेंसरशिप अथवा अभिवेचन)  से बचकर निकलने में सहायता करने के लिए तैयार है"
+    },
+    "popupRetrying": {
+        "message": "पुन: प्रयास कर रहे हैं ..."
+    },
+    "badgeCookiesOff": {
+        "message": "Cookies (कुकी) प्रयोग में नहीं हैं|"
+    },
+    "popupRetry": {
+        "message": "पुन: प्रयास करें"
+    },
+    "popupEnabled": {
+        "message": "प्रयोग में है"
+    },
+    "popupWebRTCOff": {
+        "message": "WebRTC (वेब आर टी सी ) खूबी नहीं पायी गयी है"
+    },
+    "popupBridgeUnreachable": {
+        "message": "Bridge (ब्रिज) से जुड़ नहीं पाए हैं|"
+    },
+    "appDesc": {
+        "message": "Allow users in censored countries to use your network connection to access the Tor network."
+    },
+    "popupRunInBackground": {
+        "message": "Keep running when the browser is closed"
+    }
+}

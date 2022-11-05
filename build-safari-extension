@@ -4,7 +4,7 @@
 src_directory="./src"
 
 # built extension path
-built_extension_path="$src_directory/webext"
+built_extension_path="$src_directory/build-webext"
 
 # safari extension resource path
 safari_extension_resource_path="extension/Shared (Extension)/Resources"
@@ -25,7 +25,7 @@ then
   echo "[-] Building extension."
   cd $src_directory
   npm install
-  npm run webext
+  npm run webext gecko
   cd ..
 
   if [ -d "$built_extension_path" ];

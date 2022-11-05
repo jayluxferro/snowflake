@@ -1,1 +1,10 @@
 This repository holds all translations, with one branch per project.
+For more information, please read:
+
+https://gitlab.torproject.org/tpo/community/l10n/-/wikis/home
+
+This branch has the translations for the Snowflake add-on and its website:
+
+https://snowflake.torproject.org/
+
+The files are taken from https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake-webext/-/blob/main/static/_locales/en_US/

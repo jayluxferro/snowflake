@@ -1,0 +1,41 @@
+{
+    "popupStatusReady": {
+        "message": "Ваш Snowflake готовий допомагати користувачам обходити цензуру"
+    },
+    "popupWebRTCOff": {
+        "message": "Функцію WebRTC не виявлено."
+    },
+    "popupBridgeUnreachable": {
+        "message": "Не вдалося з'єднатися з мостом."
+    },
+    "popupLearnMore": {
+        "message": "Дізнатися більше"
+    },
+    "popupDescOn": {
+        "message": "Кількість користувачів, яким ваш Snowflake допоміг обійти цензуру протягом останніх 24 годин: $1"
+    },
+    "popupRunInBackground": {
+        "message": "Продовжувати роботу після закриття браузера"
+    },
+    "appDesc": {
+        "message": "Дозвольте користувачам в країнах з цензурою використовувати ваше мережеве з'єднання для доступу до мережі Tor."
+    },
+    "popupEnabled": {
+        "message": "Увімкнено"
+    },
+    "popupRetry": {
+        "message": "Повторити"
+    },
+    "badgeCookiesOff": {
+        "message": "Куки не увімкнено."
+    },
+    "popupStatusOff": {
+        "message": "Snowflake вимкнений"
+    },
+    "popupStatusOn": {
+        "message": "Кількість під'єднаних користувачів: $1"
+    },
+    "popupRetrying": {
+        "message": "Повторна спроба ..."
+    }
+}

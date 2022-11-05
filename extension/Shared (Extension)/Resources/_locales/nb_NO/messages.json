@@ -1,0 +1,41 @@
+{
+    "popupBridgeUnreachable": {
+        "message": "Kunne ikke koble til broen."
+    },
+    "popupStatusReady": {
+        "message": "Ditt Snowflake er klar for å hjelpe brukere omgå sensur."
+    },
+    "popupWebRTCOff": {
+        "message": "WebRTC-funksjonen er ikke oppdaget."
+    },
+    "popupDescOn": {
+        "message": "Antall brukere ditt Snowflake har hjulpet omgå sensur de siste 24 timer: $1"
+    },
+    "popupEnabled": {
+        "message": "På"
+    },
+    "popupLearnMore": {
+        "message": "Lær mer"
+    },
+    "popupStatusOff": {
+        "message": "Snowflake er av"
+    },
+    "popupStatusOn": {
+        "message": "Antall brukere som er tilkoblet: $1"
+    },
+    "popupRetry": {
+        "message": "Prøv igjen"
+    },
+    "popupRetrying": {
+        "message": "Prøver igjen..."
+    },
+    "badgeCookiesOff": {
+        "message": "Informasjonskapsler er ikke påslått."
+    },
+    "appDesc": {
+        "message": "Allow users in censored countries to use your network connection to access the Tor network."
+    },
+    "popupRunInBackground": {
+        "message": "Keep running when the browser is closed"
+    }
+}

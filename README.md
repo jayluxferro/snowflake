@@ -30,3 +30,7 @@ cd snowflake
 
 #### Sample
 <img src="extension/resources/web.png" style="width: 100%; height: auto"/>
+
+
+#### Snowflake WebExtension - Tor Project
+https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake-webext

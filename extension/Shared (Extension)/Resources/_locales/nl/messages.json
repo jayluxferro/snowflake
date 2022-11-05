@@ -1,0 +1,41 @@
+{
+    "popupDescOn": {
+        "message": "Aantal gebruikers die dankzij uw Snowflake de afgelopen 24 uur censuur hebben kunnen omzeilen: $1"
+    },
+    "popupEnabled": {
+        "message": "Ingeschakeld"
+    },
+    "popupLearnMore": {
+        "message": "Meer info"
+    },
+    "popupStatusOff": {
+        "message": "Snowflake staat uit"
+    },
+    "popupStatusOn": {
+        "message": "Aantal momenteel verbonden gebruikers: $1"
+    },
+    "popupStatusReady": {
+        "message": "Uw Snowflake kan nu gebruikers helpen censuur te omzeilen"
+    },
+    "popupWebRTCOff": {
+        "message": "WebRTC-functie is niet gedetecteerd."
+    },
+    "popupBridgeUnreachable": {
+        "message": "Kon geen verbinding maken met de bridge."
+    },
+    "popupRetry": {
+        "message": "Opnieuw proberen"
+    },
+    "popupRetrying": {
+        "message": "Opnieuw proberen..."
+    },
+    "badgeCookiesOff": {
+        "message": "Cookies zijn niet ingeschakeld."
+    },
+    "appDesc": {
+        "message": "Allow users in censored countries to use your network connection to access the Tor network."
+    },
+    "popupRunInBackground": {
+        "message": "Keep running when the browser is closed"
+    }
+}

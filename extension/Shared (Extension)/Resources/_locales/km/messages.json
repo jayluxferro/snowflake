@@ -1,0 +1,41 @@
+{
+    "popupLearnMore": {
+        "message": "ស្វែងយល់បន្ថែម"
+    },
+    "popupEnabled": {
+        "message": "បានបើក"
+    },
+    "popupRetry": {
+        "message": "ព្យាយាមម្តងទៀត"
+    },
+    "appDesc": {
+        "message": "Allow users in censored countries to use your network connection to access the Tor network."
+    },
+    "popupStatusOff": {
+        "message": "Snowflake is off"
+    },
+    "popupStatusOn": {
+        "message": "Number of users currently connected: $1"
+    },
+    "popupStatusReady": {
+        "message": "Your Snowflake is ready to help users circumvent censorship"
+    },
+    "popupDescOn": {
+        "message": "Number of users your Snowflake has helped circumvent censorship in the last 24 hours: $1"
+    },
+    "popupRetrying": {
+        "message": "Retrying ..."
+    },
+    "badgeCookiesOff": {
+        "message": "Cookies are not enabled."
+    },
+    "popupRunInBackground": {
+        "message": "Keep running when the browser is closed"
+    },
+    "popupWebRTCOff": {
+        "message": "WebRTC feature is not detected."
+    },
+    "popupBridgeUnreachable": {
+        "message": "Could not connect to the bridge."
+    }
+}

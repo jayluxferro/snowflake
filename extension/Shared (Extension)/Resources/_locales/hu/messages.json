@@ -1,92 +1,41 @@
 {
-  "appDesc": {
-    "message": "A Snowflake (Hópihe) egy WebRTC cserélhető átvitel a Tor-hoz."
-  },
-  "popupEnabled": {
-    "message": "Engedélyezve"
-  },
-  "popupLearnMore": {
-    "message": "További információ"
-  },
-  "popupStatusOff": {
-    "message": "A Snowflake kikapcsolt"
-  },
-  "popupStatusOn": {
-    "message": "Jelenleg kapcsolódott felhasználók száma: $1"
-  },
-  "popupStatusReady": {
-    "message": "Az ön Snowflake-je kész arra, hogy segítse a cenzúra elkerülésében."
-  },
-  "popupWebRTCOff": {
-    "message": "WebRTC szolgáltatás nem észlelt."
-  },
-  "popupBridgeUnreachable": {
-    "message": "Sikertelen a hídhoz csatlakozás."
-  },
-  "popupDescOn": {
-    "message": "Az Ön Snowflake-je az elmúlt 24 órában ennyi felhasználónak segített a cenzúra elkerülésében: $1"
-  },
-  "popupRetry": {
-    "message": "Újra"
-  },
-  "popupRetrying": {
-    "message": "Újra próbálkozás ..."
-  },
-  "badgeCookiesOff": {
-    "message": "A cookie-k nincsenek engedélyezve."
-  },
-  "websiteIntro": {
-    "message": "A Snowflake egy cenzúra elleni rendszer. Azok, akiket cenzúráznak a Snowflake-et használhatják az internet elérésére. A kapcsolatuk Snowflake proxykon megy keresztül, amiket önkéntesek futtatnak. Részletesebb információkért, arról, hogy a Snowflake hogyan működik látogassa meg a <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/home\">dokumentáció wiki</a>-t."
-  },
-  "browser": {
-    "message": "Snowflake használata"
-  },
-  "censoredUsers": {
-    "message": "Ha az internet hozzáférése blokkolt, javasolt a <a href=\"https://www.torproject.org/download/\">Tor Böngésző</a> letöltése."
-  },
-  "extension": {
-    "message": "Proxy futtatása"
-  },
-  "installExtension": {
-    "message": "Ha az internet hozzáférése <strong>nem</strong> cenzúrázott, javasolt a Snowflake bővítmény telepítése, hogy segítse a felhasználókat a cenzúrázott hálózatokon. Nem kell aggódnia milyen weboldalakat érnek el a proxyján keresztül. A látható IP címük a Tor kilépési ponttal fog egyezni, nem az Önével."
-  },
-  "installFirefox": {
-    "message": "Telepítés Firefox-ba"
-  },
-  "installChrome": {
-    "message": "Telepítés Chrome-ba"
-  },
-  "installStandalone": {
-    "message": "Ha szeretné futtatni a parancssori verzióját a Snowflake proxy-nak az asztali gépén vagy szerverén, tekintse meg a <a href=\"https://community.torproject.org/relay/setup/snowflake/standalone/\">közösségi dokumentációt</a> az önálló Snowflake proxy futtatásához."
-  },
-  "reportingBugs": {
-    "message": "Hibajelentés"
-  },
-  "fileBug": {
-    "message": "Ha problémát tapasztal a Snowflake-kel, mint kliens vagy proxy, gondoljon arra, hogy beküldjön egy hibát. Két módja van a hiba beküldésének:"
-  },
-  "sharedAccount": {
-    "message": "Küldjön be egy <a href=\"https://anonticket.onionize.space/\">névtelen hibajegyet</a> egy azonosító generálásával és azzal belépéssel.  Utána keresse meg a Snowflake projektet a <strong>Minden projekt listája</strong> alatt és hozzon létre egy hibajegyet."
-  },
-  "bugTracker": {
-    "message": "<a href=\"https://gitlab.onionize.space/\">Igényeljen egy fiókot</a> a Tor Project GitLabjához, majd <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">nyisson egy hibajegyet</a> a Snowflake projektben."
-  },
-  "descriptive": {
-    "message": "Kérjük legyen annyira leíró, amennyire lehet a hibajegyében és ha van rá lehetősége csatolja a logot, ami segítheti a probléma reprodukálását."
-  },
-  "embed": {
-    "message": "Beágyazás"
-  },
-  "possible": {
-    "message": "Most már lehetséges, hogy beágyazza a Snowflake kitűzőt bármelyik weboldalba:"
-  },
-  "looksLike": {
-    "message": "Amely így néz ki:"
-  },
-  "faq": {
-    "message": "GYIK"
-  },
-  "support": {
-    "message": "Lásd a<a href=\"https://support.torproject.org/censorship/\">Cenzúra</a> témát a Tor <a href=\"https://support.torproject.org/\">Support Portálján</a>."
-  }
+    "popupWebRTCOff": {
+        "message": "WebRTC szolgáltatás nem észlelt."
+    },
+    "popupBridgeUnreachable": {
+        "message": "Sikertelen a hídhoz csatlakozás."
+    },
+    "popupDescOn": {
+        "message": "Az Ön Snowflake-je az elmúlt 24 órában ennyi felhasználónak segített a cenzúra elkerülésében: $1"
+    },
+    "popupEnabled": {
+        "message": "Engedélyezve"
+    },
+    "popupLearnMore": {
+        "message": "További információ"
+    },
+    "popupStatusOff": {
+        "message": "A Snowflake kikapcsolt"
+    },
+    "popupStatusOn": {
+        "message": "Jelenleg kapcsolódott felhasználók száma: $1"
+    },
+    "popupStatusReady": {
+        "message": "Az ön Snowflake-je kész arra, hogy segítse a cenzúra elkerülésében"
+    },
+    "popupRetry": {
+        "message": "Újra"
+    },
+    "popupRetrying": {
+        "message": "Újra próbálkozás ..."
+    },
+    "badgeCookiesOff": {
+        "message": "A cookie-k nincsenek engedélyezve."
+    },
+    "appDesc": {
+        "message": "Allow users in censored countries to use your network connection to access the Tor network."
+    },
+    "popupRunInBackground": {
+        "message": "Keep running when the browser is closed"
+    }
 }

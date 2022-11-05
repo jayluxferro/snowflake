@@ -17,10 +17,18 @@
       <p id="statusdesc"></p>
       <button type="button" id="retry">__MSG_popupRetry__</button>
     </div>
-    <div class="b button">
+    <div id="enabled-wrapper" class="b button">
       <label id="toggle" for="enabled">__MSG_popupEnabled__</label>
       <label class="switch">
         <input id="enabled" type="checkbox" />
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <!-- `display-none` is to be removed when appropriate -->
+    <div id="run-in-background-wrapper" class="display-none b button">
+      <label for="run-in-background">__MSG_popupRunInBackground__</label>
+      <label class="switch">
+        <input id="run-in-background" type="checkbox" />
         <span class="slider round"></span>
       </label>
     </div>
