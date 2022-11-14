@@ -42,6 +42,7 @@ class Broker {
    * Registers this Snowflake with the broker using an HTTP POST request, and
    * waits for a response containing some client offer that the Broker chooses
    * for this proxy..
+   * Rejects on timeout or on error.
    * TODO: Actually support multiple clients.
    */
   getClientOffer(id, numClientsConnected) {
@@ -51,22 +52,21 @@ class Broker {
         if (xhr.DONE !== xhr.readyState) {
           return;
         }
-        switch (xhr.status) {
-          case Broker.CODE.OK: {
-            const response = JSON.parse(xhr.responseText);
-            if (response.Status == Broker.STATUS.MATCH) {
-              return fulfill(response); // Should contain offer.
-            } else if (response.Status == Broker.STATUS.TIMEOUT) {
-              return reject(Broker.MESSAGE.TIMEOUT);
-            } else {
-              log('Broker ERROR: Unexpected ' + response.Status);
-              return reject(Broker.MESSAGE.UNEXPECTED);
-            }
+        if (xhr.status !== Broker.CODE.OK) {
+          log('Broker ERROR: Unexpected ' + xhr.status + ' - ' + xhr.statusText);
+          snowflake.ui.setStatus(' failure. Please refresh.');
+          reject(Broker.MESSAGE.UNEXPECTED);
+          return;
+        }
+        const response = JSON.parse(xhr.responseText);
+        switch (response.Status) {
+          case Broker.STATUS.MATCH: fulfill(response); return;
+          case Broker.STATUS.TIMEOUT: reject(Broker.MESSAGE.TIMEOUT); return;
+          default: {
+            log('Broker ERROR: Unexpected ' + response.Status);
+            reject(Broker.MESSAGE.UNEXPECTED);
+            return;
           }
-          default:
-            log('Broker ERROR: Unexpected ' + xhr.status + ' - ' + xhr.statusText);
-            snowflake.ui.setStatus(' failure. Please refresh.');
-            return reject(Broker.MESSAGE.UNEXPECTED);
         }
       };
       this._xhr = xhr; // Used by spec to fake async Broker interaction
@@ -165,10 +165,7 @@ class Config {
 
 Config.prototype.brokerUrl = 'snowflake-broker.freehaven.net';
 
-Config.prototype.relayAddr = {
-  host: 'snowflake.freehaven.net',
-  port: '443'
-};
+Config.prototype.defaultRelayAddr = 'wss://snowflake.freehaven.net';
 
 // Original non-wss relay:
 // host: '192.81.135.242'
@@ -196,6 +193,12 @@ Config.prototype.datachannelTimeout = 20 * 1000;
 // Timeout to close proxypair if no messages are sent
 Config.prototype.messageTimeout = 30 * 1000;
 
+// This must be smaller than the clien't timeout (`ClientTimeout`)
+// (which is 10 seconds by default as of now), otherwise the client would be
+// gone before we send the answer.
+// And it, obviously, must be smaller than `datachannelTimeout`.
+Config.prototype.answerTimeout = 6 * 1000;
+
 Config.prototype.maxNumClients = 1;
 
 Config.prototype.proxyType = "";
@@ -212,7 +215,7 @@ Config.prototype.pcConfig = {
 Config.PROBEURL = "https://snowflake-broker.freehaven.net:8443/probe";
 
 Config.prototype.allowedRelayPattern="snowflake.torproject.net";
-/* global snowflake, log, dbg, Util, Parse, WS */
+/* global snowflake, log, dbg, debug, Util, Parse, WS */
 
 /**
 Represents a single:
@@ -226,11 +229,10 @@ Broker with an WebRTC answer.
 class ProxyPair {
 
   /**
-   * @param relayAddr the destination relay
-   * @param {*} rateLimit specifies a rate limit on traffic
+   * @param {DummyRateLimit | BucketRateLimit} rateLimit specifies a rate limit on traffic
    * @param {Config} config
    */
-  constructor(relayAddr, rateLimit, config) {
+  constructor(rateLimit, config) {
     this.prepareDataChannel = this.prepareDataChannel.bind(this);
     this.connectRelay = this.connectRelay.bind(this);
     this.onClientToRelayMessage = this.onClientToRelayMessage.bind(this);
@@ -238,42 +240,35 @@ class ProxyPair {
     this.onError = this.onError.bind(this);
     this.flush = this.flush.bind(this);
 
-    /** @type {string | undefined} */
-    this.relayURL = undefined;
-    this.relayAddr = relayAddr;
+    /** @type {string | URL} */
+    this.relayURL = config.defaultRelayAddr;
     this.rateLimit = rateLimit;
     this.config = config;
-    this.pcConfig = config.pcConfig;
     this.id = Util.genSnowflakeID();
     this.c2rSchedule = [];
     this.r2cSchedule = [];
-    this.counted = false;
+    this.nowConnected = false;
   }
 
   /** Prepare a WebRTC PeerConnection and await for an SDP offer. */
   begin() {
-    this.pc = new RTCPeerConnection(this.pcConfig);
-    this.pc.onicecandidate = (evt) => {
-      // Browser sends a null candidate once the ICE gathering completes.
-      if (null === evt.candidate && this.pc.connectionState !== 'closed') {
-        dbg('Finished gathering ICE candidates.');
-        snowflake.broker.sendAnswer(this.id, this.pc.localDescription);
-      }
-    };
+    /** @private */
+    this.pc = new RTCPeerConnection(this.config.pcConfig);
     // OnDataChannel triggered remotely from the client when connection succeeds.
-    this.pc.ondatachannel = (dc) => {
-      const channel = dc.channel;
+    this.pc.ondatachannel = ({ channel }) => {
       dbg('Data Channel established...');
       this.prepareDataChannel(channel);
+      /** @private */
       this.client = channel;
     };
   }
 
   /**
    * @param {RTCSessionDescription} offer
+   * @param {(answer: RTCSessionDescription) => void} sendAnswer
    * @returns {boolean} `true` on success, `false` on fail.
    */
-  receiveWebRTCOffer(offer) {
+  receiveWebRTCOffer(offer, sendAnswer) {
     if ('offer' !== offer.type) {
       log('Invalid SDP received -- was not an offer.');
       return false;
@@ -285,31 +280,73 @@ class ProxyPair {
       return false;
     }
     dbg('SDP ' + offer.type + ' successfully received.');
+
+    this.pc.createAnswer()
+    .then((sdp) => {
+      dbg('webrtc: Answer ready.');
+      return this.pc.setLocalDescription(sdp);
+    })
+    .catch(() => {
+      this.close();
+      dbg('webrtc: Failed to create or set Answer');
+    });
+
+    // Send the answer when ready.
+    const onceSendAnswer = () => {
+      sendAnswer(this.pc.localDescription);
+
+      this.pc.onicegatheringstatechange = null;
+      clearTimeout(this.answerTimeoutId);
+    };
+    this.pc.onicegatheringstatechange = () => {
+      if (this.pc.iceGatheringState === 'complete' && this.pc.connectionState !== 'closed') {
+        dbg('Finished gathering ICE candidates.');
+        onceSendAnswer();
+      }
+    };
+    if (this.pc.iceGatheringState === 'complete') {
+      // This probably never happens as we've `setRemoteDescription` just now,
+      // but let's play it safe.
+      onceSendAnswer();
+    } else {
+      this.answerTimeoutId = setTimeout(() => {
+        dbg('answerTimeout');
+        // ICE gathering is taking a while to complete - send what we got so far.
+        if (!this.pc.localDescription) {
+          // We don't have anything to send yet. Sigh. The client will probably timeout waiting
+          // for us, but let's not bail and just try to wait some more in hope that it won't.
+          // Worst case scenario - `datachannelTimeout` callback will run.
+          return;
+        }
+        onceSendAnswer();
+      }, this.config.answerTimeout);
+    }
+
     return true;
   }
 
   /**
    * Given a WebRTC DataChannel, prepare callbacks.
    * @param {RTCDataChannel} channel
+   * @private
    */
   prepareDataChannel(channel) {
-    // if we don't receive any keep-alive messages from the client, close the
-    // connection
-    const onStaleTimeout = () => {
-      console.log("Closing stale connection.");
-      this.flush();
-      this.close();
-    };
-    this.refreshStaleTimeout = () => {
-      clearTimeout(this.messageTimer);
-      this.messageTimer = setTimeout(onStaleTimeout, this.config.messageTimeout);
-    };
-
     channel.onopen = () => {
       log('WebRTC DataChannel opened!');
       snowflake.ui.increaseClients();
-      this.counted = true;
+      this.nowConnected = true;
 
+      // if we don't receive any keep-alive messages from the client, close the
+      // connection
+      const onStaleTimeout = () => {
+        console.log("Closing stale connection.");
+        this.flush();
+        this.close();
+      };
+      this.refreshStaleTimeout = () => {
+        clearTimeout(this.messageTimer);
+        this.messageTimer = setTimeout(onStaleTimeout, this.config.messageTimeout);
+      };
       this.refreshStaleTimeout();
 
       // This is the point when the WebRTC datachannel is done, so the next step
@@ -319,9 +356,9 @@ class ProxyPair {
     channel.onclose = () => {
       log('WebRTC DataChannel closed.');
       snowflake.ui.setStatus('disconnected by webrtc.');
-      if (this.counted) {
+      if (this.nowConnected) {
         snowflake.ui.decreaseClients();
-        this.counted = false;
+        this.nowConnected = false;
       }
       this.flush();
       this.close();
@@ -333,7 +370,10 @@ class ProxyPair {
     channel.onmessage = this.onClientToRelayMessage;
   }
 
-  /** Assumes WebRTC datachannel is connected. */
+  /**
+   * Assumes WebRTC datachannel is connected.
+   * @private
+   */
   connectRelay() {
     dbg('Connecting to relay...');
     // Get a remote IP address from the PeerConnection, if possible. Add it to
@@ -349,28 +389,25 @@ class ProxyPair {
     if (peer_ip != null) {
       params.push(["client_ip", peer_ip]);
     }
-    const relay = this.relay =
-      (this.relayURL === undefined) ?
-        WS.makeWebsocket(this.relayAddr, params) :
-        WS.makeWebsocketFromURL(this.relayURL, params);
-    this.relay.label = 'websocket-relay';
-    this.relay.onopen = () => {
+    const relay = this.relay = WS.makeWebsocket(this.relayURL, params);
+    relay.label = 'websocket-relay';
+    relay.onopen = () => {
       clearTimeout(this.connectToRelayTimeoutId);
       log(relay.label + ' connected!');
       snowflake.ui.setStatus('connected');
     };
-    this.relay.onclose = () => {
+    relay.onclose = () => {
       log(relay.label + ' closed.');
       snowflake.ui.setStatus('disconnected.');
-      if (this.counted) {
+      if (this.nowConnected) {
         snowflake.ui.decreaseClients();
-        this.counted = false;
+        this.nowConnected = false;
       }
       this.flush();
       this.close();
     };
-    this.relay.onerror = this.onError;
-    this.relay.onmessage = this.onRelayToClientMessage;
+    relay.onerror = this.onError;
+    relay.onmessage = this.onRelayToClientMessage;
     // TODO: Better websocket timeout handling.
     this.connectToRelayTimeoutId = setTimeout((() => {
       log(relay.label + ' timed out connecting.');
@@ -381,9 +418,9 @@ class ProxyPair {
   /**
    * WebRTC --> websocket
    * @param {MessageEvent} msg
+   * @private
    */
   onClientToRelayMessage(msg) {
-    dbg('WebRTC --> websocket data: ' + msg.data.byteLength + ' bytes');
     this.c2rSchedule.push(msg.data);
     this.flush();
 
@@ -393,13 +430,14 @@ class ProxyPair {
   /**
    * websocket --> WebRTC
    * @param {MessageEvent} event
+   * @private
    */
   onRelayToClientMessage(event) {
-    dbg('websocket --> WebRTC data: ' + event.data.byteLength + ' bytes');
     this.r2cSchedule.push(event.data);
     this.flush();
   }
 
+  /** @private */
   onError(event) {
     const ws = event.target;
     log(ws.label + ' error.');
@@ -408,8 +446,35 @@ class ProxyPair {
 
   /** Close both WebRTC and websocket. */
   close() {
+    if (debug) {
+      this.pc.getStats().then(report => {
+        let transportStats;
+        for (const stat of report.values()) {
+          // Also consider 'data-channel'.
+          if (stat.type === 'transport') {
+            transportStats = stat;
+            break;
+          }
+        }
+        if (!transportStats) {
+          return;
+        }
+        function bytesToMBytesStr(numBytes) {
+          return (numBytes / 1024 / 1024).toFixed(3);
+        }
+        log(
+          `Connection closed. Traffic (up|down):`
+          + ` ${bytesToMBytesStr(transportStats.bytesReceived)} MB|`
+          + `${bytesToMBytesStr(transportStats.bytesSent)} MB`
+          + `, packets: ${transportStats.packetsReceived}|`
+          + `${transportStats.packetsSent}`
+        );
+      });
+    }
+
     clearTimeout(this.connectToRelayTimeoutId);
     clearTimeout(this.messageTimer);
+    clearTimeout(this.answerTimeoutId);
     if (this.webrtcIsReady()) {
       this.client.close();
     }
@@ -422,7 +487,10 @@ class ProxyPair {
     this.onCleanup();
   }
 
-  /** Send as much data in both directions as the rate limit currently allows. */
+  /**
+   * Send as much data in both directions as the rate limit currently allows.
+   * @private
+   */
   flush() {
     let busy = true;
     while (busy && !this.rateLimit.isLimited()) {
@@ -447,7 +515,7 @@ class ProxyPair {
       clearTimeout(this.flush_timeout_id);
       this.flush_timeout_id = null;
     }
-    if (this.r2cSchedule.length > 0 || this.c2rSchedule.length > 0 || (this.relayIsReady() && this.relay.bufferedAmount > 0) || (this.webrtcIsReady() && this.client.bufferedAmount > 0)) {
+    if (this.r2cSchedule.length > 0 || this.c2rSchedule.length > 0) {
       this.flush_timeout_id = setTimeout(this.flush, this.rateLimit.when() * 1000);
     }
   }
@@ -460,19 +528,12 @@ class ProxyPair {
     return (null !== this.relay) && (WebSocket.OPEN === this.relay.readyState);
   }
 
-  /**
-   * @param {WebSocket} ws
-   */
-  isClosed(ws) {
-    return undefined === ws || WebSocket.CLOSED === ws.readyState;
-  }
-
   peerConnOpen() {
     return (null !== this.pc) && ('closed' !== this.pc.connectionState);
   }
 
   /**
-   * @param {typeof this.relayURL} relayURL
+   * @param {URL | string} relayURL
    */
   setRelayURL(relayURL) {
     this.relayURL = relayURL;
@@ -488,6 +549,7 @@ ProxyPair.prototype.relay = null; // websocket
 
 ProxyPair.prototype.connectToRelayTimeoutId = 0;
 ProxyPair.prototype.messageTimer = 0;
+ProxyPair.prototype.answerTimeoutId = 0;
 ProxyPair.prototype.flush_timeout_id = null;
 
 ProxyPair.prototype.onCleanup = null;
@@ -531,48 +593,37 @@ class Snowflake {
   }
 
   /**
-   * Set the target relay address spec, which is expected to be websocket.
-   * TODO: Should potentially fetch the target from broker later, or modify
-   * entirely for the Tor-independent version.
-   * @param {{ host: string; port: string; }} relayAddr
+   * Start asking the broker for clients and serving them.
    */
-  setRelayAddr(relayAddr) {
-    this.relayAddr = relayAddr;
-    log('Using ' + relayAddr.host + ':' + relayAddr.port + ' as Relay.');
-  }
-
-  /**
-   * Initialize WebRTC PeerConnection, which requires beginning the signalling
-   * process. `pollBroker` automatically arranges signalling.
-   */
-  beginWebRTC() {
-    this.pollBroker();
+  beginServingClients() {
+    if (this.proxyPairs.length < this.config.maxNumClients) {
+      this.pollBroker();
+    } else {
+      dbg('Polling skipped: at client capacity.');
+    }
     this.pollTimeoutId = setTimeout((() => {
-      this.beginWebRTC();
+      this.beginServingClients();
     }), this.pollInterval);
   }
 
   /**
-   * Regularly poll Broker for clients to serve until this snowflake is
-   * serving at capacity, at which point stop polling.
+   * Try to get a client from the broker and start serving it upon success.
+   * @private
    */
   pollBroker() {
-    // Poll broker for clients.
-    if (this.proxyPairs.length >= this.config.maxNumClients) {
-      log('At client capacity.');
-      return;
-    }
     const pair = this.makeProxyPair();
     log('Polling broker..');
-    // Do nothing until a new proxyPair is available.
+
     let msg = 'Polling for client ... ';
     if (this.retries > 0) {
       msg += '[retries: ' + this.retries + ']';
     }
     this.ui.setStatus(msg);
+
     //update NAT type
     console.log("NAT type: " + this.ui.natType);
     this.broker.setNATType(this.ui.natType);
+
     const recv = this.broker.getClientOffer(pair.id, this.proxyPairs.length);
     recv.then((resp) => {
       const clientNAT = resp.NAT;
@@ -626,6 +677,7 @@ class Snowflake {
    * @param {string} desc
    * @param {string | undefined} relayURL
    * @returns {boolean} `true` on success, `false` on fail.
+   * @private
    */
   receiveOffer(pair, desc, relayURL) {
     try {
@@ -637,7 +689,7 @@ class Snowflake {
           log('incorrect relay url protocol');
           return false;
         }
-        if (!this.checkRelayPattern(this.config.allowedRelayPattern, hostname)) {
+        if (!Snowflake.checkRelayPattern(this.config.allowedRelayPattern, hostname)) {
           log('relay url hostname does not match allowed pattern');
           return false;
         }
@@ -647,12 +699,11 @@ class Snowflake {
       const offer = JSON.parse(desc);
       dbg('Received:\n\n' + offer.sdp + '\n');
       const sdp = new RTCSessionDescription(offer);
-      if (pair.receiveWebRTCOffer(sdp)) {
-        this.sendAnswer(pair);
-        return true;
-      } else {
-        return false;
-      }
+      const result = pair.receiveWebRTCOffer(
+        sdp,
+        answer => this.broker.sendAnswer(pair.id, answer)
+      );
+      return result;
     } catch (e) {
       log('ERROR: Unable to receive Offer: ' + e);
       return false;
@@ -660,26 +711,11 @@ class Snowflake {
   }
 
   /**
-   * @param {ProxyPair} pair
-   */
-  sendAnswer(pair) {
-    /** @param {RTCLocalSessionDescriptionInit} sdp */
-    const next = function (sdp) {
-      dbg('webrtc: Answer ready.');
-      pair.pc.setLocalDescription(sdp).catch(fail);
-    };
-    const fail = function () {
-      pair.close();
-      dbg('webrtc: Failed to create or set Answer');
-    };
-    pair.pc.createAnswer().then(next).catch(fail);
-  }
-
-  /**
    * @returns {ProxyPair}
+   * @private
    */
   makeProxyPair() {
-    const pair = new ProxyPair(this.relayAddr, this.rateLimit, this.config);
+    const pair = new ProxyPair(this.rateLimit, this.config);
     this.proxyPairs.push(pair);
 
     log('Snowflake IDs: ' + (this.proxyPairs.map(p => p.id)).join(' | '));
@@ -709,8 +745,9 @@ class Snowflake {
    * @param {string} pattern
    * @param {string} str typically a domain name to be checked
    * @return {boolean}
+   * @private
    */
-  checkRelayPattern(pattern, str) {
+  static checkRelayPattern(pattern, str) {
     if (typeof pattern !== "string") {
       throw 'invalid checkRelayPattern input: pattern';
     }
@@ -732,7 +769,6 @@ class Snowflake {
 
 }
 
-Snowflake.prototype.relayAddr = null;
 Snowflake.prototype.rateLimit = null;
 
 Snowflake.MESSAGE = {
@@ -918,36 +954,6 @@ class Parse {
       }
     }
     return result;
-  }
-
-  /**
-   * @param {string} spec
-   * Parse an address in the form 'host:port'. Returns an Object with keys 'host'
-   * (String) and 'port' (int). Returns null on error.
-   */
-  static address(spec) {
-    let m = null;
-    if (!m) {
-      // IPv6 syntax.
-      m = spec.match(/^\[([\0-9a-fA-F:.]+)\]:([0-9]+)$/);
-    }
-    if (!m) {
-      // IPv4 syntax.
-      m = spec.match(/^([0-9.]+):([0-9]+)$/);
-    }
-    if (!m) {
-      // TODO: Domain match
-      return null;
-    }
-    const host = m[1];
-    const port = parseInt(m[2], 10);
-    if (isNaN(port) || port < 0 || port > 65535) {
-      return null;
-    }
-    return {
-      host: host,
-      port: port
-    };
   }
 
   /**
@@ -1139,65 +1145,15 @@ class DummyRateLimit {
 Only websocket-specific stuff.
 */
 
+// eslint-disable-next-line no-unused-vars
 class WS {
-
-  /**
-   * Build an escaped URL string from unescaped components. Only scheme and host
-   * are required. See RFC 3986, section 3.
-   */
-  static buildUrl(scheme, host, port, path, params) {
-    const parts = [];
-    parts.push(encodeURIComponent(scheme));
-    parts.push('://');
-    // If it contains a colon but no square brackets, treat it as IPv6.
-    if (host.match(/:/) && !host.match(/[[\]]/)) {
-      parts.push('[');
-      parts.push(host);
-      parts.push(']');
-    } else {
-      parts.push(encodeURIComponent(host));
-    }
-    if (undefined !== port && this.DEFAULT_PORTS[scheme] !== port) {
-      parts.push(':');
-      parts.push(encodeURIComponent(port.toString()));
-    }
-    if (undefined !== path && '' !== path) {
-      if (!path.match(/^\//)) {
-        path = '/' + path;
-      }
-      path = path.replace(/[^/]+/, function (m) {
-        return encodeURIComponent(m);
-      });
-      parts.push(path);
-    }
-    if (undefined !== params) {
-      parts.push('?');
-      parts.push(new URLSearchParams(params).toString());
-    }
-    return parts.join('');
-  }
-
-  static makeWebsocket(addr, params) {
-    const wsProtocol = this.WSS_ENABLED ? 'wss' : 'ws';
-    const url = this.buildUrl(wsProtocol, addr.host, addr.port, '/', params);
-    const ws = new WebSocket(url);
-    /*
-    'User agents can use this as a hint for how to handle incoming binary data:
-    if the attribute is set to 'blob', it is safe to spool it to disk, and if it
-    is set to 'arraybuffer', it is likely more efficient to keep the data in
-    memory.'
-    */
-    ws.binaryType = 'arraybuffer';
-    return ws;
-  }
-
   /**
    * Creates a websocket connection from a URL and params to override
    * @param {URL|string} url
    * @param {URLSearchParams|string[][]} params
    * @return {WebSocket}
    */
-  static makeWebsocketFromURL(url, params) {
+  static makeWebsocket(url, params) {
     let parsedURL = new URL(url);
     let urlpa = new URLSearchParams(params);
     urlpa.forEach(function (value, key) {
@@ -1215,9 +1171,12 @@ class WS {
     return ws;
   }
 
+  /**
+   * @param {URL | string} addr
+   */
   static probeWebsocket(addr) {
     return /** @type {Promise<void>} */(new Promise((resolve, reject) => {
-      const ws = WS.makeWebsocket(addr);
+      const ws = WS.makeWebsocket(addr, []);
       ws.onopen = () => {
         resolve();
         ws.close();
@@ -1230,13 +1189,6 @@ class WS {
   }
 
 }
-
-WS.WSS_ENABLED = true;
-
-WS.DEFAULT_PORTS = {
-  http: 80,
-  https: 443
-};
 /* global module, require */
 
 /*
@@ -1332,7 +1284,7 @@ class WebExtUI extends UI {
   }
 
   tryProbe() {
-    WS.probeWebsocket(config.relayAddr)
+    WS.probeWebsocket(config.defaultRelayAddr)
     .then(
       () => {
         this.missingFeature = false;
@@ -1444,25 +1396,42 @@ class WebExtUI extends UI {
 
   setIcon() {
     let path = null;
+    let badgeText = '';
     if (!this.enabled) {
       path = {
         48: "assets/toolbar-off-48.png",
         96: "assets/toolbar-off-96.png"
       };
-    } else if (this.active) {
-      path = {
-        48: "assets/toolbar-running-48.png",
-        96: "assets/toolbar-running-96.png"
-      };
     } else {
-      path = {
-        48: "assets/toolbar-on-48.png",
-        96: "assets/toolbar-on-96.png"
-      };
+      if (this.active) {
+        path = {
+          48: "assets/toolbar-running-48.png",
+          96: "assets/toolbar-running-96.png"
+        };
+      } else {
+        path = {
+          48: "assets/toolbar-on-48.png",
+          96: "assets/toolbar-on-96.png"
+        };
+      }
+
+      const totalClients = this.stats.reduce((t, c) => t + c, 0);
+      if (totalClients > 0) {
+        if (config.maxNumClients > 1 && this.clients > 0) {
+          // Like `19+3`
+          badgeText = `${totalClients - this.clients}+${this.clients}`;
+        } else {
+          badgeText = `${totalClients}`;
+        }
+      }
     }
     chrome.browserAction.setIcon({
       path: path,
     });
+    // Color is taken from Tor Browser (tor-styles.css, `purple-30`,
+    // with lightness changed to 81%).
+    chrome.browserAction.setBadgeBackgroundColor({ color: '#d79eff' });
+    chrome.browserAction.setBadgeText({ text: badgeText });
   }
 
 }
@@ -1543,8 +1512,7 @@ var
     // Otherwise, begin setting up WebRTC and acting as a proxy.
     dbg('Contacting Broker at ' + broker.url);
     log('Starting snowflake');
-    snowflake.setRelayAddr(config.relayAddr);
-    snowflake.beginWebRTC();
+    snowflake.beginServingClients();
   };
 
   window.onunload = function() {

@@ -33,7 +33,7 @@
         "message": "Installa in Chrome"
     },
     "webBadgeTitle": {
-        "message": "Tieni aperta questa scheda del browser o incorpora un'etichetta sul tuo sito."
+        "message": "Tieni aperta questa scheda del browser o incorpora un'etichetta sul tuo sito"
     },
     "possible": {
         "message": "In alternativa, puoi incorporare te stesso un proxy Snowflake in una pagina sul tuo sito web (es. <a href=\"https://relay.love\">relay.love</a>). I visitatori del tuo sito potranno aprire la pagina, attivare il proxy e lasciarlo aperto per permettere alla gente di usarlo (si comporta e sembra esattamente come l'estensione web)."
