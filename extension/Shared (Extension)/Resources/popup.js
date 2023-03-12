@@ -30,9 +30,9 @@ class Popup {
     this.img = document.getElementById('statusimg');
     this.enabledWrapper = document.getElementById('enabled-wrapper');
     if (
-      typeof false !== 'undefined'
+      typeof SUPPORTS_WEBEXT_OPTIONAL_BACKGROUND_PERMISSION !== 'undefined'
       // eslint-disable-next-line no-undef
-      && false
+      && SUPPORTS_WEBEXT_OPTIONAL_BACKGROUND_PERMISSION
     ) {
       /** @type {HTMLInputElement} */
       const runInBackgroundInput = document.getElementById('run-in-background');

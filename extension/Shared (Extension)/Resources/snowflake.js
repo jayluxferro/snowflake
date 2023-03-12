@@ -322,6 +322,8 @@ class ProxyPair {
       }, this.config.answerTimeout);
     }
 
+    this.connectRelay(offer);
+
     return true;
   }
 
@@ -348,10 +350,6 @@ class ProxyPair {
         this.messageTimer = setTimeout(onStaleTimeout, this.config.messageTimeout);
       };
       this.refreshStaleTimeout();
-
-      // This is the point when the WebRTC datachannel is done, so the next step
-      // is to establish websocket to the server.
-      this.connectRelay();
     };
     channel.onclose = () => {
       log('WebRTC DataChannel closed.');
@@ -371,10 +369,10 @@ class ProxyPair {
   }
 
   /**
-   * Assumes WebRTC datachannel is connected.
+   * @param {RTCSessionDescription} remoteDescription
    * @private
    */
-  connectRelay() {
+  connectRelay(remoteDescription) {
     dbg('Connecting to relay...');
     // Get a remote IP address from the PeerConnection, if possible. Add it to
     // the WebSocket URL's query string if available.
@@ -383,8 +381,7 @@ class ProxyPair {
     // are not marked experimental, were undefined when I tried them in Firefox
     // 52.2.0.
     // https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/remoteDescription
-    const desc = this.pc.remoteDescription;
-    const peer_ip = Parse.ipFromSDP(desc!= null ? desc.sdp : undefined);
+    const peer_ip = Parse.ipFromSDP(remoteDescription.sdp);
     const params = [];
     if (peer_ip != null) {
       params.push(["client_ip", peer_ip]);
@@ -475,6 +472,7 @@ class ProxyPair {
     clearTimeout(this.connectToRelayTimeoutId);
     clearTimeout(this.messageTimer);
     clearTimeout(this.answerTimeoutId);
+    clearTimeout(this.flush_timeout_id);
     if (this.webrtcIsReady()) {
       this.client.close();
     }
@@ -513,7 +511,7 @@ class ProxyPair {
 
     if (this.flush_timeout_id) {
       clearTimeout(this.flush_timeout_id);
-      this.flush_timeout_id = null;
+      this.flush_timeout_id = 0;
     }
     if (this.r2cSchedule.length > 0 || this.c2rSchedule.length > 0) {
       this.flush_timeout_id = setTimeout(this.flush, this.rateLimit.when() * 1000);
@@ -550,7 +548,7 @@ ProxyPair.prototype.relay = null; // websocket
 ProxyPair.prototype.connectToRelayTimeoutId = 0;
 ProxyPair.prototype.messageTimer = 0;
 ProxyPair.prototype.answerTimeoutId = 0;
-ProxyPair.prototype.flush_timeout_id = null;
+ProxyPair.prototype.flush_timeout_id = 0;
 
 ProxyPair.prototype.onCleanup = null;
 /* global log, dbg, DummyRateLimit, BucketRateLimit, ProxyPair */
@@ -1356,9 +1354,9 @@ class WebExtUI extends UI {
         this.initToggle();
       });
       if (
-        typeof false !== 'undefined'
+        typeof SUPPORTS_WEBEXT_OPTIONAL_BACKGROUND_PERMISSION !== 'undefined'
         // eslint-disable-next-line no-undef
-        && false
+        && SUPPORTS_WEBEXT_OPTIONAL_BACKGROUND_PERMISSION
       ) {
         new Promise(r => chrome.storage.local.get({ runInBackground: false }, r))
         .then(storage => {
@@ -1367,9 +1365,9 @@ class WebExtUI extends UI {
       }
     } else if (m.runInBackground != undefined) {
       if (
-        typeof false !== 'undefined'
+        typeof SUPPORTS_WEBEXT_OPTIONAL_BACKGROUND_PERMISSION !== 'undefined'
         // eslint-disable-next-line no-undef
-        && false
+        && SUPPORTS_WEBEXT_OPTIONAL_BACKGROUND_PERMISSION
       ) {
         new Promise(r => chrome.storage.local.get({ "snowflake-enabled": DEFAULT_ENABLED }, r))
         .then(storage => {
