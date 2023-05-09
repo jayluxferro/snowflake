@@ -42,7 +42,7 @@
         "message": "<a href=\"https://gitlab.onionize.space/\">Požádejte o účet </a> na GitLabu projektu Tor, potom <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">otevřete nový požadavek</a> v projektu Snowflake."
     },
     "websiteIntro": {
-        "message": "Snowflake je systém, který <strong>umožňuje lidem z celého světa přístup k cenzurovaným webovým stránkám a aplikacím</strong>. Podobně jako sítě VPN pomáhají uživatelům obejít cenzuru na internetu, Snowflake vám pomůže vyhnout se pozornosti cenzorů internetu tím, že vaše internetová aktivita bude vypadat, jako byste používali internet pro běžné video nebo hlasové hovory."
+        "message": "Věděli jste, že Snowflake proxy jsou provozovány kompletně dobrovolníky? Jinak řečeno, uživateli je přiřazeno náhodné Snowflake dobrovolnické proxy, které provozuje dobrolník, jako vy!\nTakže, jestli chcete pomoci lidem obejít cenzuru, zvažte nainstalování a provozování Snowflake proxy. Jedinou podmínkou je, aby internet ve vaší zemi už nebyl <strong>silně cenzurován</strong>."
     },
     "websiteIntro2": {
         "message": "K dispozici je řada nástrojů, jako je například Snowflake, které „transformují“ internetové aktivity, přičemž každý z nich používá jinou techniku. Některé z nich přesměrovávají internetový provoz tak, aby vypadal, že pochází od populárních poskytovatelů cloudových služeb, jako jsou Microsoft Azure a Amazon Web Services. Jiné internetový provoz zakódují tak, aby se jevil jako zcela náhodný."
@@ -84,6 +84,6 @@
         "message": "Nainstalovat do Firefoxu"
     },
     "installExtension": {
-        "message": "Did you know that Snowflake proxies are operated entirely by volunteers? In other words, a user gets matched with a random Snowflake volunteer proxy, which is run by a volunteer like you! So, if you want to help people bypass censorship, consider installing and running a Snowflake proxy. The only prerequisite is that the Internet in your country is <strong>not</strong> heavily censored already."
+        "message": "Věděli jste, že Snowflake proxy jsou provozovány kompletně dobrovolníky? Jinak řečeno, uživateli je přiřazeno náhodné Snowflake dobrovolnické proxy, které provozuje dobrolník, jako vy!\nTakže, jestli chcete pomoci lidem obejít cenzuru, zvažte nainstalování a provozování Snowflake proxy. Jedinou podmínkou je, aby internet ve vaší zemi už nebyl <strong>silně cenzurován</strong>."
     }
 }

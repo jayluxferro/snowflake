@@ -1,0 +1,41 @@
+{
+    "appDesc": {
+        "message": "Помогает другим обойти блокировку Tor через ваше Интернет-соединение."
+    },
+    "popupEnabled": {
+        "message": "Включено"
+    },
+    "popupRunInBackground": {
+        "message": "Продолжать работу, когда браузер закрыт"
+    },
+    "popupLearnMore": {
+        "message": "Узнать больше"
+    },
+    "popupStatusOff": {
+        "message": "Snowflake выключен"
+    },
+    "popupStatusOn": {
+        "message": "Сейчас подключено пользователей: $1"
+    },
+    "popupStatusReady": {
+        "message": "Ваш Snowflake готов помочь пользователям обойти цензуру"
+    },
+    "popupWebRTCOff": {
+        "message": "Функция WebRTC не работает в вашем браузере."
+    },
+    "popupBridgeUnreachable": {
+        "message": "Не удалось подключиться к мосту."
+    },
+    "popupDescOn": {
+        "message": "Пользователей, которым ваш Snowflake помог обойти цензуру за последние 24 часа: $1"
+    },
+    "popupRetry": {
+        "message": "Повторить"
+    },
+    "popupRetrying": {
+        "message": "Повторная попытка ..."
+    },
+    "badgeCookiesOff": {
+        "message": "Файлы куки не включены."
+    }
+}

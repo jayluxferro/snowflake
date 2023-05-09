@@ -36,6 +36,6 @@
         "message": "Váš Snowflake je připraven pomáhat uživatelům obejít cenzuru"
     },
     "popupRunInBackground": {
-        "message": "Keep running when the browser is closed"
+        "message": "Pokračovat v běhu po zavření prohlížeče"
     }
 }

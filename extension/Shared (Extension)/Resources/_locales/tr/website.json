@@ -3,7 +3,7 @@
         "message": "Snowflake kullanımı hakkında destek almak"
     },
     "websiteIntro": {
-        "message": "Snowflake, <strong>dünyanın her yerinden insanların engellenen web sitelerine ve uygulamalara erişmesini sağlayan</strong> bir sistemdir. VPN hizmetlerinin kullanıcılarına internet sansürünü aşmakta yardımcı olması gibi, Snowflake internet etkinliğinizin normal bir görüntülü ya da sesli arama için kullanıyormuşsunuz gibi görünmesini sağlar. Böylece internetinizi sansürleyenler tarafından fark edilmenizi engeller."
+        "message": "Snowflake, <strong>dünyanın her yerinden insanların engellenen sitelere ve uygulamalara erişmesini sağlayan</strong> bir sistemdir. VPN hizmetlerinin kullanıcılarına internet sansürünü aşmakta yardımcı olması gibi, Snowflake internet etkinliğinizin normal bir görüntülü ya da sesli arama için kullanıyormuşsunuz gibi görünmesini sağlar. Böylece internetinizi sansürleyenler tarafından fark edilmenizi engeller."
     },
     "websiteIntro2": {
         "message": "Her biri farklı bir teknik kullanarak internet etkinliğini \"dönüştüren\" Snowflake gibi çok sayıda araç vardır. Bazıları internet trafiğini Microsoft Azure ve Amazon Web Services gibi popüler bulut hizmeti sağlayıcılarından geliyormuş gibi görünecek şekilde yöneltir. Diğerleri, tamamen rastgele görünmesi için internet trafiğini karıştırır."
@@ -24,7 +24,7 @@
         "message": "Snowflake vekil sunucularının tamamen gönüllüler tarafından işletildiğini biliyor muydunuz? Başka bir deyişle, bir kullanıcı sizin gibi bir gönüllü tarafından işletilen rastgele bir Snowflake gönüllü vekil sunucusu ile eşleştirilir! İnsanların sansürü aşmasına yardımcı olmak istiyorsanız, bir Snowflake vekil sunucusu kurup işletmeyi düşünün. Tek ön koşul, ülkenizdeki internet ağının zaten yoğun bir şekilde <strong>sansürlenmiyor</strong> olmasıdır."
     },
     "volunteer": {
-        "message": "Dünyanın dört bir yanında Snowflake vekil sunucusu kurmuş ve işleten binlerce gönüllüye katılabilirsiniz. İnsanların Snowflake vekil sunucunuz üzerinden hangi web sitelerine eriştiği konusunda endişelenmenize gerek yok. Gezinme IP adresleri, vekil sunucunuzun IP adresi değil, Tor çıkış aktarıcılarının IP adresleri olarak görünür."
+        "message": "Dünyanın dört bir yanında Snowflake vekil sunucusu kurmuş ve işleten binlerce gönüllüye katılabilirsiniz. İnsanların Snowflake vekil sunucunuz üzerinden hangi sitelere eriştiği konusunda endişelenmenize gerek yok. Gezinme IP adresleri, vekil sunucunuzun IP adresi değil, Tor çıkış aktarıcılarının IP adresleri olarak görünür."
     },
     "installOptions": {
         "message": "Bir Snowfloake vekil sunucusu işletmenin farklı yolları vardır (başlangıç ve ileri düzey):"
@@ -42,13 +42,13 @@
         "message": "Chrome üzerine kurulum"
     },
     "webBadgeTitle": {
-        "message": "Bu tarayıcı sekmesini açık bırakın veya web sitenize bir web afişi yerleştirin"
+        "message": "Bu tarayıcı sekmesini açık bırakın veya sitenize bir internet afişi yerleştirin"
     },
     "webBadgeInstructions": {
         "message": "Aşağıdan Snowflake uygulamasını açar ve tarayıcı sekmesini açık bırakırsanız, bir kullanıcı yeni vekil sunucunuz üzerinden bağlanabilir!"
     },
     "possible": {
-        "message": "Alternatif olarak, bir Snowflake vekil sunucusunu kendi web sitenizdeki bir sayfanın içine gömebilirsiniz (<a href=\"https://relay.love\">aktarici.sevgisi</a> gibi). Sitenizi ziyaret edenler sayfaya girebilir, vekil sunucuyu etkinleştirebilir ve başkalarının sayfa üzerinden vekil sunucu kullanmasını sağlamak için açık bırakabilir (tam olarak bir web eklentisi gibi davranır ve görünür)."
+        "message": "Alternatif olarak, bir Snowflake vekil sunucusunu kendi sitenizdeki bir sayfanın içine gömebilirsiniz (<a href=\"https://relay.love\">aktarici.sevgisi</a> gibi). Sitenizi ziyaret edenler sayfaya girebilir, vekil sunucuyu etkinleştirebilir ve başkalarının sayfa üzerinden vekil sunucu kullanmasını sağlamak için açık bırakabilir (tam olarak bir web eklentisi gibi davranır ve görünür)."
     },
     "StandaloneTitle": {
         "message": "Bağımsız bir vekil sunucu işletin"
@@ -78,7 +78,7 @@
         "message": "Snowflake uygulamasının nasıl çalıştığı hakkında ayrıntılı bilgi alın"
     },
     "snowflakeTechOverview": {
-        "message": "Snowflake, <a href=\"https://gitweb.torproject.org/torspec.git/tree/pt-spec.txt\">Değiştirilebilir taşıyıcılar</a> ailesinin bir parçası olan ve sürekli geliştirilmekte olan yeni bir engellemeyi aşma teknolojisidir. Mimarisi hakkında ayrınlı bilgi edinmek mi istiyorsunuz? <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/Technical%20Overview\">Teknik özeti</a> (İngilizce) okuyabilirsiniz."
+        "message": "Snowflake, <a href=\"https://gitweb.torproject.org/torspec.git/tree/pt-spec.txt\">Değiştirilebilir taşıyıcılar</a> ailesinin bir parçası olan ve sürekli geliştirilmekte olan yeni bir engellemeyi aşma teknolojisidir. Mimarisi hakkında ayrıntılı bilgi edinmek mi istiyorsunuz? <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/Technical%20Overview\">Teknik özeti</a> (İngilizce) okuyabilirsiniz."
     },
     "embed": {
         "message": "Ekleme"

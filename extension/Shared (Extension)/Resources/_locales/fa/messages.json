@@ -1,12 +1,12 @@
 {
     "appDesc": {
-        "message": "به کاربران کشورهای تحت سانسور اجازه دهید از اتصال شبکه شما برای دسترسی به شبکه Tor استفاده کنند."
+        "message": "به کاربران در کشورهای مسدودشده اجازه دهید تا از اتصال شبکهٔ شما برای دستری به شبکهٔ Tor استفاده کنند."
     },
     "popupEnabled": {
         "message": "فعال"
     },
     "popupLearnMore": {
-        "message": "اطلاعات بیشتر"
+        "message": "بیشتر یاد بگیرید"
     },
     "popupRetry": {
         "message": "تلاش دوباره"
@@ -15,27 +15,27 @@
         "message": "تعداد کاربرانی که متصل هستند: $1"
     },
     "popupBridgeUnreachable": {
-        "message": "اتصال به پل ممکن نشد."
+        "message": "اتصال به پل ممکن نبود."
     },
     "badgeCookiesOff": {
-        "message": "کوکی ها فعال نیستند."
+        "message": "کوکی‌ها فعال نیستند."
     },
     "popupStatusReady": {
-        "message": "Snowflake شما آماده‌ی کمک به دور زدن سانسور است"
+        "message": "Snowflake شما آماده‌ٔ کمک به کاربران برای دور زدن فیلترینگ است"
     },
     "popupDescOn": {
-        "message": "تعداد کاربرانی که برف‌دانه‌ی شما در 24 ساعت گذشته به آنها کمک کرده تا سانسور را دور بزنند: $1"
+        "message": "تعداد کاربرانی که Snowflake شما در ۲۴ ساعت گذشته به آنها کمک کرده تا سانسور را دور بزنند: $1"
     },
     "popupRetrying": {
-        "message": "در حال تلاش مجدد..."
+        "message": "در حال تلاش دوباره..."
     },
     "popupStatusOff": {
         "message": "Snowflake خاموش است"
     },
     "popupWebRTCOff": {
-        "message": "ویژگی WebRTC شناسایی نشده است."
+        "message": "قابلیت WebRTC تشخیص داده نشده است."
     },
     "popupRunInBackground": {
-        "message": "Keep running when the browser is closed"
+        "message": "وقتی مرورگر بسته است همچنان در حال اجرا بماند"
     }
 }

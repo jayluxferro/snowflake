@@ -376,17 +376,9 @@ class ProxyPair {
     dbg('Connecting to relay...');
     // Get a remote IP address from the PeerConnection, if possible. Add it to
     // the WebSocket URL's query string if available.
-    // MDN marks remoteDescription as "experimental". However the other two
-    // options, currentRemoteDescription and pendingRemoteDescription, which
-    // are not marked experimental, were undefined when I tried them in Firefox
-    // 52.2.0.
     // https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/remoteDescription
-    const peer_ip = Parse.ipFromSDP(remoteDescription.sdp);
-    const params = [];
-    if (peer_ip != null) {
-      params.push(["client_ip", peer_ip]);
-    }
-    const relay = this.relay = WS.makeWebsocket(this.relayURL, params);
+    const clientIP = Parse.ipFromSDP(remoteDescription.sdp);
+    const relay = this.relay = WS.makeWebSocket(this.relayURL, clientIP);
     relay.label = 'websocket-relay';
     relay.onopen = () => {
       clearTimeout(this.connectToRelayTimeoutId);
@@ -1140,25 +1132,35 @@ class DummyRateLimit {
 
 }
 /*
-Only websocket-specific stuff.
+Only WebSocket-specific stuff.
 */
 
 // eslint-disable-next-line no-unused-vars
 class WS {
   /**
-   * Creates a websocket connection from a URL and params to override
+   * Creates a WebSocket URL from a base URL and an optional client IP address
+   * string.
    * @param {URL|string} url
-   * @param {URLSearchParams|string[][]} params
+   * @param {?string} clientIP
+   * @return {URL}
+   */
+  static makeWebSocketURL(url, clientIP) {
+    url = new URL(url);
+    if (clientIP != null) {
+      url.searchParams.set('client_ip', clientIP);
+    }
+    return url;
+  }
+
+  /**
+   * Creates a WebSocket connection from a URL and an optional client IP address
+   * string.
+   * @param {URL|string} url
+   * @param {?string} clientIP
    * @return {WebSocket}
    */
-  static makeWebsocket(url, params) {
-    let parsedURL = new URL(url);
-    let urlpa = new URLSearchParams(params);
-    urlpa.forEach(function (value, key) {
-      parsedURL.searchParams.set(key, value);
-    });
-
-    let ws = new WebSocket(url);
+  static makeWebSocket(url, clientIP) {
+    let ws = new WebSocket(WS.makeWebSocketURL(url, clientIP));
     /*
     'User agents can use this as a hint for how to handle incoming binary data:
     if the attribute is set to 'blob', it is safe to spool it to disk, and if it
@@ -1172,9 +1174,9 @@ class WS {
   /**
    * @param {URL | string} addr
    */
-  static probeWebsocket(addr) {
+  static probeWebSocket(addr) {
     return /** @type {Promise<void>} */(new Promise((resolve, reject) => {
-      const ws = WS.makeWebsocket(addr, []);
+      const ws = WS.makeWebSocket(addr, null);
       ws.onopen = () => {
         resolve();
         ws.close();
@@ -1282,7 +1284,7 @@ class WebExtUI extends UI {
   }
 
   tryProbe() {
-    WS.probeWebsocket(config.defaultRelayAddr)
+    WS.probeWebSocket(config.defaultRelayAddr)
     .then(
       () => {
         this.missingFeature = false;

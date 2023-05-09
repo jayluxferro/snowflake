@@ -1,6 +1,6 @@
 {
     "websiteIntro": {
-        "message": "Snowflake es un sistema que <strong>permite a personas en todo el mundo acceder a sitios web y aplicaciones censurados.</strong>. De manera similar a como las VPN ayudan a los usuarios a eludir la censura de Internet, Snowflake te ayuda a evitar que los censores de Internet lo noten al hacer que tu actividad en Internet parezca como si estuvieras usando Internet para un video normal o una llamada de voz."
+        "message": "Snowflake es un sistema que <strong>permite a personas en todo el mundo acceder a sitios web y aplicaciones censurados.</strong>. De manera similar a como las VPN ayudan a los usuarios a eludir la censura de Internet, Snowflake te ayuda a evitar que los censores de Internet te detecten al hacer que tu actividad en Internet aparezca como si estuvieras usando Internet para un video normal o una llamada de voz."
     },
     "websiteIntro2": {
         "message": "Hay numerosas herramientas disponibles, como Snowflake, que \"transforman\" la actividad en Internet, cada una utilizando una técnica diferente. Algunas redirigen el tráfico de Internet para que parezca que proviene de proveedores de nube populares como Microsoft Azure y Amazon Web Services. Otras codifican el tráfico de Internet para que parezca completamente aleatorio."
@@ -18,7 +18,7 @@
         "message": "Ayuda a las personas a eludir la censura: opera un proxy Snowflake"
     },
     "installExtension": {
-        "message": "¿Sabías que los proxies de Snowflake son operados en su totalidad por voluntarios? En otras palabras, un usuario conecta con un voluntario aleatorio de un proxy de Snowflake que está a cargo de un voluntario como usted. Así que, si deseas ayudar a las personas a eludir la censura, considera instalar y ejecutar un proxy Snowflake. El único requisito previo es que Internet en tu país <strong>no</strong> esté ya muy censurado."
+        "message": "¿Sabías que los proxies de Snowflake son operados en su totalidad por voluntarios? En otras palabras, un usuario conecta con un voluntario aleatorio de un proxy de Snowflake que está a cargo de un voluntario como tú. Así que, si deseas ayudar a las personas a eludir la censura, considera instalar y ejecutar un proxy Snowflake. El único requisito previo es que Internet en tu país <strong>no</strong> esté ya muy censurado."
     },
     "volunteer": {
         "message": "Puedes unirte a miles de voluntarios de todo el mundo que tienen un proxy Snowflake instalado y ejecutándose. No tienes por qué preocuparte por los sitios web a los que acceden las personas a través de tu proxy Snowflake. Su dirección IP de navegación visible coincidirá con su nodo de salida Tor, no con el tuyo."
@@ -45,7 +45,7 @@
         "message": "Si enciendes Snowflake a continuación y dejas abierta la pestaña del navegador, ¡un usuario podrá conectarse a través de tu nuevo proxy!"
     },
     "possible": {
-        "message": "De otro modo, tu mismo puedes incrustar un proxy Snowflake en una página en tu sitio web (p.ej., <a href=\"https://relay.love\">relay.love</a>). Los visitantes de tu sitio pueden ingresar en la página, habilitar el proxy y dejarlo abierto para permitir que las personas lo utilicen (se comporta y se ve exactamente como la extensión web)."
+        "message": "Como alternativa, puedes incrustar un proxy Snowflake en una página en tu sitio web (p.ej., <a href=\"https://relay.love\">relay.love</a>). Los visitantes de tu sitio pueden ingresar en la página, habilitar el proxy y dejarlo abierto para permitir que las personas lo utilicen (se comporta y se ve exactamente como la extensión web)."
     },
     "StandaloneTitle": {
         "message": "Ejecutar un proxy independiente"

@@ -81,7 +81,7 @@
         "message": "在 Tor Project 的 GitLab 上<a href=\"https://gitlab.onionize.space/\">申请一个账号</a>，然后在 Snowflake 项目中<a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">提交一个新的问题</a>。"
     },
     "descriptive": {
-        "message": "请在工单中尽可能客观描述你遇到的情况，如有可能，请同时报告日志信息，这将有助于我们重现漏洞。"
+        "message": "请在工单中尽可能客观描述你遇到的情况，如有可能，请同时报告日志信息，这将有助于我们重现缺陷。"
     },
     "contactSnowflakeDevs": {
         "message": "若有兴趣在你的应用使用 Snowflake，请联系<a href=\"https://lists.torproject.org/cgi-bin/mailman/listinfo/anti-censorship-team\">反审查团队。"

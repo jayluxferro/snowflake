@@ -1,12 +1,12 @@
 {
     "appDesc": {
-        "message": "Sansür uygulanan ülkelerdeki kullanıcıların sizin ağ bağlantınızı kullanarak Tor ağına ulaşmasını sağlayın."
+        "message": "Sansür uygulanan ülkelerdeki kullanıcıların, ağ bağlantınızı kullanarak Tor ağına ulaşmasını sağlayın."
     },
     "popupEnabled": {
         "message": "Etkin"
     },
     "popupRunInBackground": {
-        "message": "Tarayıcı kapatıldığında çalışmaya devam et"
+        "message": "Tarayıcı kapatıldığında çalışmayı sürdürsün"
     },
     "popupLearnMore": {
         "message": "Ayrıntılı bilgi alın"
@@ -27,7 +27,7 @@
         "message": "Köprü ile bağlantı kurulamadı."
     },
     "popupDescOn": {
-        "message": "Snowflake uygulamanız son 24 saatte $1 kullanıcının sansürü aşmasına yardımcı oldu."
+        "message": "Snowflake uygulamanızın son 24 saatte sansürü aşmasına yardımcı olduğu kullanıcı sayısı: $1"
     },
     "popupRetry": {
         "message": "Yeniden dene"

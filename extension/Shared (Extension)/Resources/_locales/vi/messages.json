@@ -1,0 +1,41 @@
+{
+    "popupStatusOff": {
+        "message": "Snowflake đã tắt"
+    },
+    "popupStatusOn": {
+        "message": "Số lượng người dùng hiện tại đã được kết nối: $1"
+    },
+    "popupWebRTCOff": {
+        "message": "Tính năng WebRTC không được phát hiện."
+    },
+    "popupStatusReady": {
+        "message": "Snowflake của bạn đã sẵn sàng để giúp đỡ người dùng vượt qua sự kiểm duyệt"
+    },
+    "popupBridgeUnreachable": {
+        "message": "Đã không thể kết nối đến cầu Bridge."
+    },
+    "popupDescOn": {
+        "message": "Số lượng người dùng đã được Snowflake của bạn giúp đỡ vượt qua sự kiểm duyệt trong vòng 24 giờ qua: $1"
+    },
+    "popupEnabled": {
+        "message": "Đã kích hoạt"
+    },
+    "popupLearnMore": {
+        "message": "Tìm hiểu thêm"
+    },
+    "popupRetry": {
+        "message": "Thử lại"
+    },
+    "popupRetrying": {
+        "message": "Đang thử lại ..."
+    },
+    "badgeCookiesOff": {
+        "message": "Cookies không được kích hoạt."
+    },
+    "appDesc": {
+        "message": "Cho phép người dùng ở các quốc gia bị kiểm duyệt sử dụng kết nối mạng của bạn để truy cập mạng lưới Tor Network."
+    },
+    "popupRunInBackground": {
+        "message": "Tiếp tục chạy khi trình duyệt bị đóng"
+    }
+}

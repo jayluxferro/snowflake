@@ -6,7 +6,7 @@
         "message": "关闭浏览器时保持运行状态"
     },
     "popupLearnMore": {
-        "message": "了解详情"
+        "message": "详细了解"
     },
     "popupStatusOff": {
         "message": "Snowflake 已关闭"
@@ -27,7 +27,7 @@
         "message": "重试"
     },
     "popupRetrying": {
-        "message": "正在重试……"
+        "message": "正在重试…"
     },
     "appDesc": {
         "message": "允许身陷审查阴霾的用户利用你的网络连接访问 Tor。"

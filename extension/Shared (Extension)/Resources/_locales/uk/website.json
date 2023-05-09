@@ -72,13 +72,13 @@
         "message": "Якщо ви зіткнулися з проблемами в роботі Snowflake — незалежно від того, чи використовуєте ви його або запускаєте — будь ласка, розгляньте можливість подання звіту про помилку.  Існує два способи подати звіт про помилку:"
     },
     "bugTracker": {
-        "message": "<a href=\"https://gitlab.onionize.space/\">Створити обліковий запис</a> у проєкту Tor на GitLab, потім <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">відкрийте нову гілку про проблему</a> в розділі проблем проєкту Snowflake."
+        "message": "<a href=\"https://gitlab.onionize.space/\">Надішліть запит для створення облікового запису</a> в проєкті Tor на GitLab, потім <a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/issues\">відкрийте нову гілку обговорення</a> в розділі проблем проєкту Snowflake."
     },
     "descriptive": {
         "message": "Прохання описувати якомога точніше і по можливості вкажіть повідомлення лоґів, це допоможе нам точніше відтворити помилку."
     },
     "snowflakeTechOverview": {
-        "message": "Snowflake — це нова технологія обходу, яка є частиною сімейства <a href=\"https://gitweb.torproject.org/torspec.git/tree/pt-spec.txt\">Pluggable Transports</a>, яка постійно вдосконалюється. Цікаво дізнатися більше про його архітектуру? Не соромтеся переглянути цей<a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/Technical%20Overview\">технічний огляд</a> (англійською мовою)."
+        "message": "Snowflake — це нова технологія обходу, яка є частиною сімейства <a href=\"https://gitweb.torproject.org/torspec.git/tree/pt-spec.txt\">додаткових передавачів</a>, яка постійно вдосконалюється. Цікаво дізнатися більше про його архітектуру? Не соромтеся переглянути цей<a href=\"https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/Technical%20Overview\">технічний огляд</a> (англійською мовою)."
     },
     "support": {
         "message": "Якщо у вас виникли проблеми під час під'єднання до Tor за допомогою Snowflake, зв’яжіться з каналом підтримки Tor у <a href=\"https://t.me/TorProjectSupportBot\">Telegram</a>. Ви також можете переглянути <a href=\"https://support.torproject.org/censorship/\">портал підтримки Tor</a> і <a href=\"https://forum.torproject.net/tag/snowflake\">форум Tor</a> для отримання відповідей."

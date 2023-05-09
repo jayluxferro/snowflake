@@ -1,0 +1,41 @@
+{
+    "popupBridgeUnreachable": {
+        "message": "Não foi possível se conectar à ponte."
+    },
+    "popupDescOn": {
+        "message": "Número de pessoas que driblaram censura com ajuda do seu Snowflake nas últimas 24 horas: $1"
+    },
+    "popupEnabled": {
+        "message": "Habilitado"
+    },
+    "popupLearnMore": {
+        "message": "Saber mais"
+    },
+    "popupStatusOff": {
+        "message": "Snowflake está desligado"
+    },
+    "popupStatusOn": {
+        "message": "Número de pessoas conectadas agora: $1"
+    },
+    "popupStatusReady": {
+        "message": "Seu Snowflake está pronto para ajudar pessoas a driblar censura"
+    },
+    "popupWebRTCOff": {
+        "message": "O recurso WebRTC não foi detectado."
+    },
+    "popupRetry": {
+        "message": "Tentar novamente"
+    },
+    "popupRetrying": {
+        "message": "Tentando novamente ..."
+    },
+    "badgeCookiesOff": {
+        "message": "Cookies não estão habilitados."
+    },
+    "appDesc": {
+        "message": "Permita que usuários em países censurados usem sua conexão de rede para acessar a rede Tor."
+    },
+    "popupRunInBackground": {
+        "message": "Continuar executando quando o navegador estiver fechado"
+    }
+}

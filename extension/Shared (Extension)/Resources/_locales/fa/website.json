@@ -84,6 +84,6 @@
         "message": "If you encounter issues while trying to connect to Tor using Snowflake, the Tor support channel can be reached on <a href=\"https://t.me/TorProjectSupportBot\">Telegram</a>. You can also browse the <a href=\"https://support.torproject.org/censorship/\">Tor Support Portal</a> and the <a href=\"https://forum.torproject.net/tag/snowflake\">Tor Forum</a> for answers."
     },
     "installExtension": {
-        "message": "Did you know that Snowflake proxies are operated entirely by volunteers? In other words, a user gets matched with a random Snowflake volunteer proxy, which is run by a volunteer like you! So, if you want to help people bypass censorship, consider installing and running a Snowflake proxy. The only prerequisite is that the Internet in your country is <strong>not</strong> heavily censored already."
+        "message": "آیا می‌دانستید پروکسی‌های Snowflake کاملاً از سوی داوطلبان اداره می‌شوند؟ به عبارتی دیگر، کاربری با یک پروکسی داوطلب Snowflake منطبق می‌شود، که از سوی داوطلبی همانند شما اجرا می‌شود! پس، اگر می‌خواهید به مردم در دور زدن سانسور کمک کنید، نصب و اجرای یک پروکسی Snowflake را در نظر بگیرید. تنها پیش‌نیاز این است که اینترنت در کشور شما خود محدود <strong>نشده</strong> باشد."
     }
 }
