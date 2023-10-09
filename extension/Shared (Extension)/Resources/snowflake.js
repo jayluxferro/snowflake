@@ -273,15 +273,13 @@ class ProxyPair {
       log('Invalid SDP received -- was not an offer.');
       return false;
     }
-    try {
-      this.pc.setRemoteDescription(offer);
-    } catch (error) {
-      log('Invalid SDP message.');
-      return false;
-    }
     dbg('SDP ' + offer.type + ' successfully received.');
 
-    this.pc.createAnswer()
+    this.pc.setRemoteDescription(offer)
+    // Since we don't have a singaling channel, besides the initial offer/answer,
+    // mark the end of ICE candidates, in case it's not already marked in the offer.
+    .then(() => this.pc.addIceCandidate({ candidate: '' }))
+    .then(() => this.pc.createAnswer())
     .then((sdp) => {
       dbg('webrtc: Answer ready.');
       return this.pc.setLocalDescription(sdp);
@@ -1356,9 +1354,9 @@ class WebExtUI extends UI {
         this.initToggle();
       });
       if (
-        typeof SUPPORTS_WEBEXT_OPTIONAL_BACKGROUND_PERMISSION !== 'undefined'
+        typeof false !== 'undefined'
         // eslint-disable-next-line no-undef
-        && SUPPORTS_WEBEXT_OPTIONAL_BACKGROUND_PERMISSION
+        && false
       ) {
         new Promise(r => chrome.storage.local.get({ runInBackground: false }, r))
         .then(storage => {
@@ -1367,9 +1365,9 @@ class WebExtUI extends UI {
       }
     } else if (m.runInBackground != undefined) {
       if (
-        typeof SUPPORTS_WEBEXT_OPTIONAL_BACKGROUND_PERMISSION !== 'undefined'
+        typeof false !== 'undefined'
         // eslint-disable-next-line no-undef
-        && SUPPORTS_WEBEXT_OPTIONAL_BACKGROUND_PERMISSION
+        && false
       ) {
         new Promise(r => chrome.storage.local.get({ "snowflake-enabled": DEFAULT_ENABLED }, r))
         .then(storage => {

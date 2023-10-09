@@ -16,9 +16,9 @@ window.onload = () => {
     () => port.postMessage({ retry: true }),
     (
       (
-        typeof SUPPORTS_WEBEXT_OPTIONAL_BACKGROUND_PERMISSION !== 'undefined'
+        typeof false !== 'undefined'
         // eslint-disable-next-line no-undef
-        && SUPPORTS_WEBEXT_OPTIONAL_BACKGROUND_PERMISSION
+        && false
       )
         ? (newValue) => port.postMessage({ runInBackground: newValue })
         : undefined

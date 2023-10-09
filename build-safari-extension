@@ -23,6 +23,7 @@ git clone  "$snowflake_repo" "$src_directory"
 if [ -d $src_directory ];
 then
   echo "[-] Building extension."
+  python3 sed-fix.py
   cd $src_directory
   npm install
   npm run webext gecko
@@ -46,6 +47,11 @@ then
   then
     rm -rf "$src_directory"
   fi
+
+  # delete buggy translations
+  rm -rf extension/Shared\ \(Extension\)/Resources/_locales/el
+  rm -rf extension/Shared\ \(Extension\)/Resources/_locales/pl
+  rm -rf extension/Shared\ \(Extension\)/Resources/_locales/ro
 fi
 
 echo "[+] Process completed."
